@@ -440,7 +440,7 @@ function WhyChoose() {
             Built for Realtors who want to{" "}
             <span className="text-[color:var(--gold)]">close, not chase.</span>
           </h2>
-          <p className="mt-4 max-w-lg text-[color:var(--muted-foreground)]">
+          <p className="mx-auto mt-4 max-w-lg text-[color:var(--muted-foreground)]">
             We handle the entire top of your funnel — from prospecting to qualification — so your
             calendar is filled with seller conversations that convert.
           </p>
