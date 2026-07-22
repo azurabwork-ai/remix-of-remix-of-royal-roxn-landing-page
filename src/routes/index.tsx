@@ -16,9 +16,7 @@ import {
 } from "lucide-react";
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
-import heroImg from "@/assets/hero-presenter.jpg";
 import frustratedImg from "@/assets/frustrated-realtor.jpg";
-import callCenterImg from "@/assets/call-center.jpg";
 import realtor1 from "@/assets/realtor-1.jpg";
 import realtor2 from "@/assets/realtor-2.jpg";
 import realtor3 from "@/assets/realtor-3.jpg";
@@ -172,8 +170,8 @@ function Hero() {
         aria-hidden
         className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-[color:var(--gold-soft)] blur-3xl"
       />
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-10 lg:py-28">
-        <div className="relative">
+      <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:px-10 lg:py-28">
+        <div className="relative mx-auto flex flex-col items-center text-center">
           <GoldPill>Canadian Real Estate Growth Partner</GoldPill>
           <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-[68px]">
             Stop chasing leads.
@@ -185,12 +183,12 @@ function Hero() {
               </span>
             </span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[color:var(--muted-foreground)]">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--muted-foreground)]">
             Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so
             you can focus on winning more listings — not cold calling.
           </p>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-1">
+          <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3">
             {[
               "Qualified Seller Appointments",
               "Dedicated Appointment Team",
@@ -205,7 +203,7 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-wrap items-center gap-5">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
             <Button
               asChild
               className="group h-14 rounded-full bg-[color:var(--ink)] px-7 font-display text-base font-semibold text-white shadow-card hover:bg-[color:var(--graphite)]"
@@ -228,36 +226,6 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-[color:var(--gold)]/25 via-transparent to-transparent blur-2xl" />
-          <div className="relative overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-white shadow-card">
-            <img
-              src={heroImg}
-              alt="Royal RoXn team member inside the Canadian office"
-              width={1280}
-              height={1440}
-              className="h-[560px] w-full object-cover lg:h-[640px]"
-            />
-          </div>
-          {/* floating stat card */}
-          <div className="absolute -bottom-6 -left-6 hidden w-64 rounded-2xl border border-[color:var(--border)] bg-white p-5 shadow-card sm:block">
-            <div className="flex items-center gap-3">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-[color:var(--gold-soft)]">
-                <CalendarCheck className="h-5 w-5 text-[color:var(--ink)]" />
-              </div>
-              <div>
-                <p className="font-display text-2xl font-bold">6,000+</p>
-                <p className="text-xs text-[color:var(--muted-foreground)]">
-                  Appointments / month
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="absolute -top-4 right-6 hidden rounded-2xl border border-[color:var(--border)] bg-white px-4 py-3 shadow-soft md:flex md:items-center md:gap-2">
-            <span className="grid h-2.5 w-2.5 place-items-center rounded-full bg-emerald-500" />
-            <p className="text-xs font-semibold">Live from Toronto HQ</p>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -463,26 +431,14 @@ function WhyChoose() {
   ];
   return (
     <section className="bg-[color:var(--mist)] py-24">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:px-10">
-        <div className="order-2 lg:order-1">
-          <div className="relative overflow-hidden rounded-[28px] border border-[color:var(--border)] shadow-card">
-            <img
-              src={callCenterImg}
-              alt="Royal RoXn Canadian call center"
-              width={1280}
-              height={1200}
-              loading="lazy"
-              className="h-[540px] w-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="order-1 lg:order-2">
+      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+        <div className="text-center">
           <SectionEyebrow>Why Realtors Choose Us</SectionEyebrow>
           <h2 className="font-display text-4xl font-bold sm:text-5xl">
             Built for Realtors who want to{" "}
             <span className="text-[color:var(--gold)]">close, not chase.</span>
           </h2>
-          <p className="mt-4 max-w-lg text-[color:var(--muted-foreground)]">
+          <p className="mx-auto mt-4 max-w-lg text-[color:var(--muted-foreground)]">
             We handle the entire top of your funnel — from prospecting to qualification — so your
             calendar is filled with seller conversations that convert.
           </p>
