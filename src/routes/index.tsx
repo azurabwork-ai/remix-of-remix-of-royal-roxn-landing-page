@@ -90,16 +90,16 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 
 function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
   return (
-    <div className="flex items-center gap-2.5">
+    <div className="flex min-w-0 items-center gap-2 sm:gap-2.5">
       <img
         src={logoAsset.url}
         alt="Royal RoXn"
         width={40}
         height={40}
-        className="h-10 w-10 object-contain"
+        className="h-8 w-8 shrink-0 object-contain sm:h-10 sm:w-10"
       />
       <span
-        className={`font-display text-lg font-bold tracking-tight ${
+        className={`truncate font-display text-base font-bold tracking-tight sm:text-lg ${
           variant === "light" ? "text-white" : "text-[color:var(--ink)]"
         }`}
       >
