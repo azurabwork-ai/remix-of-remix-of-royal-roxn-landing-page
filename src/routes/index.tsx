@@ -17,9 +17,6 @@ import {
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
 import frustratedImg from "@/assets/frustrated-realtor.jpg";
-import realtor1 from "@/assets/realtor-1.jpg";
-import realtor2 from "@/assets/realtor-2.jpg";
-import realtor3 from "@/assets/realtor-3.jpg";
 import test1 from "@/assets/testimonial-1.jpg";
 import test2 from "@/assets/testimonial-2.jpg";
 import test3 from "@/assets/testimonial-3.jpg";
