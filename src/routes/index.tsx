@@ -1,24 +1,978 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import {
+  Phone,
+  Star,
+  Search,
+  ClipboardCheck,
+  CalendarCheck,
+  Check,
+  X,
+  ArrowRight,
+  MapPin,
+  Mail,
+  ChevronDown,
+  Sparkles,
+} from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import logoAsset from "@/assets/logo_royal.png.asset.json";
+import heroImg from "@/assets/hero-presenter.jpg";
+import frustratedImg from "@/assets/frustrated-realtor.jpg";
+import callCenterImg from "@/assets/call-center.jpg";
+import realtor1 from "@/assets/realtor-1.jpg";
+import realtor2 from "@/assets/realtor-2.jpg";
+import realtor3 from "@/assets/realtor-3.jpg";
+import test1 from "@/assets/testimonial-1.jpg";
+import test2 from "@/assets/testimonial-2.jpg";
+import test3 from "@/assets/testimonial-3.jpg";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Royal RoXn — Qualified Seller Appointments for Canadian Realtors" },
+      {
+        name: "description",
+        content:
+          "Royal RoXn books qualified seller appointments on your calendar so Canadian Realtors can stop chasing leads and start closing more listings.",
+      },
+      { property: "og:title", content: "Royal RoXn — Book Qualified Seller Appointments" },
+      {
+        property: "og:description",
+        content:
+          "A dedicated Canadian appointment-setting team that fills your calendar with qualified seller appointments.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap",
+      },
+    ],
+  }),
+  component: Landing,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+/* ---------- Small primitives ---------- */
+
+function GoldPill({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/30 bg-[color:var(--gold-soft)] px-3 py-1 text-xs font-semibold tracking-wide text-[color:var(--ink)] uppercase">
+      <Sparkles className="h-3.5 w-3.5 text-[color:var(--gold)]" />
+      {children}
+    </span>
+  );
+}
+
+function SectionEyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
+      <span className="h-px w-8 bg-[color:var(--gold)]" />
+      {children}
     </div>
+  );
+}
+
+function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
+  return (
+    <div className="flex items-center gap-2.5">
+      <img
+        src={logoAsset.url}
+        alt="Royal RoXn"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
+      <span
+        className={`font-display text-lg font-bold tracking-tight ${
+          variant === "light" ? "text-white" : "text-[color:var(--ink)]"
+        }`}
+      >
+        Royal RoXn
+      </span>
+    </div>
+  );
+}
+
+/* ---------- Page ---------- */
+
+function Landing() {
+  return (
+    <div className="min-h-screen bg-white text-[color:var(--ink)]">
+      <Nav />
+      <Hero />
+      <Stats />
+      <Brokerages />
+      <PainPoints />
+      <HowItWorks />
+      <WhyChoose />
+      <CaseStudies />
+      <Testimonials />
+      <Results />
+      <FAQ />
+      <FinalCTA />
+      <Footer />
+    </div>
+  );
+}
+
+/* ---------- Nav ---------- */
+
+function Nav() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+        <Logo />
+        <div className="flex items-center gap-3 sm:gap-5">
+          <a
+            href="tel:+18005550100"
+            className="hidden items-center gap-2 text-sm font-medium text-[color:var(--ink)] hover:text-[color:var(--gold)] sm:inline-flex"
+          >
+            <Phone className="h-4 w-4" />
+            Call Us <span className="hidden lg:inline">(800) 555-0100</span>
+          </a>
+          <Button
+            asChild
+            className="h-11 rounded-full bg-[color:var(--gold)] px-5 font-display text-sm font-semibold text-[color:var(--ink)] shadow-soft hover:bg-[color:var(--gold)]/90"
+          >
+            <a href="#book">Book Strategy Call</a>
+          </Button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+/* ---------- Hero ---------- */
+
+function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-white">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-[color:var(--gold-soft)] blur-3xl"
+      />
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-10 lg:py-28">
+        <div className="relative">
+          <GoldPill>Canadian Real Estate Growth Partner</GoldPill>
+          <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-[68px]">
+            Stop chasing leads.
+            <br />
+            <span className="relative inline-block">
+              Start closing more
+              <span className="ml-3 bg-gradient-to-r from-[color:var(--gold)] to-amber-500 bg-clip-text text-transparent">
+                listings.
+              </span>
+            </span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[color:var(--muted-foreground)]">
+            Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so
+            you can focus on winning more listings — not cold calling.
+          </p>
+
+          <ul className="mt-8 grid gap-3 sm:grid-cols-1">
+            {[
+              "Qualified Seller Appointments",
+              "Dedicated Appointment Team",
+              "Canadian Market Experts",
+            ].map((t) => (
+              <li key={t} className="flex items-center gap-3 text-[15px] font-medium">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[color:var(--gold)]">
+                  <Check className="h-3.5 w-3.5 text-[color:var(--ink)]" strokeWidth={3} />
+                </span>
+                {t}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-wrap items-center gap-5">
+            <Button
+              asChild
+              className="group h-14 rounded-full bg-[color:var(--ink)] px-7 font-display text-base font-semibold text-white shadow-card hover:bg-[color:var(--graphite)]"
+            >
+              <a href="#book" className="inline-flex items-center gap-2">
+                Book Your FREE Strategy Call
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+            <div className="flex items-center gap-3">
+              <div className="flex text-[color:var(--gold)]">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+              <p className="text-sm font-medium text-[color:var(--muted-foreground)]">
+                Trusted by Canadian Realtors
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-[color:var(--gold)]/25 via-transparent to-transparent blur-2xl" />
+          <div className="relative overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-white shadow-card">
+            <img
+              src={heroImg}
+              alt="Royal RoXn team member inside the Canadian office"
+              width={1280}
+              height={1440}
+              className="h-[560px] w-full object-cover lg:h-[640px]"
+            />
+          </div>
+          {/* floating stat card */}
+          <div className="absolute -bottom-6 -left-6 hidden w-64 rounded-2xl border border-[color:var(--border)] bg-white p-5 shadow-card sm:block">
+            <div className="flex items-center gap-3">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-[color:var(--gold-soft)]">
+                <CalendarCheck className="h-5 w-5 text-[color:var(--ink)]" />
+              </div>
+              <div>
+                <p className="font-display text-2xl font-bold">6,000+</p>
+                <p className="text-xs text-[color:var(--muted-foreground)]">
+                  Appointments / month
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="absolute -top-4 right-6 hidden rounded-2xl border border-[color:var(--border)] bg-white px-4 py-3 shadow-soft md:flex md:items-center md:gap-2">
+            <span className="grid h-2.5 w-2.5 place-items-center rounded-full bg-emerald-500" />
+            <p className="text-xs font-semibold">Live from Toronto HQ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Stats ---------- */
+
+function Stats() {
+  const items = [
+    { n: "630+", l: "On Board Realtors" },
+    { n: "9+", l: "Years Experience" },
+    { n: "6000+", l: "Listing Appointments / Month" },
+    { n: "1200+", l: "Listings Every Month" },
+  ];
+  return (
+    <section className="bg-[color:var(--ink)] py-24 text-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-3xl text-center">
+          <SectionEyebrow>Proven Track Record</SectionEyebrow>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            9+ Years of{" "}
+            <span className="text-[color:var(--gold)]">Undefeated Success</span>
+          </h2>
+          <p className="mt-4 text-white/70">
+            Numbers we've delivered for Realtors across every Canadian province.
+          </p>
+        </div>
+        <div className="mt-14 grid grid-cols-2 gap-5 lg:grid-cols-4">
+          {items.map((s) => (
+            <div
+              key={s.l}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--graphite)] p-8 transition hover:border-[color:var(--gold)]/40"
+            >
+              <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[color:var(--gold)]/10 blur-2xl transition group-hover:bg-[color:var(--gold)]/25" />
+              <p className="font-display text-5xl font-extrabold text-[color:var(--gold)] sm:text-6xl">
+                {s.n}
+              </p>
+              <p className="mt-3 text-sm font-medium text-white/80">{s.l}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Brokerages ---------- */
+
+function Brokerages() {
+  const names = ["RE/MAX", "Royal LePage", "Century 21", "eXp Realty", "Keller Williams", "Sutton"];
+  return (
+    <section className="bg-white py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
+          Trusted by Realtors from Canada's leading brokerages
+        </p>
+        <div className="mt-10 grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
+          {names.map((n) => (
+            <div
+              key={n}
+              className="flex h-14 items-center justify-center rounded-xl border border-[color:var(--border)] bg-[color:var(--mist)] px-4 font-display text-base font-semibold tracking-tight text-[color:var(--graphite)] transition hover:border-[color:var(--gold)]/40 hover:text-[color:var(--ink)]"
+            >
+              {n}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Pain Points ---------- */
+
+function PainPoints() {
+  const items = [
+    { t: "Spending Hours Cold Calling", d: "Time drained on dials that don't turn into listings." },
+    { t: "Paying for Low-Quality Leads", d: "Ad budgets burned on tire-kickers and dead numbers." },
+    { t: "Inconsistent Listings", d: "Feast-or-famine months that make forecasting impossible." },
+    { t: "No Predictable Seller Pipeline", d: "No system to keep seller appointments coming in." },
+  ];
+  return (
+    <section className="bg-[color:var(--mist)] py-24">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
+        <div>
+          <SectionEyebrow>The Realtor Reality</SectionEyebrow>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            Does this sound{" "}
+            <span className="text-[color:var(--gold)]">familiar?</span>
+          </h2>
+          <p className="mt-4 max-w-lg text-[color:var(--muted-foreground)]">
+            Most Realtors we speak with are stuck in the same trap — great at closing, buried in
+            prospecting.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {items.map((i) => (
+              <div
+                key={i.t}
+                className="rounded-2xl border border-[color:var(--border)] bg-white p-6 shadow-soft transition hover:shadow-card"
+              >
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-red-50">
+                  <X className="h-5 w-5 text-red-500" strokeWidth={2.5} />
+                </div>
+                <h3 className="mt-4 font-display text-base font-semibold">{i.t}</h3>
+                <p className="mt-1 text-sm text-[color:var(--muted-foreground)]">{i.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="relative">
+          <div className="overflow-hidden rounded-[28px] border border-[color:var(--border)] shadow-card">
+            <img
+              src={frustratedImg}
+              alt="Realtor looking at an empty calendar"
+              width={1280}
+              height={1200}
+              loading="lazy"
+              className="h-[540px] w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- How It Works ---------- */
+
+function HowItWorks() {
+  const steps = [
+    {
+      icon: Search,
+      step: "Step 1",
+      title: "We Find Motivated Sellers",
+      desc: "Our Canadian team identifies homeowners actively thinking about selling in your farm area.",
+    },
+    {
+      icon: ClipboardCheck,
+      step: "Step 2",
+      title: "We Qualify Every Opportunity",
+      desc: "Each lead is screened against your criteria — timeline, motivation, price range and readiness.",
+    },
+    {
+      icon: CalendarCheck,
+      step: "Step 3",
+      title: "Booked On Your Calendar",
+      desc: "Qualified seller appointments land directly on your calendar. You show up and close.",
+    },
+  ];
+  return (
+    <section className="bg-white py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionEyebrow>How It Works</SectionEyebrow>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            A predictable path to{" "}
+            <span className="text-[color:var(--gold)]">more listings</span>
+          </h2>
+        </div>
+        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+          {steps.map((s, idx) => {
+            const Icon = s.icon;
+            return (
+              <div key={s.title} className="relative">
+                <div className="group relative h-full rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-[color:var(--gold)]/40 hover:shadow-card">
+                  <div className="flex items-center justify-between">
+                    <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[color:var(--ink)] text-[color:var(--gold)]">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
+                      {s.step}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 font-display text-xl font-bold">{s.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--muted-foreground)]">
+                    {s.desc}
+                  </p>
+                </div>
+                {idx < steps.length - 1 && (
+                  <div className="pointer-events-none absolute top-1/2 -right-6 hidden -translate-y-1/2 lg:block">
+                    <div className="grid h-10 w-10 place-items-center rounded-full border border-[color:var(--border)] bg-white shadow-soft">
+                      <ArrowRight className="h-4 w-4 text-[color:var(--gold)]" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Why Choose ---------- */
+
+function WhyChoose() {
+  const bullets = [
+    "Qualified Seller Appointments",
+    "Dedicated Canadian Calling Team",
+    "Proven Appointment Setting Process",
+    "Save Time Prospecting",
+    "Focus On Closing Listings",
+  ];
+  return (
+    <section className="bg-[color:var(--mist)] py-24">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:px-10">
+        <div className="order-2 lg:order-1">
+          <div className="relative overflow-hidden rounded-[28px] border border-[color:var(--border)] shadow-card">
+            <img
+              src={callCenterImg}
+              alt="Royal RoXn Canadian call center"
+              width={1280}
+              height={1200}
+              loading="lazy"
+              className="h-[540px] w-full object-cover"
+            />
+          </div>
+        </div>
+        <div className="order-1 lg:order-2">
+          <SectionEyebrow>Why Realtors Choose Us</SectionEyebrow>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            Built for Realtors who want to{" "}
+            <span className="text-[color:var(--gold)]">close, not chase.</span>
+          </h2>
+          <p className="mt-4 max-w-lg text-[color:var(--muted-foreground)]">
+            We handle the entire top of your funnel — from prospecting to qualification — so your
+            calendar is filled with seller conversations that convert.
+          </p>
+          <ul className="mt-8 grid gap-3">
+            {bullets.map((b) => (
+              <li
+                key={b}
+                className="flex items-center gap-4 rounded-2xl border border-[color:var(--border)] bg-white px-5 py-4 shadow-soft"
+              >
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[color:var(--gold)]">
+                  <Check className="h-4 w-4 text-[color:var(--ink)]" strokeWidth={3} />
+                </span>
+                <span className="font-display text-[15px] font-semibold">{b}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8">
+            <Button
+              asChild
+              className="h-12 rounded-full bg-[color:var(--ink)] px-6 font-display text-sm font-semibold text-white hover:bg-[color:var(--graphite)]"
+            >
+              <a href="#book">See if you qualify</a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Case Studies ---------- */
+
+function CaseStudies() {
+  const cases = [
+    {
+      img: realtor1,
+      name: "Michael Thompson",
+      province: "Ontario",
+      challenge: "Struggling to keep a full listing pipeline while managing active clients.",
+      solution: "Dedicated appointment team handling all outbound & qualification.",
+      result: "37 seller appointments in 90 days — 11 new listings signed.",
+    },
+    {
+      img: realtor2,
+      name: "Sarah Bélanger",
+      province: "Quebec",
+      challenge: "Wasting ad spend on cold buyer leads that never converted.",
+      solution: "Repositioned budget behind Royal RoXn's qualified seller flow.",
+      result: "4.2× more listing appointments in her first quarter.",
+    },
+    {
+      img: realtor3,
+      name: "Arjun Malhotra",
+      province: "British Columbia",
+      challenge: "Solo agent with zero time to prospect between showings.",
+      solution: "Fully outsourced calling & booking to Royal RoXn's Canadian team.",
+      result: "Booked $4.1M in listings within 6 months of onboarding.",
+    },
+  ];
+  return (
+    <section className="bg-white py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionEyebrow>Case Studies</SectionEyebrow>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            Real results from{" "}
+            <span className="text-[color:var(--gold)]">Canadian Realtors</span>
+          </h2>
+        </div>
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {cases.map((c) => (
+            <article
+              key={c.name}
+              className="group flex flex-col overflow-hidden rounded-[24px] border border-[color:var(--border)] bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+            >
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={c.img}
+                  alt={c.name}
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[color:var(--ink)] shadow-soft">
+                  <MapPin className="h-3 w-3 text-[color:var(--gold)]" />
+                  {c.province}
+                </div>
+              </div>
+              <div className="flex flex-1 flex-col gap-4 p-7">
+                <h3 className="font-display text-xl font-bold">{c.name}</h3>
+                <dl className="space-y-3 text-sm">
+                  <div>
+                    <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">
+                      Challenge
+                    </dt>
+                    <dd className="mt-1 text-[color:var(--ink)]/85">{c.challenge}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">
+                      Solution
+                    </dt>
+                    <dd className="mt-1 text-[color:var(--ink)]/85">{c.solution}</dd>
+                  </div>
+                  <div className="rounded-xl bg-[color:var(--gold-soft)] p-3">
+                    <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--ink)]">
+                      Result
+                    </dt>
+                    <dd className="mt-1 font-display text-sm font-semibold text-[color:var(--ink)]">
+                      {c.result}
+                    </dd>
+                  </div>
+                </dl>
+                <button className="mt-auto inline-flex items-center gap-2 self-start font-display text-sm font-semibold text-[color:var(--ink)] hover:text-[color:var(--gold)]">
+                  Read Full Story
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Testimonials ---------- */
+
+function Testimonials() {
+  const items = [
+    {
+      img: test1,
+      name: "Karen Whitfield",
+      brokerage: "RE/MAX Hallmark",
+      quote:
+        "Royal RoXn transformed the way I run my business. My calendar is full of qualified seller appointments and my listing volume has never been higher.",
+    },
+    {
+      img: test2,
+      name: "David Laurent",
+      brokerage: "Royal LePage Signature",
+      quote:
+        "I stopped cold calling on day one. Their Canadian team is professional, consistent, and truly understands the seller conversation.",
+    },
+    {
+      img: test3,
+      name: "Emily Chen",
+      brokerage: "Century 21 Legacy",
+      quote:
+        "It's the most predictable pipeline I've ever had. I finally get to focus on closing listings instead of prospecting.",
+    },
+  ];
+  return (
+    <section className="bg-[color:var(--mist)] py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionEyebrow>Testimonials</SectionEyebrow>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            Loved by Realtors from coast to coast
+          </h2>
+        </div>
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {items.map((t) => (
+            <figure
+              key={t.name}
+              className="flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft"
+            >
+              <div className="flex text-[color:var(--gold)]">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+              <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-[color:var(--ink)]/85">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="mt-8 flex items-center gap-3 border-t border-[color:var(--border)] pt-6">
+                <img
+                  src={t.img}
+                  alt={t.name}
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  className="h-12 w-12 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-display text-sm font-semibold">{t.name}</p>
+                  <p className="text-xs text-[color:var(--muted-foreground)]">{t.brokerage}</p>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Results ---------- */
+
+function Results() {
+  const items = [
+    { n: "6000+", l: "Seller Appointments Monthly" },
+    { n: "1200+", l: "Listings Monthly" },
+    { n: "630+", l: "Canadian Realtors" },
+    { n: "9+", l: "Years Experience" },
+  ];
+  return (
+    <section className="bg-white py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionEyebrow>The Numbers</SectionEyebrow>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            Results that speak{" "}
+            <span className="text-[color:var(--gold)]">for themselves</span>
+          </h2>
+        </div>
+        <div className="mt-14 grid grid-cols-2 gap-5 lg:grid-cols-4">
+          {items.map((s) => (
+            <div
+              key={s.l}
+              className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--mist)] p-8 text-center shadow-soft"
+            >
+              <p className="font-display text-5xl font-extrabold text-[color:var(--ink)]">
+                {s.n}
+              </p>
+              <p className="mt-3 text-sm font-medium text-[color:var(--muted-foreground)]">
+                {s.l}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- FAQ ---------- */
+
+function FAQ() {
+  const faqs = [
+    {
+      q: "What exactly does Royal RoXn do?",
+      a: "We're a done-for-you appointment setting company for Canadian Realtors. Our Canadian team identifies motivated sellers, qualifies them against your criteria, and books listing appointments directly on your calendar.",
+    },
+    {
+      q: "Which markets do you serve?",
+      a: "We work with Realtors across every Canadian province, from Vancouver Island to Halifax. Our appointment setters understand local market nuances.",
+    },
+    {
+      q: "How is this different from buying leads?",
+      a: "Leads are just names. We deliver booked appointments with motivated, qualified sellers — people who have already agreed to speak with you about listing.",
+    },
+    {
+      q: "How quickly will I see results?",
+      a: "Most Realtors receive their first qualified seller appointments within 10-14 days of onboarding.",
+    },
+    {
+      q: "Is there a long-term contract?",
+      a: "No. We earn your business month over month. Onboarding is simple and cancellation policies are transparent.",
+    },
+  ];
+  return (
+    <section className="bg-[color:var(--mist)] py-24">
+      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+        <div className="text-center">
+          <SectionEyebrow>FAQ</SectionEyebrow>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            Questions Realtors ask us
+          </h2>
+        </div>
+        <Accordion type="single" collapsible className="mt-12 space-y-4">
+          {faqs.map((f, i) => (
+            <AccordionItem
+              key={i}
+              value={`item-${i}`}
+              className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white px-6 shadow-soft [&[data-state=open]]:border-[color:var(--gold)]/40"
+            >
+              <AccordionTrigger className="py-5 font-display text-left text-base font-semibold hover:no-underline [&>svg]:hidden">
+                <span className="flex-1">{f.q}</span>
+                <ChevronDown className="h-5 w-5 shrink-0 text-[color:var(--gold)] transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </AccordionTrigger>
+              <AccordionContent className="pb-5 pr-8 text-[15px] leading-relaxed text-[color:var(--muted-foreground)]">
+                {f.a}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Final CTA ---------- */
+
+function FinalCTA() {
+  const [submitted, setSubmitted] = useState(false);
+  return (
+    <section id="book" className="relative overflow-hidden bg-[color:var(--gold)] py-24">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-white/30 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[color:var(--ink)]/10 blur-3xl"
+      />
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10">
+        <div>
+          <GoldPill>Limited Onboarding Slots</GoldPill>
+          <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] text-[color:var(--ink)] sm:text-5xl lg:text-6xl">
+            Ready to fill your calendar with qualified seller appointments?
+          </h2>
+          <p className="mt-6 max-w-lg text-lg text-[color:var(--ink)]/80">
+            Book your FREE Strategy Call today and discover how Royal RoXn can help grow your
+            business.
+          </p>
+          <ul className="mt-8 space-y-3">
+            {[
+              "30-minute call, no obligation",
+              "Custom plan for your market",
+              "See if you qualify to work with us",
+            ].map((t) => (
+              <li key={t} className="flex items-center gap-3 font-medium text-[color:var(--ink)]">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[color:var(--ink)]">
+                  <Check className="h-3.5 w-3.5 text-[color:var(--gold)]" strokeWidth={3} />
+                </span>
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="rounded-[28px] border border-white/40 bg-white p-8 shadow-card sm:p-10">
+          {submitted ? (
+            <div className="flex h-full flex-col items-center justify-center py-16 text-center">
+              <div className="grid h-14 w-14 place-items-center rounded-full bg-[color:var(--gold)]">
+                <Check className="h-6 w-6 text-[color:var(--ink)]" strokeWidth={3} />
+              </div>
+              <h3 className="mt-6 font-display text-2xl font-bold">You're on the list</h3>
+              <p className="mt-2 text-[color:var(--muted-foreground)]">
+                A Royal RoXn strategist will reach out within one business day.
+              </p>
+            </div>
+          ) : (
+            <form
+              className="space-y-5"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setSubmitted(true);
+              }}
+            >
+              <h3 className="font-display text-2xl font-bold">Book your free strategy call</h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <FieldWithLabel id="name" label="Full Name">
+                  <Input id="name" required placeholder="Jane Doe" className="h-12 rounded-xl" />
+                </FieldWithLabel>
+                <FieldWithLabel id="email" label="Email">
+                  <Input
+                    id="email"
+                    required
+                    type="email"
+                    placeholder="you@brokerage.ca"
+                    className="h-12 rounded-xl"
+                  />
+                </FieldWithLabel>
+                <FieldWithLabel id="phone" label="Phone Number">
+                  <Input
+                    id="phone"
+                    required
+                    type="tel"
+                    placeholder="(416) 555-0100"
+                    className="h-12 rounded-xl"
+                  />
+                </FieldWithLabel>
+                <FieldWithLabel id="city" label="City / Province">
+                  <Input id="city" required placeholder="Toronto, ON" className="h-12 rounded-xl" />
+                </FieldWithLabel>
+                <div className="sm:col-span-2">
+                  <FieldWithLabel id="brokerage" label="Brokerage Name">
+                    <Input
+                      id="brokerage"
+                      required
+                      placeholder="RE/MAX Hallmark"
+                      className="h-12 rounded-xl"
+                    />
+                  </FieldWithLabel>
+                </div>
+              </div>
+              <Button
+                type="submit"
+                className="h-14 w-full rounded-full bg-[color:var(--ink)] font-display text-sm font-semibold uppercase tracking-wider text-white hover:bg-[color:var(--graphite)]"
+              >
+                Book My Free Strategy Call
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <p className="text-center text-xs text-[color:var(--muted-foreground)]">
+                No spam. No obligations. 100% confidential.
+              </p>
+            </form>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FieldWithLabel({
+  id,
+  label,
+  children,
+}: {
+  id: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="space-y-1.5">
+      <Label htmlFor={id} className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--ink)]">
+        {label}
+      </Label>
+      {children}
+    </div>
+  );
+}
+
+/* ---------- Footer ---------- */
+
+function Footer() {
+  return (
+    <footer className="bg-[color:var(--ink)] text-white/80">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
+          <div className="lg:col-span-1">
+            <Logo variant="light" />
+            <p className="mt-5 max-w-xs text-sm text-white/60">
+              Canada's trusted appointment setting partner for high-performing Realtors.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
+              Quick Links
+            </h4>
+            <ul className="mt-4 space-y-3 text-sm">
+              {["How It Works", "Case Studies", "Testimonials", "FAQ"].map((l) => (
+                <li key={l}>
+                  <a href="#" className="hover:text-[color:var(--gold)]">
+                    {l}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
+              Contact
+            </h4>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
+                (800) 555-0100
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
+                hello@royalroxn.ca
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
+                Toronto, Ontario, Canada
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
+              Legal
+            </h4>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li>
+                <a href="#" className="hover:text-[color:var(--gold)]">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[color:var(--gold)]">Terms of Service</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row sm:items-center">
+          <p>© {new Date().getFullYear()} Royal RoXn. All rights reserved.</p>
+          <p>Proudly built for Canadian Realtors 🇨🇦</p>
+        </div>
+      </div>
+    </footer>
   );
 }
