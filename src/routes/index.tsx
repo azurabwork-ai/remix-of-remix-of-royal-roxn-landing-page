@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { useEffect, useRef } from "react";
 import {
   Phone,
   Star,
@@ -14,13 +15,12 @@ import {
   Mail,
   ChevronDown,
   Sparkles,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
 import frustratedImg from "@/assets/frustrated-realtor.jpg";
-import test1 from "@/assets/testimonial-1.jpg";
-import test2 from "@/assets/testimonial-2.jpg";
-import test3 from "@/assets/testimonial-3.jpg";
 
 import remaxLogo from "@/assets/brokerages/remax.png.asset.json";
 import royalLepageLogo from "@/assets/brokerages/royal-lepage.png.asset.json";
