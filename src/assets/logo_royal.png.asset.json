@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "0c2ad6d6-db9c-43fd-8594-ab50c98531ea",
-  "project_id": "e4205420-f7b8-4d17-937a-8326a264db36",
-  "url": "/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png",
-  "r2_key": "a/v1/e4205420-f7b8-4d17-937a-8326a264db36/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png",
-  "original_filename": "logo_royal.png",
-  "size": 84115,
   "content_type": "image/png",
-  "created_at": "2026-07-22T15:55:02Z"
+  "created_at": "2026-07-22T15:55:02Z",
+  "original_filename": "logo_royal.png",
+  "project_id": "7773dfaa-5593-4268-8ed6-e16c298437a3",
+  "r2_key": "a/v1/7773dfaa-5593-4268-8ed6-e16c298437a3/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png",
+  "size": 84115,
+  "url": "/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png",
+  "version": 1
 }
