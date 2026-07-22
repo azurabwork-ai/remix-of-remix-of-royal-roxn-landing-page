@@ -96,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/logo_royal.png" },
     ],
     scripts: [
       {
@@ -106,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "Royal RoXn",
           url: "https://rox-finder-pro.lovable.app",
-          logo: "https://rox-finder-pro.lovable.app/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png",
+          logo: "https://rox-finder-pro.lovable.app/logo_royal.png",
           email: "contact@royalroxn.com",
           telephone: ["+1-613-723-0251", "+1-343-599-4999"],
           address: {

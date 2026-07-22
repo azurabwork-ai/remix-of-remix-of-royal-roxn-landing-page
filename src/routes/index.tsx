@@ -59,11 +59,11 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://rox-finder-pro.lovable.app/" },
-      { property: "og:image", content: "https://rox-finder-pro.lovable.app/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png" },
+      { property: "og:image", content: "https://rox-finder-pro.lovable.app/logo_royal.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Royal RoXn — Book Qualified Seller Appointments" },
       { name: "twitter:description", content: "Done-for-you appointment setting for Canadian Realtors." },
-      { name: "twitter:image", content: "https://rox-finder-pro.lovable.app/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png" },
+      { name: "twitter:image", content: "https://rox-finder-pro.lovable.app/logo_royal.png" },
       { name: "keywords", content: "appointment setting for realtors, Canadian real estate leads, seller appointments, listing appointments, real estate prospecting Canada, ISA for realtors" },
     ],
     links: [
@@ -92,7 +92,7 @@ export const Route = createFileRoute("/")({
           description:
             "Done-for-you appointment setting service for Canadian Realtors. We book qualified seller appointments directly on your calendar.",
           url: "https://rox-finder-pro.lovable.app/",
-          image: "https://rox-finder-pro.lovable.app/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png",
+          image: "https://rox-finder-pro.lovable.app/logo_royal.png",
           telephone: "+1-613-723-0251",
           email: "contact@royalroxn.com",
           priceRange: "$$",
