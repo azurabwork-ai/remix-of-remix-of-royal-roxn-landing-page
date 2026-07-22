@@ -228,36 +228,6 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-[color:var(--gold)]/25 via-transparent to-transparent blur-2xl" />
-          <div className="relative overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-white shadow-card">
-            <img
-              src={heroImg}
-              alt="Royal RoXn team member inside the Canadian office"
-              width={1280}
-              height={1440}
-              className="h-[560px] w-full object-cover lg:h-[640px]"
-            />
-          </div>
-          {/* floating stat card */}
-          <div className="absolute -bottom-6 -left-6 hidden w-64 rounded-2xl border border-[color:var(--border)] bg-white p-5 shadow-card sm:block">
-            <div className="flex items-center gap-3">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-[color:var(--gold-soft)]">
-                <CalendarCheck className="h-5 w-5 text-[color:var(--ink)]" />
-              </div>
-              <div>
-                <p className="font-display text-2xl font-bold">6,000+</p>
-                <p className="text-xs text-[color:var(--muted-foreground)]">
-                  Appointments / month
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="absolute -top-4 right-6 hidden rounded-2xl border border-[color:var(--border)] bg-white px-4 py-3 shadow-soft md:flex md:items-center md:gap-2">
-            <span className="grid h-2.5 w-2.5 place-items-center rounded-full bg-emerald-500" />
-            <p className="text-xs font-semibold">Live from Toronto HQ</p>
-          </div>
-        </div>
       </div>
     </section>
   );
