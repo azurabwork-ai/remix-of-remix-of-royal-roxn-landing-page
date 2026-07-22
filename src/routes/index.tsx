@@ -368,11 +368,11 @@ function Nav() {
         <Logo />
         <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
-            href="tel:+18005550100"
+            href="tel:+16137230251"
             className="hidden items-center gap-2 text-sm font-medium text-[color:var(--ink)] hover:text-[color:var(--gold)] sm:inline-flex"
           >
             <Phone className="h-4 w-4" />
-            Call Us <span className="hidden lg:inline">(800) 555-0100</span>
+            Call Us <span className="hidden lg:inline">+1 (613) 723-0251</span>
           </a>
           <Button
             asChild
