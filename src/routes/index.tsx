@@ -90,16 +90,16 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 
 function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
   return (
-    <div className="flex items-center gap-2.5">
+    <div className="flex min-w-0 items-center gap-2 sm:gap-2.5">
       <img
         src={logoAsset.url}
         alt="Royal RoXn"
         width={40}
         height={40}
-        className="h-10 w-10 object-contain"
+        className="h-8 w-8 shrink-0 object-contain sm:h-10 sm:w-10"
       />
       <span
-        className={`font-display text-lg font-bold tracking-tight ${
+        className={`truncate font-display text-base font-bold tracking-tight sm:text-lg ${
           variant === "light" ? "text-white" : "text-[color:var(--ink)]"
         }`}
       >
@@ -136,9 +136,9 @@ function Landing() {
 function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-4 sm:px-6 lg:px-10">
         <Logo />
-        <div className="flex items-center gap-3 sm:gap-5">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
             href="tel:+18005550100"
             className="hidden items-center gap-2 text-sm font-medium text-[color:var(--ink)] hover:text-[color:var(--gold)] sm:inline-flex"
@@ -148,13 +148,14 @@ function Nav() {
           </a>
           <Button
             asChild
-            className="h-11 rounded-full bg-[color:var(--gold)] px-5 font-display text-sm font-semibold text-[color:var(--ink)] shadow-soft hover:bg-[color:var(--gold)]/90"
+            className="h-10 rounded-full bg-[color:var(--gold)] px-4 font-display text-xs font-semibold text-[color:var(--ink)] shadow-soft hover:bg-[color:var(--gold)]/90 sm:h-11 sm:px-5 sm:text-sm"
           >
-            <a href="#book">Book Strategy Call</a>
+            <a href="#book">Book Call</a>
           </Button>
         </div>
       </div>
     </header>
+
   );
 }
 
@@ -167,31 +168,31 @@ function Hero() {
         aria-hidden
         className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-[color:var(--gold-soft)] blur-3xl"
       />
-      <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-10 lg:py-28">
         <div className="relative mx-auto flex flex-col items-center text-center">
           <GoldPill>Canadian Real Estate Growth Partner</GoldPill>
-          <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-[68px]">
+          <h1 className="mt-6 font-display text-[34px] font-extrabold leading-[1.05] tracking-tight text-[color:var(--ink)] sm:text-5xl md:text-6xl lg:text-[68px]">
             Stop chasing leads.
             <br />
             <span className="relative inline-block">
               Start closing more
-              <span className="ml-3 bg-gradient-to-r from-[color:var(--gold)] to-amber-500 bg-clip-text text-transparent">
+              <span className="ml-2 bg-gradient-to-r from-[color:var(--gold)] to-amber-500 bg-clip-text text-transparent sm:ml-3">
                 listings.
               </span>
             </span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--muted-foreground)]">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)] sm:mt-6 sm:text-lg">
             Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so
             you can focus on winning more listings — not cold calling.
           </p>
 
-          <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3">
+          <ul className="mt-7 flex flex-col flex-wrap justify-center gap-x-6 gap-y-3 sm:mt-8 sm:flex-row">
             {[
               "Qualified Seller Appointments",
               "Dedicated Appointment Team",
               "Canadian Market Experts",
             ].map((t) => (
-              <li key={t} className="flex items-center gap-3 text-[15px] font-medium">
+              <li key={t} className="flex items-center gap-3 text-[14px] font-medium sm:text-[15px]">
                 <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[color:var(--gold)]">
                   <Check className="h-3.5 w-3.5 text-[color:var(--ink)]" strokeWidth={3} />
                 </span>
@@ -200,10 +201,10 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
+          <div className="mt-9 flex w-full flex-col items-center justify-center gap-5 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap">
             <Button
               asChild
-              className="group h-14 rounded-full bg-[color:var(--ink)] px-7 font-display text-base font-semibold text-white shadow-card hover:bg-[color:var(--graphite)]"
+              className="group h-13 w-full rounded-full bg-[color:var(--ink)] px-6 font-display text-sm font-semibold text-white shadow-card hover:bg-[color:var(--graphite)] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
             >
               <a href="#book" className="inline-flex items-center gap-2">
                 Book Your FREE Strategy Call
@@ -223,6 +224,7 @@ function Hero() {
           </div>
         </div>
 
+
       </div>
     </section>
   );
@@ -238,11 +240,11 @@ function Stats() {
     { n: "1200+", l: "Listings Every Month" },
   ];
   return (
-    <section className="bg-[color:var(--ink)] py-24 text-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-[color:var(--ink)] py-16 text-white sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <SectionEyebrow>Proven Track Record</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             9+ Years of{" "}
             <span className="text-[color:var(--gold)]">Undefeated Success</span>
           </h2>
@@ -254,10 +256,10 @@ function Stats() {
           {items.map((s) => (
             <div
               key={s.l}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--graphite)] p-8 transition hover:border-[color:var(--gold)]/40"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--graphite)] p-6 transition sm:p-8 hover:border-[color:var(--gold)]/40"
             >
               <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[color:var(--gold)]/10 blur-2xl transition group-hover:bg-[color:var(--gold)]/25" />
-              <p className="font-display text-5xl font-extrabold text-[color:var(--gold)] sm:text-6xl">
+              <p className="font-display text-4xl font-extrabold text-[color:var(--gold)] sm:text-5xl lg:text-6xl">
                 {s.n}
               </p>
               <p className="mt-3 text-sm font-medium text-white/80">{s.l}</p>
@@ -274,8 +276,8 @@ function Stats() {
 function Brokerages() {
   const names = ["RE/MAX", "Royal LePage", "Century 21", "eXp Realty", "Keller Williams", "Sutton"];
   return (
-    <section className="bg-white py-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-white py-14 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
           Trusted by Realtors from Canada's leading brokerages
         </p>
@@ -304,11 +306,11 @@ function PainPoints() {
     { t: "No Predictable Seller Pipeline", d: "No system to keep seller appointments coming in." },
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-24">
+    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
         <div>
           <SectionEyebrow>The Realtor Reality</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Does this sound{" "}
             <span className="text-[color:var(--gold)]">familiar?</span>
           </h2>
@@ -339,7 +341,7 @@ function PainPoints() {
               width={1280}
               height={1200}
               loading="lazy"
-              className="h-[540px] w-full object-cover"
+              className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[540px]"
             />
           </div>
         </div>
@@ -372,11 +374,11 @@ function HowItWorks() {
     },
   ];
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>How It Works</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             A predictable path to{" "}
             <span className="text-[color:var(--gold)]">more listings</span>
           </h2>
@@ -386,7 +388,7 @@ function HowItWorks() {
             const Icon = s.icon;
             return (
               <div key={s.title} className="relative">
-                <div className="group relative h-full rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-[color:var(--gold)]/40 hover:shadow-card">
+                <div className="group relative h-full rounded-[24px] border border-[color:var(--border)] bg-white p-6 shadow-soft transition hover:-translate-y-1 sm:p-8 hover:border-[color:var(--gold)]/40 hover:shadow-card">
                   <div className="flex items-center justify-between">
                     <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[color:var(--ink)] text-[color:var(--gold)]">
                       <Icon className="h-6 w-6" />
@@ -427,11 +429,11 @@ function WhyChoose() {
     "Focus On Closing Listings",
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-24">
-      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-10">
         <div className="text-center">
           <SectionEyebrow>Why Realtors Choose Us</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Built for Realtors who want to{" "}
             <span className="text-[color:var(--gold)]">close, not chase.</span>
           </h2>
@@ -493,11 +495,11 @@ function CaseStudies() {
     },
   ];
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Case Studies</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Real results from{" "}
             <span className="text-[color:var(--gold)]">Canadian Realtors</span>
           </h2>
@@ -506,7 +508,7 @@ function CaseStudies() {
           {cases.map((c) => (
             <article
               key={c.name}
-              className="group flex flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="group flex flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-display text-xl font-bold">{c.name}</h3>
@@ -576,11 +578,11 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Testimonials</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Loved by Realtors from coast to coast
           </h2>
         </div>
@@ -588,7 +590,7 @@ function Testimonials() {
           {items.map((t) => (
             <figure
               key={t.name}
-              className="flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft"
+              className="flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-soft"
             >
               <div className="flex text-[color:var(--gold)]">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -630,11 +632,11 @@ function Results() {
     { n: "9+", l: "Years Experience" },
   ];
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>The Numbers</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Results that speak{" "}
             <span className="text-[color:var(--gold)]">for themselves</span>
           </h2>
@@ -643,9 +645,9 @@ function Results() {
           {items.map((s) => (
             <div
               key={s.l}
-              className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--mist)] p-8 text-center shadow-soft"
+              className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--mist)] p-6 text-center sm:p-8 shadow-soft"
             >
-              <p className="font-display text-5xl font-extrabold text-[color:var(--ink)]">
+              <p className="font-display text-4xl font-extrabold text-[color:var(--ink)] sm:text-5xl">
                 {s.n}
               </p>
               <p className="mt-3 text-sm font-medium text-[color:var(--muted-foreground)]">
@@ -685,11 +687,11 @@ function FAQ() {
     },
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-24">
-      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-10">
         <div className="text-center">
           <SectionEyebrow>FAQ</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Questions Realtors ask us
           </h2>
         </div>
@@ -732,10 +734,10 @@ function FinalCTA() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10">
         <div>
           <GoldPill>Limited Onboarding Slots</GoldPill>
-          <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] text-[color:var(--ink)] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.05] text-[color:var(--ink)] sm:text-4xl md:text-5xl lg:text-6xl">
             Ready to fill your calendar with qualified seller appointments?
           </h2>
-          <p className="mt-6 max-w-lg text-lg text-[color:var(--ink)]/80">
+          <p className="mt-5 max-w-lg text-base text-[color:var(--ink)]/80 sm:mt-6 sm:text-lg">
             Book your FREE Strategy Call today and discover how Royal RoXn can help grow your
             business.
           </p>
@@ -755,7 +757,7 @@ function FinalCTA() {
           </ul>
         </div>
 
-        <div className="rounded-[28px] border border-white/40 bg-white p-8 shadow-card sm:p-10">
+        <div className="rounded-[28px] border border-white/40 bg-white p-6 shadow-card sm:p-10">
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center py-16 text-center">
               <div className="grid h-14 w-14 place-items-center rounded-full bg-[color:var(--gold)]">
