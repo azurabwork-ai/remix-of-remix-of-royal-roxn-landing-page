@@ -136,7 +136,7 @@ function Landing() {
 function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-4 sm:px-6 lg:px-10">
         <Logo />
         <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
@@ -240,11 +240,11 @@ function Stats() {
     { n: "1200+", l: "Listings Every Month" },
   ];
   return (
-    <section className="bg-[color:var(--ink)] py-24 text-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-[color:var(--ink)] py-16 text-white sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <SectionEyebrow>Proven Track Record</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             9+ Years of{" "}
             <span className="text-[color:var(--gold)]">Undefeated Success</span>
           </h2>
@@ -259,7 +259,7 @@ function Stats() {
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--graphite)] p-8 transition hover:border-[color:var(--gold)]/40"
             >
               <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[color:var(--gold)]/10 blur-2xl transition group-hover:bg-[color:var(--gold)]/25" />
-              <p className="font-display text-5xl font-extrabold text-[color:var(--gold)] sm:text-6xl">
+              <p className="font-display text-4xl font-extrabold text-[color:var(--gold)] sm:text-5xl lg:text-6xl">
                 {s.n}
               </p>
               <p className="mt-3 text-sm font-medium text-white/80">{s.l}</p>
@@ -276,8 +276,8 @@ function Stats() {
 function Brokerages() {
   const names = ["RE/MAX", "Royal LePage", "Century 21", "eXp Realty", "Keller Williams", "Sutton"];
   return (
-    <section className="bg-white py-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-white py-14 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
           Trusted by Realtors from Canada's leading brokerages
         </p>
@@ -306,11 +306,11 @@ function PainPoints() {
     { t: "No Predictable Seller Pipeline", d: "No system to keep seller appointments coming in." },
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-24">
+    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
         <div>
           <SectionEyebrow>The Realtor Reality</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Does this sound{" "}
             <span className="text-[color:var(--gold)]">familiar?</span>
           </h2>
@@ -374,11 +374,11 @@ function HowItWorks() {
     },
   ];
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>How It Works</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             A predictable path to{" "}
             <span className="text-[color:var(--gold)]">more listings</span>
           </h2>
@@ -429,11 +429,11 @@ function WhyChoose() {
     "Focus On Closing Listings",
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-24">
-      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-10">
         <div className="text-center">
           <SectionEyebrow>Why Realtors Choose Us</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Built for Realtors who want to{" "}
             <span className="text-[color:var(--gold)]">close, not chase.</span>
           </h2>
@@ -495,11 +495,11 @@ function CaseStudies() {
     },
   ];
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Case Studies</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Real results from{" "}
             <span className="text-[color:var(--gold)]">Canadian Realtors</span>
           </h2>
@@ -578,11 +578,11 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Testimonials</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Loved by Realtors from coast to coast
           </h2>
         </div>
@@ -632,11 +632,11 @@ function Results() {
     { n: "9+", l: "Years Experience" },
   ];
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>The Numbers</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Results that speak{" "}
             <span className="text-[color:var(--gold)]">for themselves</span>
           </h2>
@@ -647,7 +647,7 @@ function Results() {
               key={s.l}
               className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--mist)] p-8 text-center shadow-soft"
             >
-              <p className="font-display text-5xl font-extrabold text-[color:var(--ink)]">
+              <p className="font-display text-4xl font-extrabold text-[color:var(--ink)] sm:text-5xl">
                 {s.n}
               </p>
               <p className="mt-3 text-sm font-medium text-[color:var(--muted-foreground)]">
@@ -687,11 +687,11 @@ function FAQ() {
     },
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-24">
-      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-10">
         <div className="text-center">
           <SectionEyebrow>FAQ</SectionEyebrow>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Questions Realtors ask us
           </h2>
         </div>
