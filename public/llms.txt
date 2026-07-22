@@ -1,0 +1,16 @@
+# Royal RoXn
+
+> Done-for-you appointment setting that books qualified seller appointments on Canadian Realtors' calendars.
+
+Royal RoXn is a Canadian appointment-setting service built for real estate agents and teams. We specialize in outbound prospecting, lead qualification, and calendar booking for seller appointments across Canada. Our team works as an Inside Sales Agent (ISA) extension so Realtors can focus on listing appointments and closings instead of cold calling and chasing leads.
+
+## Pages
+
+- [Home](/): Overview of Royal RoXn's appointment-setting service for Canadian Realtors, how it works, success metrics, trusted brokerages, testimonials, and lead capture.
+- [Case Studies](/case-studies): Detailed success stories from Canadian Realtors and teams showing appointments booked, listings gained, and GCI growth.
+- [Privacy Policy](/privacy): How Royal RoXn collects, uses, stores, and protects personal information in compliance with PIPEDA and Canadian privacy law.
+- [Terms of Service](/terms): The terms and conditions for using Royal RoXn's appointment-setting services, including service scope, payment, and liability.
+
+## Optional
+
+- [Sitemap](/sitemap.xml): XML sitemap listing public URLs for search engine discovery.
