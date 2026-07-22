@@ -23,7 +23,7 @@ export const ensureAdminUser = createServerFn({ method: "POST" }).handler(async 
     user = created.user!;
   }
 
-  await supabaseAdmin
+  await (supabaseAdmin as any)
     .from("user_roles")
     .upsert({ user_id: user.id, role: "admin" }, { onConflict: "user_id,role" });
 
