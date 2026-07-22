@@ -192,6 +192,127 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
+/* ---------- Auto Slider ---------- */
+
+function AutoSlider({
+  children,
+  total,
+  intervalMs = 5000,
+  itemsPerView = { base: 1, md: 2, lg: 3 },
+  className = "",
+}: {
+  children: React.ReactNode;
+  total: number;
+  intervalMs?: number;
+  itemsPerView?: { base: number; md?: number; lg?: number };
+  className?: string;
+}) {
+  const [perView, setPerView] = useState(itemsPerView.base);
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const compute = () => {
+      const w = window.innerWidth;
+      if (w >= 1024 && itemsPerView.lg) setPerView(itemsPerView.lg);
+      else if (w >= 768 && itemsPerView.md) setPerView(itemsPerView.md);
+      else setPerView(itemsPerView.base);
+    };
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, [itemsPerView.base, itemsPerView.md, itemsPerView.lg]);
+
+  const maxIndex = Math.max(0, total - perView);
+  const safeIndex = Math.min(index, maxIndex);
+
+  useEffect(() => {
+    if (paused || maxIndex === 0) return;
+    const id = setInterval(() => {
+      setIndex((i) => (i >= maxIndex ? 0 : i + 1));
+    }, intervalMs);
+    return () => clearInterval(id);
+  }, [paused, maxIndex, intervalMs]);
+
+  const go = (dir: -1 | 1) => {
+    setIndex((i) => {
+      const next = i + dir;
+      if (next < 0) return maxIndex;
+      if (next > maxIndex) return 0;
+      return next;
+    });
+  };
+
+  const slidePct = 100 / total;
+  const translate = safeIndex * (100 / total);
+
+  return (
+    <div
+      className={`relative ${className}`}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="overflow-hidden">
+        <div
+          ref={trackRef}
+          className="flex transition-transform duration-700 ease-out"
+          style={{
+            width: `${(total / perView) * 100}%`,
+            transform: `translateX(-${translate}%)`,
+          }}
+        >
+          {Array.isArray(children)
+            ? (children as React.ReactNode[]).map((child, i) => (
+                <div key={i} className="px-3" style={{ width: `${slidePct}%` }}>
+                  {child}
+                </div>
+              ))
+            : children}
+        </div>
+      </div>
+
+      {maxIndex > 0 && (
+        <>
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <button
+              type="button"
+              aria-label="Previous"
+              onClick={() => go(-1)}
+              className="grid h-11 w-11 place-items-center rounded-full border border-[color:var(--border)] bg-white text-[color:var(--ink)] shadow-soft transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Go to slide ${i + 1}`}
+                  onClick={() => setIndex(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === safeIndex
+                      ? "w-8 bg-[color:var(--gold)]"
+                      : "w-2 bg-[color:var(--border)] hover:bg-[color:var(--muted-foreground)]"
+                  }`}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              aria-label="Next"
+              onClick={() => go(1)}
+              className="grid h-11 w-11 place-items-center rounded-full border border-[color:var(--border)] bg-white text-[color:var(--ink)] shadow-soft transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
   return (
     <div className="flex min-w-0 items-center gap-2 sm:gap-2.5">
