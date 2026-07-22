@@ -136,9 +136,9 @@ function Landing() {
 function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-10">
         <Logo />
-        <div className="flex items-center gap-3 sm:gap-5">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
             href="tel:+18005550100"
             className="hidden items-center gap-2 text-sm font-medium text-[color:var(--ink)] hover:text-[color:var(--gold)] sm:inline-flex"
@@ -148,13 +148,14 @@ function Nav() {
           </a>
           <Button
             asChild
-            className="h-11 rounded-full bg-[color:var(--gold)] px-5 font-display text-sm font-semibold text-[color:var(--ink)] shadow-soft hover:bg-[color:var(--gold)]/90"
+            className="h-10 rounded-full bg-[color:var(--gold)] px-4 font-display text-xs font-semibold text-[color:var(--ink)] shadow-soft hover:bg-[color:var(--gold)]/90 sm:h-11 sm:px-5 sm:text-sm"
           >
-            <a href="#book">Book Strategy Call</a>
+            <a href="#book">Book Call</a>
           </Button>
         </div>
       </div>
     </header>
+
   );
 }
 
