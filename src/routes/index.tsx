@@ -16,9 +16,7 @@ import {
 } from "lucide-react";
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
-import heroImg from "@/assets/hero-presenter.jpg";
 import frustratedImg from "@/assets/frustrated-realtor.jpg";
-import callCenterImg from "@/assets/call-center.jpg";
 import realtor1 from "@/assets/realtor-1.jpg";
 import realtor2 from "@/assets/realtor-2.jpg";
 import realtor3 from "@/assets/realtor-3.jpg";
