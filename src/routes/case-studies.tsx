@@ -11,7 +11,22 @@ export const Route = createFileRoute("/case-studies")({
       { property: "og:title", content: "Case Studies — Royal RoXn" },
       { property: "og:description", content: "Real results from Canadian Realtors partnering with Royal RoXn." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://rox-finder-pro.lovable.app/case-studies" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://rox-finder-pro.lovable.app/case-studies" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://rox-finder-pro.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://rox-finder-pro.lovable.app/case-studies" },
+          ],
+        }),
+      },
     ],
   }),
   component: CaseStudiesPage,
