@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Phone,
@@ -893,13 +894,10 @@ function Footer() {
               Quick Links
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
-              {["How It Works", "Case Studies", "Testimonials", "FAQ"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="hover:text-[color:var(--gold)]">
-                    {l}
-                  </a>
-                </li>
-              ))}
+              <li><a href="/#how" className="hover:text-[color:var(--gold)]">How It Works</a></li>
+              <li><Link to="/case-studies" className="hover:text-[color:var(--gold)]">Case Studies</Link></li>
+              <li><a href="/#testimonials" className="hover:text-[color:var(--gold)]">Testimonials</a></li>
+              <li><a href="/#faq" className="hover:text-[color:var(--gold)]">FAQ</a></li>
             </ul>
           </div>
           <div>
@@ -908,16 +906,22 @@ function Footer() {
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
-                (800) 555-0100
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+                <span>1730 St. Laurent Blvd,<br />Ottawa, ON K1G 3Y7, Canada</span>
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
-                hello@royalroxn.ca
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+                <span>
+                  <a href="tel:+16137230251" className="block hover:text-[color:var(--gold)]">+1 (613) 723-0251</a>
+                  <a href="tel:+13435994999" className="block hover:text-[color:var(--gold)]">+1 (343) 599-4999</a>
+                </span>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
-                Toronto, Ontario, Canada
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+                <span>
+                  <a href="mailto:contact@royalroxn.com" className="block hover:text-[color:var(--gold)]">contact@royalroxn.com</a>
+                  <a href="mailto:accounts@royalroxn.com" className="block hover:text-[color:var(--gold)]">accounts@royalroxn.com</a>
+                </span>
               </li>
             </ul>
           </div>
@@ -926,12 +930,9 @@ function Footer() {
               Legal
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
-              <li>
-                <a href="#" className="hover:text-[color:var(--gold)]">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[color:var(--gold)]">Terms of Service</a>
-              </li>
+              <li><Link to="/privacy" className="hover:text-[color:var(--gold)]">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-[color:var(--gold)]">Terms of Service</Link></li>
+              <li><Link to="/case-studies" className="hover:text-[color:var(--gold)]">Case Studies</Link></li>
             </ul>
           </div>
         </div>
