@@ -757,6 +757,69 @@ function CaseStudies() {
       solution: "Native French-speaking setters trained on her value proposition.",
       result: "$6.8M in signed listing volume within 5 months.",
     },
+    {
+      name: "Nathan Cooper",
+      province: "Ontario",
+      challenge: "Newer agent with a thin sphere and no consistent lead source.",
+      solution: "Full-funnel prospecting focused on expired listings in his farm.",
+      result: "9 listings signed in his first 90 days on the program.",
+    },
+    {
+      name: "Meera Kapoor",
+      province: "British Columbia",
+      challenge: "Luxury Vancouver market with a long, relationship-heavy sales cycle.",
+      solution: "High-touch nurture cadence with senior Canadian setters.",
+      result: "$12.4M in luxury listings booked in 7 months.",
+    },
+    {
+      name: "Olivia Martin",
+      province: "Manitoba",
+      challenge: "Wanted to scale beyond referrals without hiring more staff.",
+      solution: "Outsourced ISA team feeding pre-qualified seller conversations.",
+      result: "Team GCI up 2.8× in the first year.",
+    },
+    {
+      name: "Ethan Brooks",
+      province: "Saskatchewan",
+      challenge: "Slow winter months killed his listing momentum every year.",
+      solution: "Year-round outreach targeting motivated sellers in every season.",
+      result: "24 signed listings across a single winter quarter.",
+    },
+    {
+      name: "Chloé Gagnon",
+      province: "Quebec",
+      challenge: "Struggled to convert online leads into real listing appointments.",
+      solution: "Speed-to-lead calling within 5 minutes plus follow-up cadence.",
+      result: "Appointment set rate jumped from 6% to 31%.",
+    },
+    {
+      name: "Ravi Sandhu",
+      province: "Alberta",
+      challenge: "Two-agent team hitting a ceiling at 20 deals a year.",
+      solution: "Dedicated setter pod booking both partners' calendars.",
+      result: "Closed 54 transactions in the following 12 months.",
+    },
+    {
+      name: "Hannah Walsh",
+      province: "New Brunswick",
+      challenge: "Small-market agent competing against long-established brokers.",
+      solution: "Hyper-local outreach positioning her as the neighbourhood expert.",
+      result: "Became #1 listing agent in her town within 8 months.",
+    },
+    {
+      name: "Benjamin Clarke",
+      province: "Prince Edward Island",
+      challenge: "Seasonal cottage market with a tiny window for listings.",
+      solution: "Concentrated 90-day outreach sprint before peak buying season.",
+      result: "$3.2M in waterfront listings signed in one summer.",
+    },
+    {
+      name: "Amélie Fortin",
+      province: "Quebec",
+      challenge: "Wanted to graduate from buyer's agent to listing specialist.",
+      solution: "100% seller-focused appointment flow with weekly coaching.",
+      result: "Transitioned to full listing agent within 6 months.",
+    },
   ];
   const all = [...cases, ...extra];
   return (
@@ -863,6 +926,78 @@ function Testimonials() {
       brokerage: "HomeLife Realty",
       quote:
         "Best ROI decision I've made in a decade of real estate. My GCI is up 68% since onboarding with Royal RoXn.",
+    },
+    {
+      name: "Grace Fontaine",
+      brokerage: "Royal LePage Signature",
+      quote:
+        "The quality of the sellers on my calendar is next level. Every appointment feels like a real listing opportunity.",
+    },
+    {
+      name: "Owen McKenzie",
+      brokerage: "RE/MAX Realtron",
+      quote:
+        "I closed 4 listings in my first month with Royal RoXn. Their setters do the heavy lifting so I can focus on presenting.",
+    },
+    {
+      name: "Zara Ahmed",
+      brokerage: "eXp Realty",
+      quote:
+        "Consistent, predictable seller flow every single week. It has completely changed how I plan my business.",
+    },
+    {
+      name: "Julien Bouchard",
+      brokerage: "Sutton Group",
+      quote:
+        "Their bilingual setters handle Quebec sellers with real cultural nuance. Nothing feels scripted or offshore.",
+    },
+    {
+      name: "Nicole Sutherland",
+      brokerage: "Century 21 Legacy",
+      quote:
+        "I used to dread Mondays. Now I open my calendar and see 5 qualified listing appointments waiting.",
+    },
+    {
+      name: "Ravi Deol",
+      brokerage: "Keller Williams",
+      quote:
+        "Onboarding was smooth and appointments started landing in week one. Their team truly understands Canadian sellers.",
+    },
+    {
+      name: "Elena Martins",
+      brokerage: "Coldwell Banker",
+      quote:
+        "The follow-up game is second to none. Sellers who ghosted me months ago are now on my calendar.",
+    },
+    {
+      name: "Tyler Robinson",
+      brokerage: "RE/MAX Realty One",
+      quote:
+        "I stopped buying leads entirely. Royal RoXn's appointments convert at 3× the rate of anything I was paying for.",
+    },
+    {
+      name: "Sana Iqbal",
+      brokerage: "HomeLife Realty",
+      quote:
+        "Being a mom and a top producer felt impossible until I had setters handling my prospecting. Total game changer.",
+    },
+    {
+      name: "Charles Beaumont",
+      brokerage: "Sotheby's International Realty",
+      quote:
+        "In luxury real estate, the seller conversation matters. Their setters treat every call like it's a million-dollar listing - because it often is.",
+    },
+    {
+      name: "Priya Bhatt",
+      brokerage: "eXp Realty",
+      quote:
+        "I went from 6 listings a year to 6 listings a quarter. My family finally sees me on weekends again.",
+    },
+    {
+      name: "Alexandre Roy",
+      brokerage: "Royal LePage Heritage",
+      quote:
+        "The best decision I made in my 15-year career. Predictable listings, predictable income, zero prospecting stress.",
     },
   ];
   return (
