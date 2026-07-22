@@ -205,7 +205,7 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-wrap items-center gap-5">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
             <Button
               asChild
               className="group h-14 rounded-full bg-[color:var(--ink)] px-7 font-display text-base font-semibold text-white shadow-card hover:bg-[color:var(--graphite)]"
