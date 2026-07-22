@@ -614,8 +614,32 @@ function CaseStudies() {
       result: "Booked $4.1M in listings within 6 months of onboarding.",
     },
   ];
+  const extra = [
+    {
+      name: "Priya Sharma",
+      province: "Alberta",
+      challenge: "Growing team needed consistent seller flow across Calgary and Edmonton.",
+      solution: "Multi-agent routing with dedicated Royal RoXn setters per market.",
+      result: "62 seller appointments booked in the first 60 days.",
+    },
+    {
+      name: "Jonathan Reid",
+      province: "Nova Scotia",
+      challenge: "Rural market with unpredictable listing seasons.",
+      solution: "Targeted outreach to expired & FSBO homeowners in his farm area.",
+      result: "18 new listing agreements signed in one quarter.",
+    },
+    {
+      name: "Isabelle Tremblay",
+      province: "Quebec",
+      challenge: "Bilingual market required nuanced conversations with sellers.",
+      solution: "Native French-speaking setters trained on her value proposition.",
+      result: "$6.8M in signed listing volume within 5 months.",
+    },
+  ];
+  const all = [...cases, ...extra];
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section id="case-studies" className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Case Studies</SectionEyebrow>
@@ -624,14 +648,14 @@ function CaseStudies() {
             <span className="text-[color:var(--gold)]">Canadian Realtors</span>
           </h2>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {cases.map((c) => (
+        <AutoSlider itemsPerView={{ base: 1, md: 2, lg: 3 }} intervalMs={5500} total={all.length} className="mt-14">
+          {all.map((c) => (
             <article
               key={c.name}
-              className="group flex flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="group flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
-              <div className="flex items-center justify-between">
-                <h3 className="font-display text-xl font-bold">{c.name}</h3>
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="font-display text-lg font-bold sm:text-xl">{c.name}</h3>
                 <div className="flex items-center gap-1.5 rounded-full bg-[color:var(--gold-soft)] px-3 py-1 text-xs font-semibold text-[color:var(--ink)]">
                   <MapPin className="h-3 w-3 text-[color:var(--gold)]" />
                   {c.province}
@@ -659,13 +683,9 @@ function CaseStudies() {
                   </dd>
                 </div>
               </dl>
-              <button className="mt-6 inline-flex items-center gap-2 self-start font-display text-sm font-semibold text-[color:var(--ink)] hover:text-[color:var(--gold)]">
-                Read Full Story
-                <ArrowRight className="h-4 w-4" />
-              </button>
             </article>
           ))}
-        </div>
+        </AutoSlider>
       </div>
     </section>
   );
@@ -676,29 +696,56 @@ function CaseStudies() {
 function Testimonials() {
   const items = [
     {
-      img: test1,
       name: "Karen Whitfield",
       brokerage: "RE/MAX Hallmark",
       quote:
         "Royal RoXn transformed the way I run my business. My calendar is full of qualified seller appointments and my listing volume has never been higher.",
     },
     {
-      img: test2,
       name: "David Laurent",
       brokerage: "Royal LePage Signature",
       quote:
         "I stopped cold calling on day one. Their Canadian team is professional, consistent, and truly understands the seller conversation.",
     },
     {
-      img: test3,
       name: "Emily Chen",
       brokerage: "Century 21 Legacy",
       quote:
         "It's the most predictable pipeline I've ever had. I finally get to focus on closing listings instead of prospecting.",
     },
+    {
+      name: "Marc Dubois",
+      brokerage: "Sutton Group",
+      quote:
+        "In three months I closed more listings than the previous six combined. Royal RoXn's team just gets Canadian sellers.",
+    },
+    {
+      name: "Rachel Nguyen",
+      brokerage: "eXp Realty",
+      quote:
+        "The qualification is airtight. Every appointment on my calendar is a real seller — no more tire-kickers wasting my Saturdays.",
+    },
+    {
+      name: "Aiden O'Connor",
+      brokerage: "Keller Williams",
+      quote:
+        "I finally feel like a listing agent again. The pipeline is predictable and my business has doubled year over year.",
+    },
+    {
+      name: "Sophia Rossi",
+      brokerage: "Coldwell Banker",
+      quote:
+        "Professional, consistent, and truly Canadian. Their setters sound like they've been on my team for years.",
+    },
+    {
+      name: "Liam Patel",
+      brokerage: "HomeLife Realty",
+      quote:
+        "Best ROI decision I've made in a decade of real estate. My GCI is up 68% since onboarding with Royal RoXn.",
+    },
   ];
   return (
-    <section className="bg-[color:var(--mist)] py-16 sm:py-24">
+    <section id="testimonials" className="bg-[color:var(--mist)] py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Testimonials</SectionEyebrow>
@@ -706,11 +753,11 @@ function Testimonials() {
             Loved by Realtors from coast to coast
           </h2>
         </div>
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <AutoSlider itemsPerView={{ base: 1, md: 2, lg: 3 }} intervalMs={4500} total={items.length} className="mt-14">
           {items.map((t) => (
             <figure
               key={t.name}
-              className="flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-soft"
+              className="flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-7 sm:p-8 shadow-soft"
             >
               <div className="flex text-[color:var(--gold)]">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -720,15 +767,10 @@ function Testimonials() {
               <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-[color:var(--ink)]/85">
                 “{t.quote}”
               </blockquote>
-              <figcaption className="mt-8 flex items-center gap-3 border-t border-[color:var(--border)] pt-6">
-                <img
-                  src={t.img}
-                  alt={t.name}
-                  width={600}
-                  height={600}
-                  loading="lazy"
-                  className="h-12 w-12 rounded-full object-cover"
-                />
+              <figcaption className="mt-6 flex items-center gap-3 border-t border-[color:var(--border)] pt-5">
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-[color:var(--gold-soft)] font-display text-sm font-bold text-[color:var(--ink)]">
+                  {t.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                </span>
                 <div>
                   <p className="font-display text-sm font-semibold">{t.name}</p>
                   <p className="text-xs text-[color:var(--muted-foreground)]">{t.brokerage}</p>
@@ -736,7 +778,7 @@ function Testimonials() {
               </figcaption>
             </figure>
           ))}
-        </div>
+        </AutoSlider>
       </div>
     </section>
   );
