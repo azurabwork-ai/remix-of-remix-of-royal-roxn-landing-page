@@ -77,14 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Royal RoXn — Appointment Setting for Canadian Realtors" },
+      {
+        name: "description",
+        content:
+          "Royal RoXn books qualified seller appointments for Canadian Realtors — a done-for-you Canadian appointment-setting team that fills your calendar.",
+      },
+      { name: "author", content: "Royal RoXn" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "theme-color", content: "#FDB515" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Royal RoXn" },
+      { property: "og:locale", content: "en_CA" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -92,6 +97,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Royal RoXn",
+          url: "https://rox-finder-pro.lovable.app",
+          logo: "https://rox-finder-pro.lovable.app/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png",
+          email: "contact@royalroxn.com",
+          telephone: ["+1-613-723-0251", "+1-343-599-4999"],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "1730 St. Laurent Blvd",
+            addressLocality: "Ottawa",
+            addressRegion: "ON",
+            postalCode: "K1G 3Y7",
+            addressCountry: "CA",
+          },
+          areaServed: "CA",
+          sameAs: [],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Royal RoXn",
+          url: "https://rox-finder-pro.lovable.app",
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,

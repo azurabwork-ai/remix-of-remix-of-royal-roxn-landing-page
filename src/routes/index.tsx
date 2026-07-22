@@ -48,7 +48,13 @@ export const Route = createFileRoute("/")({
           "A dedicated Canadian appointment-setting team that fills your calendar with qualified seller appointments.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://rox-finder-pro.lovable.app/" },
+      { property: "og:image", content: "https://rox-finder-pro.lovable.app/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Royal RoXn — Book Qualified Seller Appointments" },
+      { name: "twitter:description", content: "Done-for-you appointment setting for Canadian Realtors." },
+      { name: "twitter:image", content: "https://rox-finder-pro.lovable.app/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png" },
+      { name: "keywords", content: "appointment setting for realtors, Canadian real estate leads, seller appointments, listing appointments, real estate prospecting Canada, ISA for realtors" },
     ],
     links: [
       {
@@ -63,6 +69,93 @@ export const Route = createFileRoute("/")({
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap",
+      },
+      { rel: "canonical", href: "https://rox-finder-pro.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Royal RoXn",
+          description:
+            "Done-for-you appointment setting service for Canadian Realtors. We book qualified seller appointments directly on your calendar.",
+          url: "https://rox-finder-pro.lovable.app/",
+          image: "https://rox-finder-pro.lovable.app/__l5e/assets-v1/0c2ad6d6-db9c-43fd-8594-ab50c98531ea/logo_royal.png",
+          telephone: "+1-613-723-0251",
+          email: "contact@royalroxn.com",
+          priceRange: "$$",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "1730 St. Laurent Blvd",
+            addressLocality: "Ottawa",
+            addressRegion: "ON",
+            postalCode: "K1G 3Y7",
+            addressCountry: "CA",
+          },
+          areaServed: { "@type": "Country", name: "Canada" },
+          serviceType: "Real Estate Appointment Setting",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What exactly does Royal RoXn do?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Royal RoXn is a done-for-you appointment setting company for Canadian Realtors. Our Canadian team identifies motivated sellers, qualifies them against your criteria, and books listing appointments directly on your calendar.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Which markets do you serve?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "We work with Realtors across every Canadian province, from Vancouver Island to Halifax. Our appointment setters understand local market nuances.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How is this different from buying leads?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Leads are just names. Royal RoXn delivers booked appointments with motivated, qualified sellers — people who have already agreed to speak with you about listing.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How quickly will I see results?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Most Realtors receive their first qualified seller appointments within 10 to 14 days of onboarding.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Is there a long-term contract?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. Royal RoXn earns your business month over month. Onboarding is simple and cancellation policies are transparent.",
+              },
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://rox-finder-pro.lovable.app/" },
+          ],
+        }),
       },
     ],
   }),
