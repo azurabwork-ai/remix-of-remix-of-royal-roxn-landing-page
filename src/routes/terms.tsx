@@ -5,9 +5,9 @@ import logoAsset from "@/assets/logo_royal.png.asset.json";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Service — Royal RoXn" },
+      { title: "Terms of Service - Royal RoXn" },
       { name: "description", content: "Terms and conditions governing use of Royal RoXn's website and appointment-setting services." },
-      { property: "og:title", content: "Terms of Service — Royal RoXn" },
+      { property: "og:title", content: "Terms of Service - Royal RoXn" },
       { property: "og:description", content: "The terms and conditions of engaging Royal RoXn." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://rox-finder-pro.lovable.app/terms" },

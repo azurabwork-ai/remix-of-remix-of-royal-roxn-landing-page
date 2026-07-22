@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Royal RoXn — Appointment Setting for Canadian Realtors" },
+      { title: "Royal RoXn - Appointment Setting for Canadian Realtors" },
       {
         name: "description",
         content:
-          "Royal RoXn books qualified seller appointments for Canadian Realtors — a done-for-you Canadian appointment-setting team that fills your calendar.",
+          "Royal RoXn books qualified seller appointments for Canadian Realtors - a done-for-you Canadian appointment-setting team that fills your calendar.",
       },
       { name: "author", content: "Royal RoXn" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
