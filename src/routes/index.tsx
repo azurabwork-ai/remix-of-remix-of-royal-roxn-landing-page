@@ -1184,7 +1184,7 @@ function FinalCTA() {
                   brokerage: String(fd.get("brokerage") ?? "").trim(),
                 };
                 setLoading(true);
-                const { error } = await supabase.from("leads").insert(payload);
+                const { error } = await (supabase as any).from("leads").insert(payload);
                 setLoading(false);
                 if (error) {
                   toast.error("Could not send. Please try again.");

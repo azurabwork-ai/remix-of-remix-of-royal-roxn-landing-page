@@ -60,7 +60,7 @@ function AdminDashboard() {
 
   async function handleDelete(id: string) {
     if (!confirm("Delete this lead?")) return;
-    const { error } = await supabase.from("leads").delete().eq("id", id);
+    const { error } = await (supabase as any).from("leads").delete().eq("id", id);
     if (error) toast.error(error.message);
     else {
       toast.success("Deleted");
