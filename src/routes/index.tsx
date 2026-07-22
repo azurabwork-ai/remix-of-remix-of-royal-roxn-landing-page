@@ -22,6 +22,16 @@ import test1 from "@/assets/testimonial-1.jpg";
 import test2 from "@/assets/testimonial-2.jpg";
 import test3 from "@/assets/testimonial-3.jpg";
 
+import remaxLogo from "@/assets/brokerages/remax.png.asset.json";
+import royalLepageLogo from "@/assets/brokerages/royal-lepage.png.asset.json";
+import century21Logo from "@/assets/brokerages/century21.png.asset.json";
+import expRealtyLogo from "@/assets/brokerages/exp-realty.png.asset.json";
+import kellerWilliamsLogo from "@/assets/brokerages/keller-williams.png.asset.json";
+import suttonLogo from "@/assets/brokerages/sutton.png.asset.json";
+import coldwellBankerLogo from "@/assets/brokerages/coldwell-banker.png.asset.json";
+import sothebysLogo from "@/assets/brokerages/sothebys.png.asset.json";
+import homelifeLogo from "@/assets/brokerages/homelife.png.asset.json";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -369,12 +379,15 @@ function Stats() {
 
 function Brokerages() {
   const brokerages = [
-    { name: "RE/MAX", domain: "remax.com" },
-    { name: "Royal LePage", domain: "royallepage.ca" },
-    { name: "Century 21", domain: "century21.ca" },
-    { name: "eXp Realty", domain: "exprealty.com" },
-    { name: "Keller Williams", domain: "kw.com" },
-    { name: "Sutton", domain: "sutton.com" },
+    { name: "RE/MAX", src: remaxLogo.url },
+    { name: "Royal LePage", src: royalLepageLogo.url },
+    { name: "Century 21", src: century21Logo.url },
+    { name: "eXp Realty", src: expRealtyLogo.url },
+    { name: "Keller Williams", src: kellerWilliamsLogo.url },
+    { name: "Sutton", src: suttonLogo.url },
+    { name: "Coldwell Banker", src: coldwellBankerLogo.url },
+    { name: "Sotheby's International Realty", src: sothebysLogo.url },
+    { name: "HomeLife", src: homelifeLogo.url },
   ];
   return (
     <section className="bg-white py-14 sm:py-20">
@@ -382,7 +395,7 @@ function Brokerages() {
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
           Trusted by Realtors from Canada's leading brokerages
         </p>
-        <div className="mt-10 grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-9">
           {brokerages.map((b) => (
             <div
               key={b.name}
@@ -390,23 +403,11 @@ function Brokerages() {
               title={b.name}
             >
               <img
-                src={`https://logo.clearbit.com/${b.domain}`}
+                src={b.src}
                 alt={`${b.name} logo`}
                 loading="lazy"
-                className="max-h-10 max-w-[130px] object-contain grayscale opacity-80 transition hover:grayscale-0 hover:opacity-100"
-                onError={(e) => {
-                  const el = e.currentTarget;
-                  el.style.display = "none";
-                  const fb = el.nextElementSibling as HTMLElement | null;
-                  if (fb) fb.style.display = "block";
-                }}
+                className="max-h-12 max-w-[130px] object-contain grayscale opacity-80 transition hover:grayscale-0 hover:opacity-100"
               />
-              <span
-                style={{ display: "none" }}
-                className="font-display text-base font-semibold tracking-tight text-[color:var(--graphite)]"
-              >
-                {b.name}
-              </span>
             </div>
           ))}
         </div>
