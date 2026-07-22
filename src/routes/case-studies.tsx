@@ -267,7 +267,6 @@ function CaseStudiesPage() {
                     Case Study {String(i + 1).padStart(2, "0")}
                   </p>
                   <h2 className="mt-4 font-display text-2xl font-bold sm:text-3xl">{c.name}</h2>
-                  <p className="mt-1 text-sm text-white/70">{c.brokerage}</p>
                   <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[color:var(--gold-soft)] px-3 py-1 text-xs font-semibold text-[color:var(--ink)]">
                     <MapPin className="h-3 w-3 text-[color:var(--gold)]" />
                     {c.province}

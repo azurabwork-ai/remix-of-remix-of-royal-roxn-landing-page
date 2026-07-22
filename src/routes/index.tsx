@@ -1029,7 +1029,6 @@ function Testimonials() {
                 </span>
                 <div>
                   <p className="font-display text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-[color:var(--muted-foreground)]">{t.brokerage}</p>
                 </div>
               </figcaption>
             </figure>
