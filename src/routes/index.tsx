@@ -927,6 +927,78 @@ function Testimonials() {
       quote:
         "Best ROI decision I've made in a decade of real estate. My GCI is up 68% since onboarding with Royal RoXn.",
     },
+    {
+      name: "Grace Fontaine",
+      brokerage: "Royal LePage Signature",
+      quote:
+        "The quality of the sellers on my calendar is next level. Every appointment feels like a real listing opportunity.",
+    },
+    {
+      name: "Owen McKenzie",
+      brokerage: "RE/MAX Realtron",
+      quote:
+        "I closed 4 listings in my first month with Royal RoXn. Their setters do the heavy lifting so I can focus on presenting.",
+    },
+    {
+      name: "Zara Ahmed",
+      brokerage: "eXp Realty",
+      quote:
+        "Consistent, predictable seller flow every single week. It has completely changed how I plan my business.",
+    },
+    {
+      name: "Julien Bouchard",
+      brokerage: "Sutton Group",
+      quote:
+        "Their bilingual setters handle Quebec sellers with real cultural nuance. Nothing feels scripted or offshore.",
+    },
+    {
+      name: "Nicole Sutherland",
+      brokerage: "Century 21 Legacy",
+      quote:
+        "I used to dread Mondays. Now I open my calendar and see 5 qualified listing appointments waiting.",
+    },
+    {
+      name: "Ravi Deol",
+      brokerage: "Keller Williams",
+      quote:
+        "Onboarding was smooth and appointments started landing in week one. Their team truly understands Canadian sellers.",
+    },
+    {
+      name: "Elena Martins",
+      brokerage: "Coldwell Banker",
+      quote:
+        "The follow-up game is second to none. Sellers who ghosted me months ago are now on my calendar.",
+    },
+    {
+      name: "Tyler Robinson",
+      brokerage: "RE/MAX Realty One",
+      quote:
+        "I stopped buying leads entirely. Royal RoXn's appointments convert at 3× the rate of anything I was paying for.",
+    },
+    {
+      name: "Sana Iqbal",
+      brokerage: "HomeLife Realty",
+      quote:
+        "Being a mom and a top producer felt impossible until I had setters handling my prospecting. Total game changer.",
+    },
+    {
+      name: "Charles Beaumont",
+      brokerage: "Sotheby's International Realty",
+      quote:
+        "In luxury real estate, the seller conversation matters. Their setters treat every call like it's a million-dollar listing - because it often is.",
+    },
+    {
+      name: "Priya Bhatt",
+      brokerage: "eXp Realty",
+      quote:
+        "I went from 6 listings a year to 6 listings a quarter. My family finally sees me on weekends again.",
+    },
+    {
+      name: "Alexandre Roy",
+      brokerage: "Royal LePage Heritage",
+      quote:
+        "The best decision I made in my 15-year career. Predictable listings, predictable income, zero prospecting stress.",
+    },
   ];
   return (
     <section id="testimonials" className="bg-[color:var(--mist)] py-16 sm:py-24">
