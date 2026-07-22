@@ -256,7 +256,7 @@ function Stats() {
           {items.map((s) => (
             <div
               key={s.l}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--graphite)] p-8 transition hover:border-[color:var(--gold)]/40"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--graphite)] p-6 transition sm:p-8 hover:border-[color:var(--gold)]/40"
             >
               <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[color:var(--gold)]/10 blur-2xl transition group-hover:bg-[color:var(--gold)]/25" />
               <p className="font-display text-4xl font-extrabold text-[color:var(--gold)] sm:text-5xl lg:text-6xl">
@@ -341,7 +341,7 @@ function PainPoints() {
               width={1280}
               height={1200}
               loading="lazy"
-              className="h-[540px] w-full object-cover"
+              className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[540px]"
             />
           </div>
         </div>
@@ -388,7 +388,7 @@ function HowItWorks() {
             const Icon = s.icon;
             return (
               <div key={s.title} className="relative">
-                <div className="group relative h-full rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-[color:var(--gold)]/40 hover:shadow-card">
+                <div className="group relative h-full rounded-[24px] border border-[color:var(--border)] bg-white p-6 shadow-soft transition hover:-translate-y-1 sm:p-8 hover:border-[color:var(--gold)]/40 hover:shadow-card">
                   <div className="flex items-center justify-between">
                     <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[color:var(--ink)] text-[color:var(--gold)]">
                       <Icon className="h-6 w-6" />
@@ -508,7 +508,7 @@ function CaseStudies() {
           {cases.map((c) => (
             <article
               key={c.name}
-              className="group flex flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="group flex flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-display text-xl font-bold">{c.name}</h3>
@@ -590,7 +590,7 @@ function Testimonials() {
           {items.map((t) => (
             <figure
               key={t.name}
-              className="flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft"
+              className="flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-soft"
             >
               <div className="flex text-[color:var(--gold)]">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -645,7 +645,7 @@ function Results() {
           {items.map((s) => (
             <div
               key={s.l}
-              className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--mist)] p-8 text-center shadow-soft"
+              className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--mist)] p-6 text-center sm:p-8 shadow-soft"
             >
               <p className="font-display text-4xl font-extrabold text-[color:var(--ink)] sm:text-5xl">
                 {s.n}
@@ -757,7 +757,7 @@ function FinalCTA() {
           </ul>
         </div>
 
-        <div className="rounded-[28px] border border-white/40 bg-white p-8 shadow-card sm:p-10">
+        <div className="rounded-[28px] border border-white/40 bg-white p-6 shadow-card sm:p-10">
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center py-16 text-center">
               <div className="grid h-14 w-14 place-items-center rounded-full bg-[color:var(--gold)]">
