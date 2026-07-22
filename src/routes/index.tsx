@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Phone,
@@ -274,7 +275,14 @@ function Stats() {
 /* ---------- Brokerages ---------- */
 
 function Brokerages() {
-  const names = ["RE/MAX", "Royal LePage", "Century 21", "eXp Realty", "Keller Williams", "Sutton"];
+  const brokerages = [
+    { name: "RE/MAX", domain: "remax.com" },
+    { name: "Royal LePage", domain: "royallepage.ca" },
+    { name: "Century 21", domain: "century21.ca" },
+    { name: "eXp Realty", domain: "exprealty.com" },
+    { name: "Keller Williams", domain: "kw.com" },
+    { name: "Sutton", domain: "sutton.com" },
+  ];
   return (
     <section className="bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
@@ -282,12 +290,30 @@ function Brokerages() {
           Trusted by Realtors from Canada's leading brokerages
         </p>
         <div className="mt-10 grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-          {names.map((n) => (
+          {brokerages.map((b) => (
             <div
-              key={n}
-              className="flex h-14 items-center justify-center rounded-xl border border-[color:var(--border)] bg-[color:var(--mist)] px-4 font-display text-base font-semibold tracking-tight text-[color:var(--graphite)] transition hover:border-[color:var(--gold)]/40 hover:text-[color:var(--ink)]"
+              key={b.name}
+              className="flex h-20 items-center justify-center rounded-xl border border-[color:var(--border)] bg-white px-4 transition hover:border-[color:var(--gold)]/40 hover:shadow-soft"
+              title={b.name}
             >
-              {n}
+              <img
+                src={`https://logo.clearbit.com/${b.domain}`}
+                alt={`${b.name} logo`}
+                loading="lazy"
+                className="max-h-10 max-w-[130px] object-contain grayscale opacity-80 transition hover:grayscale-0 hover:opacity-100"
+                onError={(e) => {
+                  const el = e.currentTarget;
+                  el.style.display = "none";
+                  const fb = el.nextElementSibling as HTMLElement | null;
+                  if (fb) fb.style.display = "block";
+                }}
+              />
+              <span
+                style={{ display: "none" }}
+                className="font-display text-base font-semibold tracking-tight text-[color:var(--graphite)]"
+              >
+                {b.name}
+              </span>
             </div>
           ))}
         </div>
@@ -868,13 +894,10 @@ function Footer() {
               Quick Links
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
-              {["How It Works", "Case Studies", "Testimonials", "FAQ"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="hover:text-[color:var(--gold)]">
-                    {l}
-                  </a>
-                </li>
-              ))}
+              <li><a href="/#how" className="hover:text-[color:var(--gold)]">How It Works</a></li>
+              <li><Link to="/case-studies" className="hover:text-[color:var(--gold)]">Case Studies</Link></li>
+              <li><a href="/#testimonials" className="hover:text-[color:var(--gold)]">Testimonials</a></li>
+              <li><a href="/#faq" className="hover:text-[color:var(--gold)]">FAQ</a></li>
             </ul>
           </div>
           <div>
@@ -883,16 +906,22 @@ function Footer() {
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
-                (800) 555-0100
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+                <span>1730 St. Laurent Blvd,<br />Ottawa, ON K1G 3Y7, Canada</span>
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
-                hello@royalroxn.ca
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+                <span>
+                  <a href="tel:+16137230251" className="block hover:text-[color:var(--gold)]">+1 (613) 723-0251</a>
+                  <a href="tel:+13435994999" className="block hover:text-[color:var(--gold)]">+1 (343) 599-4999</a>
+                </span>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" />
-                Toronto, Ontario, Canada
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+                <span>
+                  <a href="mailto:contact@royalroxn.com" className="block hover:text-[color:var(--gold)]">contact@royalroxn.com</a>
+                  <a href="mailto:accounts@royalroxn.com" className="block hover:text-[color:var(--gold)]">accounts@royalroxn.com</a>
+                </span>
               </li>
             </ul>
           </div>
@@ -901,12 +930,9 @@ function Footer() {
               Legal
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
-              <li>
-                <a href="#" className="hover:text-[color:var(--gold)]">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[color:var(--gold)]">Terms of Service</a>
-              </li>
+              <li><Link to="/privacy" className="hover:text-[color:var(--gold)]">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-[color:var(--gold)]">Terms of Service</Link></li>
+              <li><Link to="/case-studies" className="hover:text-[color:var(--gold)]">Case Studies</Link></li>
             </ul>
           </div>
         </div>
