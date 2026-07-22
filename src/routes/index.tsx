@@ -734,10 +734,10 @@ function FinalCTA() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10">
         <div>
           <GoldPill>Limited Onboarding Slots</GoldPill>
-          <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] text-[color:var(--ink)] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.05] text-[color:var(--ink)] sm:text-4xl md:text-5xl lg:text-6xl">
             Ready to fill your calendar with qualified seller appointments?
           </h2>
-          <p className="mt-6 max-w-lg text-lg text-[color:var(--ink)]/80">
+          <p className="mt-5 max-w-lg text-base text-[color:var(--ink)]/80 sm:mt-6 sm:text-lg">
             Book your FREE Strategy Call today and discover how Royal RoXn can help grow your
             business.
           </p>
