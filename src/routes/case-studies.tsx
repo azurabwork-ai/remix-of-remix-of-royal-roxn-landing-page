@@ -36,7 +36,6 @@ function CaseStudiesPage() {
   const cases = [
     {
       name: "Michael Thompson",
-      brokerage: "RE/MAX Hallmark",
       province: "Ontario",
       headline: "37 seller appointments in 90 days - 11 new listings signed.",
       metrics: [
@@ -50,7 +49,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Sarah Bélanger",
-      brokerage: "Royal LePage Signature",
       province: "Quebec",
       headline: "4.2× more listing appointments in her first quarter.",
       metrics: [
@@ -64,7 +62,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Arjun Malhotra",
-      brokerage: "eXp Realty",
       province: "British Columbia",
       headline: "Booked $4.1M in listings within 6 months of onboarding.",
       metrics: [
@@ -78,7 +75,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Priya Nair",
-      brokerage: "Century 21 Legacy",
       province: "Alberta",
       headline: "From 2 listings/month to 9 listings/month in under a year.",
       metrics: [
@@ -92,7 +88,6 @@ function CaseStudiesPage() {
     },
     {
       name: "David Laurent",
-      brokerage: "Keller Williams",
       province: "Nova Scotia",
       headline: "Stopped cold calling on day one - pipeline stayed full.",
       metrics: [
@@ -106,7 +101,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Emily Chen",
-      brokerage: "Sutton Group",
       province: "Manitoba",
       headline: "Most predictable seller pipeline of her 12-year career.",
       metrics: [
@@ -120,7 +114,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Nathan Cooper",
-      brokerage: "RE/MAX Realtron",
       province: "Ontario",
       headline: "9 listings signed in his first 90 days as a newer agent.",
       metrics: [
@@ -134,7 +127,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Meera Kapoor",
-      brokerage: "Sotheby's International Realty",
       province: "British Columbia",
       headline: "$12.4M in luxury Vancouver listings booked in 7 months.",
       metrics: [
@@ -148,7 +140,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Olivia Martin",
-      brokerage: "Royal LePage Prime",
       province: "Manitoba",
       headline: "Team GCI up 2.8x in the first year - no new hires.",
       metrics: [
@@ -162,7 +153,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Ethan Brooks",
-      brokerage: "Century 21 Fusion",
       province: "Saskatchewan",
       headline: "24 signed listings in a single winter quarter.",
       metrics: [
@@ -176,7 +166,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Chloé Gagnon",
-      brokerage: "Royal LePage Heritage",
       province: "Quebec",
       headline: "Appointment set rate jumped from 6% to 31%.",
       metrics: [
@@ -190,7 +179,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Ravi Sandhu",
-      brokerage: "eXp Realty",
       province: "Alberta",
       headline: "From 20 deals a year to 54 - without adding staff.",
       metrics: [
@@ -204,7 +192,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Hannah Walsh",
-      brokerage: "Keller Williams Select",
       province: "New Brunswick",
       headline: "Became the #1 listing agent in her town in 8 months.",
       metrics: [
@@ -218,7 +205,6 @@ function CaseStudiesPage() {
     },
     {
       name: "Amélie Fortin",
-      brokerage: "Sutton Group Distinction",
       province: "Quebec",
       headline: "Transitioned from buyer's agent to full listing specialist in 6 months.",
       metrics: [
