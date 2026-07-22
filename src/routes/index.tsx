@@ -433,20 +433,8 @@ function WhyChoose() {
   ];
   return (
     <section className="bg-[color:var(--mist)] py-24">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:px-10">
-        <div className="order-2 lg:order-1">
-          <div className="relative overflow-hidden rounded-[28px] border border-[color:var(--border)] shadow-card">
-            <img
-              src={callCenterImg}
-              alt="Royal RoXn Canadian call center"
-              width={1280}
-              height={1200}
-              loading="lazy"
-              className="h-[540px] w-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="order-1 lg:order-2">
+      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+        <div className="text-center">
           <SectionEyebrow>Why Realtors Choose Us</SectionEyebrow>
           <h2 className="font-display text-4xl font-bold sm:text-5xl">
             Built for Realtors who want to{" "}
