@@ -471,7 +471,6 @@ function WhyChoose() {
 function CaseStudies() {
   const cases = [
     {
-      img: realtor1,
       name: "Michael Thompson",
       province: "Ontario",
       challenge: "Struggling to keep a full listing pipeline while managing active clients.",
@@ -479,7 +478,6 @@ function CaseStudies() {
       result: "37 seller appointments in 90 days — 11 new listings signed.",
     },
     {
-      img: realtor2,
       name: "Sarah Bélanger",
       province: "Quebec",
       challenge: "Wasting ad spend on cold buyer leads that never converted.",
@@ -487,7 +485,6 @@ function CaseStudies() {
       result: "4.2× more listing appointments in her first quarter.",
     },
     {
-      img: realtor3,
       name: "Arjun Malhotra",
       province: "British Columbia",
       challenge: "Solo agent with zero time to prospect between showings.",
@@ -509,51 +506,41 @@ function CaseStudies() {
           {cases.map((c) => (
             <article
               key={c.name}
-              className="group flex flex-col overflow-hidden rounded-[24px] border border-[color:var(--border)] bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="group flex flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={c.img}
-                  alt={c.name}
-                  width={800}
-                  height={800}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[color:var(--ink)] shadow-soft">
+              <div className="flex items-center justify-between">
+                <h3 className="font-display text-xl font-bold">{c.name}</h3>
+                <div className="flex items-center gap-1.5 rounded-full bg-[color:var(--gold-soft)] px-3 py-1 text-xs font-semibold text-[color:var(--ink)]">
                   <MapPin className="h-3 w-3 text-[color:var(--gold)]" />
                   {c.province}
                 </div>
               </div>
-              <div className="flex flex-1 flex-col gap-4 p-7">
-                <h3 className="font-display text-xl font-bold">{c.name}</h3>
-                <dl className="space-y-3 text-sm">
-                  <div>
-                    <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">
-                      Challenge
-                    </dt>
-                    <dd className="mt-1 text-[color:var(--ink)]/85">{c.challenge}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">
-                      Solution
-                    </dt>
-                    <dd className="mt-1 text-[color:var(--ink)]/85">{c.solution}</dd>
-                  </div>
-                  <div className="rounded-xl bg-[color:var(--gold-soft)] p-3">
-                    <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--ink)]">
-                      Result
-                    </dt>
-                    <dd className="mt-1 font-display text-sm font-semibold text-[color:var(--ink)]">
-                      {c.result}
-                    </dd>
-                  </div>
-                </dl>
-                <button className="mt-auto inline-flex items-center gap-2 self-start font-display text-sm font-semibold text-[color:var(--ink)] hover:text-[color:var(--gold)]">
-                  Read Full Story
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </div>
+              <dl className="mt-6 flex flex-1 flex-col gap-4 text-sm">
+                <div>
+                  <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">
+                    Challenge
+                  </dt>
+                  <dd className="mt-1 text-[color:var(--ink)]/85">{c.challenge}</dd>
+                </div>
+                <div>
+                  <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">
+                    Solution
+                  </dt>
+                  <dd className="mt-1 text-[color:var(--ink)]/85">{c.solution}</dd>
+                </div>
+                <div className="mt-auto rounded-xl bg-[color:var(--gold-soft)] p-3">
+                  <dt className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--ink)]">
+                    Result
+                  </dt>
+                  <dd className="mt-1 font-display text-sm font-semibold text-[color:var(--ink)]">
+                    {c.result}
+                  </dd>
+                </div>
+              </dl>
+              <button className="mt-6 inline-flex items-center gap-2 self-start font-display text-sm font-semibold text-[color:var(--ink)] hover:text-[color:var(--gold)]">
+                Read Full Story
+                <ArrowRight className="h-4 w-4" />
+              </button>
             </article>
           ))}
         </div>
