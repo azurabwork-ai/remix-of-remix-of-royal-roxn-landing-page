@@ -274,7 +274,14 @@ function Stats() {
 /* ---------- Brokerages ---------- */
 
 function Brokerages() {
-  const names = ["RE/MAX", "Royal LePage", "Century 21", "eXp Realty", "Keller Williams", "Sutton"];
+  const brokerages = [
+    { name: "RE/MAX", domain: "remax.com" },
+    { name: "Royal LePage", domain: "royallepage.ca" },
+    { name: "Century 21", domain: "century21.ca" },
+    { name: "eXp Realty", domain: "exprealty.com" },
+    { name: "Keller Williams", domain: "kw.com" },
+    { name: "Sutton", domain: "sutton.com" },
+  ];
   return (
     <section className="bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
@@ -282,12 +289,30 @@ function Brokerages() {
           Trusted by Realtors from Canada's leading brokerages
         </p>
         <div className="mt-10 grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-          {names.map((n) => (
+          {brokerages.map((b) => (
             <div
-              key={n}
-              className="flex h-14 items-center justify-center rounded-xl border border-[color:var(--border)] bg-[color:var(--mist)] px-4 font-display text-base font-semibold tracking-tight text-[color:var(--graphite)] transition hover:border-[color:var(--gold)]/40 hover:text-[color:var(--ink)]"
+              key={b.name}
+              className="flex h-20 items-center justify-center rounded-xl border border-[color:var(--border)] bg-white px-4 transition hover:border-[color:var(--gold)]/40 hover:shadow-soft"
+              title={b.name}
             >
-              {n}
+              <img
+                src={`https://logo.clearbit.com/${b.domain}`}
+                alt={`${b.name} logo`}
+                loading="lazy"
+                className="max-h-10 max-w-[130px] object-contain grayscale opacity-80 transition hover:grayscale-0 hover:opacity-100"
+                onError={(e) => {
+                  const el = e.currentTarget;
+                  el.style.display = "none";
+                  const fb = el.nextElementSibling as HTMLElement | null;
+                  if (fb) fb.style.display = "block";
+                }}
+              />
+              <span
+                style={{ display: "none" }}
+                className="font-display text-base font-semibold tracking-tight text-[color:var(--graphite)]"
+              >
+                {b.name}
+              </span>
             </div>
           ))}
         </div>
