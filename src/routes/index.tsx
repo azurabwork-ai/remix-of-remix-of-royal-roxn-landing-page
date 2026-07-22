@@ -185,12 +185,12 @@ function Hero() {
               </span>
             </span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[color:var(--muted-foreground)]">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--muted-foreground)]">
             Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so
             you can focus on winning more listings — not cold calling.
           </p>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-1">
+          <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3">
             {[
               "Qualified Seller Appointments",
               "Dedicated Appointment Team",
