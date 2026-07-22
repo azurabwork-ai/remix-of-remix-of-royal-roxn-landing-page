@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies — Royal RoXn Realtor Success Stories" },
+      { title: "Case Studies - Royal RoXn Realtor Success Stories" },
       { name: "description", content: "See how Canadian Realtors are booking more qualified seller appointments and closing more listings with Royal RoXn." },
-      { property: "og:title", content: "Case Studies — Royal RoXn" },
+      { property: "og:title", content: "Case Studies - Royal RoXn" },
       { property: "og:description", content: "Real results from Canadian Realtors partnering with Royal RoXn." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://rox-finder-pro.lovable.app/case-studies" },
@@ -38,7 +38,7 @@ function CaseStudiesPage() {
       name: "Michael Thompson",
       brokerage: "RE/MAX Hallmark",
       province: "Ontario",
-      headline: "37 seller appointments in 90 days — 11 new listings signed.",
+      headline: "37 seller appointments in 90 days - 11 new listings signed.",
       metrics: [
         { icon: Calendar, label: "Appointments", value: "37" },
         { icon: TrendingUp, label: "New Listings", value: "11" },
@@ -46,7 +46,7 @@ function CaseStudiesPage() {
       ],
       challenge: "Michael was juggling active buyers and had zero bandwidth to prospect for new listings. His pipeline was drying up despite closing consistently.",
       solution: "We deployed a dedicated appointment-setting team to handle all outbound calling, qualification, and calendar booking against his exact seller criteria.",
-      result: "In 90 days he sat down with 37 qualified sellers and signed 11 new listing agreements — the strongest quarter of his career.",
+      result: "In 90 days he sat down with 37 qualified sellers and signed 11 new listing agreements - the strongest quarter of his career.",
     },
     {
       name: "Sarah Bélanger",
@@ -94,7 +94,7 @@ function CaseStudiesPage() {
       name: "David Laurent",
       brokerage: "Keller Williams",
       province: "Nova Scotia",
-      headline: "Stopped cold calling on day one — pipeline stayed full.",
+      headline: "Stopped cold calling on day one - pipeline stayed full.",
       metrics: [
         { icon: Calendar, label: "Hours Saved", value: "20/wk" },
         { icon: TrendingUp, label: "Appt Show Rate", value: "82%" },

@@ -5,9 +5,9 @@ import logoAsset from "@/assets/logo_royal.png.asset.json";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Royal RoXn" },
+      { title: "Privacy Policy - Royal RoXn" },
       { name: "description", content: "How Royal RoXn collects, uses, and protects information for Canadian Realtors and website visitors." },
-      { property: "og:title", content: "Privacy Policy — Royal RoXn" },
+      { property: "og:title", content: "Privacy Policy - Royal RoXn" },
       { property: "og:description", content: "Our commitment to protecting your data and privacy." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://rox-finder-pro.lovable.app/privacy" },

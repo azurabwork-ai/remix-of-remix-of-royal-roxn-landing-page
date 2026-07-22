@@ -45,13 +45,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Royal RoXn — Qualified Seller Appointments for Canadian Realtors" },
+      { title: "Royal RoXn - Qualified Seller Appointments for Canadian Realtors" },
       {
         name: "description",
         content:
           "Royal RoXn books qualified seller appointments on your calendar so Canadian Realtors can stop chasing leads and start closing more listings.",
       },
-      { property: "og:title", content: "Royal RoXn — Book Qualified Seller Appointments" },
+      { property: "og:title", content: "Royal RoXn - Book Qualified Seller Appointments" },
       {
         property: "og:description",
         content:
@@ -61,7 +61,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://rox-finder-pro.lovable.app/" },
       { property: "og:image", content: "https://rox-finder-pro.lovable.app/logo_royal.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Royal RoXn — Book Qualified Seller Appointments" },
+      { name: "twitter:title", content: "Royal RoXn - Book Qualified Seller Appointments" },
       { name: "twitter:description", content: "Done-for-you appointment setting for Canadian Realtors." },
       { name: "twitter:image", content: "https://rox-finder-pro.lovable.app/logo_royal.png" },
       { name: "keywords", content: "appointment setting for realtors, Canadian real estate leads, seller appointments, listing appointments, real estate prospecting Canada, ISA for realtors" },
@@ -135,7 +135,7 @@ export const Route = createFileRoute("/")({
               name: "How is this different from buying leads?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Leads are just names. Royal RoXn delivers booked appointments with motivated, qualified sellers — people who have already agreed to speak with you about listing.",
+                text: "Leads are just names. Royal RoXn delivers booked appointments with motivated, qualified sellers - people who have already agreed to speak with you about listing.",
               },
             },
             {
@@ -408,7 +408,7 @@ function Hero() {
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)] sm:mt-6 sm:text-lg">
             Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so
-            you can focus on winning more listings — not cold calling.
+            you can focus on winning more listings - not cold calling.
           </p>
 
           <ul className="mt-7 flex flex-col flex-wrap justify-center gap-x-6 gap-y-3 sm:mt-8 sm:flex-row">
@@ -556,7 +556,7 @@ function PainPoints() {
             <span className="text-[color:var(--gold)]">familiar?</span>
           </h2>
           <p className="mt-4 max-w-lg text-[color:var(--muted-foreground)]">
-            Most Realtors we speak with are stuck in the same trap — great at closing, buried in
+            Most Realtors we speak with are stuck in the same trap - great at closing, buried in
             prospecting.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -605,7 +605,7 @@ function HowItWorks() {
       icon: ClipboardCheck,
       step: "Step 2",
       title: "We Qualify Every Opportunity",
-      desc: "Each lead is screened against your criteria — timeline, motivation, price range and readiness.",
+      desc: "Each lead is screened against your criteria - timeline, motivation, price range and readiness.",
     },
     {
       icon: CalendarCheck,
@@ -679,7 +679,7 @@ function WhyChoose() {
             <span className="text-[color:var(--gold)]">close, not chase.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-[color:var(--muted-foreground)]">
-            We handle the entire top of your funnel — from prospecting to qualification — so your
+            We handle the entire top of your funnel - from prospecting to qualification - so your
             calendar is filled with seller conversations that convert.
           </p>
           <ul className="mt-8 grid gap-3">
@@ -718,7 +718,7 @@ function CaseStudies() {
       province: "Ontario",
       challenge: "Struggling to keep a full listing pipeline while managing active clients.",
       solution: "Dedicated appointment team handling all outbound & qualification.",
-      result: "37 seller appointments in 90 days — 11 new listings signed.",
+      result: "37 seller appointments in 90 days - 11 new listings signed.",
     },
     {
       name: "Sarah Bélanger",
@@ -844,7 +844,7 @@ function Testimonials() {
       name: "Rachel Nguyen",
       brokerage: "eXp Realty",
       quote:
-        "The qualification is airtight. Every appointment on my calendar is a real seller — no more tire-kickers wasting my Saturdays.",
+        "The qualification is airtight. Every appointment on my calendar is a real seller - no more tire-kickers wasting my Saturdays.",
     },
     {
       name: "Aiden O'Connor",
@@ -958,7 +958,7 @@ function FAQ() {
     },
     {
       q: "How is this different from buying leads?",
-      a: "Leads are just names. We deliver booked appointments with motivated, qualified sellers — people who have already agreed to speak with you about listing.",
+      a: "Leads are just names. We deliver booked appointments with motivated, qualified sellers - people who have already agreed to speak with you about listing.",
     },
     {
       q: "How quickly will I see results?",
