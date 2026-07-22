@@ -168,31 +168,31 @@ function Hero() {
         aria-hidden
         className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-[color:var(--gold-soft)] blur-3xl"
       />
-      <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-10 lg:py-28">
         <div className="relative mx-auto flex flex-col items-center text-center">
           <GoldPill>Canadian Real Estate Growth Partner</GoldPill>
-          <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-[68px]">
+          <h1 className="mt-6 font-display text-[34px] font-extrabold leading-[1.05] tracking-tight text-[color:var(--ink)] sm:text-5xl md:text-6xl lg:text-[68px]">
             Stop chasing leads.
             <br />
             <span className="relative inline-block">
               Start closing more
-              <span className="ml-3 bg-gradient-to-r from-[color:var(--gold)] to-amber-500 bg-clip-text text-transparent">
+              <span className="ml-2 bg-gradient-to-r from-[color:var(--gold)] to-amber-500 bg-clip-text text-transparent sm:ml-3">
                 listings.
               </span>
             </span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--muted-foreground)]">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)] sm:mt-6 sm:text-lg">
             Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so
             you can focus on winning more listings — not cold calling.
           </p>
 
-          <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3">
+          <ul className="mt-7 flex flex-col flex-wrap justify-center gap-x-6 gap-y-3 sm:mt-8 sm:flex-row">
             {[
               "Qualified Seller Appointments",
               "Dedicated Appointment Team",
               "Canadian Market Experts",
             ].map((t) => (
-              <li key={t} className="flex items-center gap-3 text-[15px] font-medium">
+              <li key={t} className="flex items-center gap-3 text-[14px] font-medium sm:text-[15px]">
                 <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[color:var(--gold)]">
                   <Check className="h-3.5 w-3.5 text-[color:var(--ink)]" strokeWidth={3} />
                 </span>
@@ -201,10 +201,10 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
+          <div className="mt-9 flex w-full flex-col items-center justify-center gap-5 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap">
             <Button
               asChild
-              className="group h-14 rounded-full bg-[color:var(--ink)] px-7 font-display text-base font-semibold text-white shadow-card hover:bg-[color:var(--graphite)]"
+              className="group h-13 w-full rounded-full bg-[color:var(--ink)] px-6 font-display text-sm font-semibold text-white shadow-card hover:bg-[color:var(--graphite)] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
             >
               <a href="#book" className="inline-flex items-center gap-2">
                 Book Your FREE Strategy Call
@@ -223,6 +223,7 @@ function Hero() {
             </div>
           </div>
         </div>
+
 
       </div>
     </section>
