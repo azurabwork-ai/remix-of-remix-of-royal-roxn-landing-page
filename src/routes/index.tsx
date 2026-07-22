@@ -172,7 +172,7 @@ function Hero() {
         aria-hidden
         className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-[color:var(--gold-soft)] blur-3xl"
       />
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:px-10 lg:py-28">
         <div className="relative">
           <GoldPill>Canadian Real Estate Growth Partner</GoldPill>
           <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-[68px]">
