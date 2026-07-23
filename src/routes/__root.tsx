@@ -86,6 +86,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Royal RoXn" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "theme-color", content: "#FDB515" },
+      {
+        name: "google-site-verification",
+        content: "ffR8V17hFhK5wTOBDFT5DAQ6XU9Z57GUF9OVH0fs7GA",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Royal RoXn" },
       { property: "og:locale", content: "en_CA" },
@@ -142,6 +146,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '1944739842853433');
         fbq('track', 'PageView');`,
+      },
+      {
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-XSDF0YKGQV",
+      },
+      {
+        type: "text/javascript",
+        children: `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XSDF0YKGQV');`,
       },
     ],
   }),
