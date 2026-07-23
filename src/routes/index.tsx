@@ -45,7 +45,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Royal RoXn - Qualified Seller Appointments for Canadian Realtors" },
+      { title: "Royal RoXn - Seller Appointments for Canadian Realtors" },
       {
         name: "description",
         content:
