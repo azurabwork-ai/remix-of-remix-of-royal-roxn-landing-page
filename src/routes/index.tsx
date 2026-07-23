@@ -1118,6 +1118,42 @@ function FAQ() {
 
 function FinalCTA() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [cityProvince, setCityProvince] = useState("");
+  const [brokerageName, setBrokerageName] = useState("");
+
+  const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwkctXlDjG3WpjYwBPWWzEjCbjeF9rLGBv485avxX3tw1_d3ivNgbZcYW4MOB7Q2pzj/exec";
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (submitting) return;
+    setErrorMsg(null);
+    setSubmitting(true);
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          full_name: fullName,
+          email,
+          phone,
+          city_province: cityProvince || "",
+          brokerage_name: brokerageName || "",
+        }),
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setErrorMsg("Something went wrong. Please try again or email contact@royalroxn.com.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
   return (
     <section id="book" className="relative overflow-hidden bg-[color:var(--gold)] py-24">
       <div
@@ -1168,21 +1204,27 @@ function FinalCTA() {
           ) : (
             <form
               className="space-y-5"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
+              onSubmit={handleSubmit}
             >
               <h3 className="font-display text-2xl font-bold">Book your free strategy call</h3>
               <div className="grid gap-4 sm:grid-cols-2">
                 <FieldWithLabel id="name" label="Full Name">
-                  <Input id="name" required placeholder="Jane Doe" className="h-12 rounded-xl" />
+                  <Input
+                    id="name"
+                    required
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder="Jane Doe"
+                    className="h-12 rounded-xl"
+                  />
                 </FieldWithLabel>
                 <FieldWithLabel id="email" label="Email">
                   <Input
                     id="email"
                     required
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@brokerage.ca"
                     className="h-12 rounded-xl"
                   />
@@ -1192,18 +1234,27 @@ function FinalCTA() {
                     id="phone"
                     required
                     type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     placeholder="(416) 555-0100"
                     className="h-12 rounded-xl"
                   />
                 </FieldWithLabel>
                 <FieldWithLabel id="city" label="City / Province">
-                  <Input id="city" required placeholder="Toronto, ON" className="h-12 rounded-xl" />
+                  <Input
+                    id="city"
+                    value={cityProvince}
+                    onChange={(e) => setCityProvince(e.target.value)}
+                    placeholder="Toronto, ON"
+                    className="h-12 rounded-xl"
+                  />
                 </FieldWithLabel>
                 <div className="sm:col-span-2">
                   <FieldWithLabel id="brokerage" label="Brokerage Name">
                     <Input
                       id="brokerage"
-                      required
+                      value={brokerageName}
+                      onChange={(e) => setBrokerageName(e.target.value)}
                       placeholder="RE/MAX Hallmark"
                       className="h-12 rounded-xl"
                     />
@@ -1212,11 +1263,15 @@ function FinalCTA() {
               </div>
               <Button
                 type="submit"
+                disabled={submitting}
                 className="h-14 w-full rounded-full bg-[color:var(--ink)] font-display text-sm font-semibold uppercase tracking-wider text-white hover:bg-[color:var(--graphite)]"
               >
-                Book My Free Strategy Call
+                {submitting ? "Submitting..." : "Book My Free Strategy Call"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+              {errorMsg && (
+                <p className="text-center text-xs text-red-600">{errorMsg}</p>
+              )}
               <p className="text-center text-xs text-[color:var(--muted-foreground)]">
                 No spam. No obligations. 100% confidential.
               </p>
