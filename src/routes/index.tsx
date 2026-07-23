@@ -406,9 +406,12 @@ function Nav() {
           </a>
           <Button
             asChild
-            className="h-10 rounded-full bg-[color:var(--gold)] px-4 font-display text-xs font-semibold text-[color:var(--ink)] shadow-soft hover:bg-[color:var(--gold)]/90 sm:h-11 sm:px-5 sm:text-sm"
+            className="nav-cta group relative h-10 rounded-full bg-[color:var(--cta-nav)] px-4 font-display text-xs font-semibold text-[color:var(--cta-nav-foreground)] shadow-soft hover:bg-[color:var(--cta-nav)]/90 sm:h-11 sm:px-5 sm:text-sm"
           >
-            <a href="#book">Book Call</a>
+            <a href="#book" className="relative z-10 inline-flex items-center gap-2">
+              Book Call
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </a>
           </Button>
         </div>
       </div>
@@ -462,12 +465,12 @@ function Hero() {
           <div className="mt-9 flex w-full flex-col items-center justify-center gap-5 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap">
             <Button
               asChild
-              className="cta-eyecatch group relative h-13 w-full rounded-full bg-[color:var(--ink)] px-6 font-display text-sm font-semibold text-white shadow-card ring-2 ring-[color:var(--gold)]/60 ring-offset-2 ring-offset-[color:var(--background)] hover:bg-[color:var(--graphite)] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
+              className="cta-eyecatch group relative h-13 w-full rounded-full bg-[color:var(--cta-hero)] px-6 font-display text-sm font-semibold text-[color:var(--cta-hero-foreground)] shadow-card ring-2 ring-[color:var(--cta-hero-glow)]/60 ring-offset-2 ring-offset-[color:var(--background)] hover:bg-[color:var(--cta-hero)]/90 sm:h-14 sm:w-auto sm:px-7 sm:text-base"
             >
               <a href="#book" className="relative z-10 inline-flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--gold)] opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[color:var(--gold)]"></span>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--cta-hero-glow)] opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[color:var(--cta-hero-glow)]"></span>
                 </span>
                 Book Your FREE Strategy Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
