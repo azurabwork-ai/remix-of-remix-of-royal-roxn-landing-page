@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, MapPin, TrendingUp, Calendar, DollarSign, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, MapPin, TrendingUp, Calendar, Clock, Check } from "lucide-react";
 import logoAsset from "@/assets/logo_royal.png.asset.json";
 import { Button } from "@/components/ui/button";
 
