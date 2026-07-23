@@ -860,6 +860,7 @@ function CaseStudies() {
             <span className="text-[color:var(--gold)]">Canadian Realtors</span>
           </h2>
         </div>
+        <NDANote />
         <AutoSlider itemsPerView={{ base: 1, md: 2, lg: 3 }} intervalMs={5500} total={all.length} className="mt-14">
           {all.map((c) => (
             <article
@@ -867,7 +868,9 @@ function CaseStudies() {
               className="group flex h-full flex-col rounded-[24px] border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
               <div className="flex items-center justify-between gap-3">
-                <h3 className="font-display text-lg font-bold sm:text-xl">{c.name}</h3>
+                <h3 className="font-display text-lg font-bold sm:text-xl">
+                  <PrivateName name={c.name} />
+                </h3>
                 <div className="flex items-center gap-1.5 rounded-full bg-[color:var(--gold-soft)] px-3 py-1 text-xs font-semibold text-[color:var(--ink)]">
                   <MapPin className="h-3 w-3 text-[color:var(--gold)]" />
                   {c.province}
@@ -1017,6 +1020,7 @@ function Testimonials() {
             Loved by Realtors from coast to coast
           </h2>
         </div>
+        <NDANote />
         <AutoSlider itemsPerView={{ base: 1, md: 2, lg: 3 }} intervalMs={4500} total={items.length} className="mt-14">
           {items.map((t) => (
             <figure
@@ -1036,7 +1040,9 @@ function Testimonials() {
                   {t.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                 </span>
                 <div>
-                  <p className="font-display text-sm font-semibold">{t.name}</p>
+                  <p className="font-display text-sm font-semibold">
+                    <PrivateName name={t.name} />
+                  </p>
                 </div>
               </figcaption>
             </figure>
