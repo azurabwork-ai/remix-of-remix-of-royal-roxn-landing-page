@@ -184,20 +184,25 @@ function GoldPill({ children }: { children: React.ReactNode }) {
 }
 
 function PrivateName({ name, className = "" }: { name: string; className?: string }) {
-  const parts = name.split(" ");
-  const first = parts[0];
-  const rest = parts.slice(1).join(" ");
+  const words = name.split(" ");
   return (
-    <span className={className}>
-      {first}{" "}
-      {rest && (
-        <span
-          aria-label="Last name hidden for privacy"
-          className="select-none blur-[6px] tracking-wider text-[color:var(--ink)]/80"
-        >
-          {rest}
-        </span>
-      )}
+    <span className={className} aria-label="Name partially hidden for privacy">
+      {words.map((word, i) => {
+        const keep = Math.max(1, Math.ceil(word.length / 2));
+        const visible = word.slice(0, keep);
+        const hidden = word.slice(keep);
+        return (
+          <span key={i}>
+            {i > 0 && " "}
+            {visible}
+            {hidden && (
+              <span className="select-none blur-[5px] tracking-wider text-[color:var(--ink)]/80">
+                {hidden}
+              </span>
+            )}
+          </span>
+        );
+      })}
     </span>
   );
 }
