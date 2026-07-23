@@ -158,6 +158,15 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1944739842853433&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
