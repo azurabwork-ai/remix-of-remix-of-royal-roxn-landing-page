@@ -323,10 +323,14 @@ function CaseStudiesPage() {
             Book a free strategy call and see if you qualify to partner with Royal RoXn.
           </p>
           <div className="mt-8">
-            <Button asChild className="h-13 rounded-full bg-[color:var(--ink)] px-7 font-display text-sm font-semibold text-white hover:bg-[color:var(--graphite)] sm:text-base">
-              <Link to="/" hash="book" className="inline-flex items-center gap-2">
+            <Button asChild className="cta-eyecatch group relative h-13 rounded-full bg-[color:var(--cta-hero)] px-7 font-display text-sm font-semibold text-[color:var(--cta-hero-foreground)] shadow-card ring-2 ring-[color:var(--cta-hero-glow)]/60 ring-offset-2 ring-offset-[color:var(--background)] hover:bg-[color:var(--cta-hero)]/90 sm:text-base">
+              <Link to="/" hash="book" className="relative z-10 inline-flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--cta-hero-glow)] opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[color:var(--cta-hero-glow)]"></span>
+                </span>
                 Book Your FREE Strategy Call
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>

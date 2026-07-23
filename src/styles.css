@@ -13,6 +13,11 @@
   --color-ink: var(--ink);
   --color-graphite: var(--graphite);
   --color-mist: var(--mist);
+  --color-cta-nav: var(--cta-nav);
+  --color-cta-nav-foreground: var(--cta-nav-foreground);
+  --color-cta-hero: var(--cta-hero);
+  --color-cta-hero-foreground: var(--cta-hero-foreground);
+  --color-cta-hero-glow: var(--cta-hero-glow);
 
   --radius-sm: calc(var(--radius) - 6px);
   --radius-md: calc(var(--radius) - 2px);
@@ -54,6 +59,12 @@
   --ink: #111111;
   --graphite: #1F1F1F;
   --mist: #F7F7F7;
+
+  --cta-nav: #10B981;
+  --cta-nav-foreground: #FFFFFF;
+  --cta-hero: #2563EB;
+  --cta-hero-foreground: #FFFFFF;
+  --cta-hero-glow: #60A5FA;
 
   --background: #FFFFFF;
   --foreground: #111111;
@@ -99,10 +110,10 @@
 
 @keyframes cta-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(253, 181, 21, 0.55), 0 20px 40px -20px rgba(17, 17, 17, 0.35);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.55), 0 20px 40px -20px rgba(17, 17, 17, 0.35);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(253, 181, 21, 0), 0 20px 40px -20px rgba(17, 17, 17, 0.35);
+    box-shadow: 0 0 0 12px rgba(37, 99, 235, 0), 0 20px 40px -20px rgba(17, 17, 17, 0.35);
   }
 }
 
@@ -114,6 +125,15 @@
 @keyframes cta-bob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-2px); }
+}
+
+@keyframes nav-cta-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45), 0 8px 20px -8px rgba(16, 185, 129, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0), 0 8px 20px -8px rgba(16, 185, 129, 0.35);
+  }
 }
 
 .cta-eyecatch {
@@ -128,9 +148,9 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(253, 181, 21, 0) 30%,
-    rgba(253, 181, 21, 0.55) 50%,
-    rgba(253, 181, 21, 0) 70%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 70%,
     transparent 100%
   );
   transform: translateX(-120%) skewX(-20deg);
@@ -138,5 +158,30 @@
   pointer-events: none;
 }
 .cta-eyecatch:hover {
+  animation-play-state: paused;
+}
+
+.nav-cta {
+  position: relative;
+  overflow: hidden;
+  animation: nav-cta-glow 2.4s ease-in-out infinite;
+}
+.nav-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 70%,
+    transparent 100%
+  );
+  transform: translateX(-120%) skewX(-20deg);
+  animation: cta-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+.nav-cta:hover {
   animation-play-state: paused;
 }
