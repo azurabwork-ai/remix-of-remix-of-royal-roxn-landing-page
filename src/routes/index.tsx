@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
 import {
@@ -365,11 +365,11 @@ function Nav() {
         <Logo />
         <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
-            href="tel:+18005550100"
+            href="tel:+13435994999"
             className="hidden items-center gap-2 text-sm font-medium text-[color:var(--ink)] hover:text-[color:var(--gold)] sm:inline-flex"
           >
             <Phone className="h-4 w-4" />
-            Call Us <span className="hidden lg:inline">(800) 555-0100</span>
+            Call Us <span className="hidden lg:inline">+1 (343) 599-4999</span>
           </a>
           <Button
             asChild
