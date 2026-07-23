@@ -462,9 +462,13 @@ function Hero() {
           <div className="mt-9 flex w-full flex-col items-center justify-center gap-5 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap">
             <Button
               asChild
-              className="group h-13 w-full rounded-full bg-[color:var(--ink)] px-6 font-display text-sm font-semibold text-white shadow-card hover:bg-[color:var(--graphite)] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
+              className="cta-eyecatch group relative h-13 w-full rounded-full bg-[color:var(--ink)] px-6 font-display text-sm font-semibold text-white shadow-card ring-2 ring-[color:var(--gold)]/60 ring-offset-2 ring-offset-[color:var(--background)] hover:bg-[color:var(--graphite)] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
             >
-              <a href="#book" className="inline-flex items-center gap-2">
+              <a href="#book" className="relative z-10 inline-flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--gold)] opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[color:var(--gold)]"></span>
+                </span>
                 Book Your FREE Strategy Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
