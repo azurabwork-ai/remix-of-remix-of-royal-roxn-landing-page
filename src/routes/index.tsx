@@ -2,9 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
 import {
   Phone,
   Star,
@@ -368,11 +365,11 @@ function Nav() {
         <Logo />
         <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
-            href="tel:+16137230251"
+            href="tel:+18005550100"
             className="hidden items-center gap-2 text-sm font-medium text-[color:var(--ink)] hover:text-[color:var(--gold)] sm:inline-flex"
           >
             <Phone className="h-4 w-4" />
-            Call Us <span className="hidden lg:inline">+1 (613) 723-0251</span>
+            Call Us <span className="hidden lg:inline">(800) 555-0100</span>
           </a>
           <Button
             asChild
@@ -1121,7 +1118,6 @@ function FAQ() {
 
 function FinalCTA() {
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
   return (
     <section id="book" className="relative overflow-hidden bg-[color:var(--gold)] py-24">
       <div
@@ -1172,36 +1168,19 @@ function FinalCTA() {
           ) : (
             <form
               className="space-y-5"
-              onSubmit={async (e) => {
+              onSubmit={(e) => {
                 e.preventDefault();
-                const form = e.currentTarget;
-                const fd = new FormData(form);
-                const payload = {
-                  name: String(fd.get("name") ?? "").trim(),
-                  email: String(fd.get("email") ?? "").trim(),
-                  phone: String(fd.get("phone") ?? "").trim(),
-                  city: String(fd.get("city") ?? "").trim(),
-                  brokerage: String(fd.get("brokerage") ?? "").trim(),
-                };
-                setLoading(true);
-                const { error } = await (supabase as any).from("leads").insert(payload);
-                setLoading(false);
-                if (error) {
-                  toast.error("Could not send. Please try again.");
-                  return;
-                }
                 setSubmitted(true);
               }}
             >
               <h3 className="font-display text-2xl font-bold">Book your free strategy call</h3>
               <div className="grid gap-4 sm:grid-cols-2">
                 <FieldWithLabel id="name" label="Full Name">
-                  <Input id="name" name="name" required placeholder="Jane Doe" className="h-12 rounded-xl" />
+                  <Input id="name" required placeholder="Jane Doe" className="h-12 rounded-xl" />
                 </FieldWithLabel>
                 <FieldWithLabel id="email" label="Email">
                   <Input
                     id="email"
-                    name="email"
                     required
                     type="email"
                     placeholder="you@brokerage.ca"
@@ -1211,7 +1190,6 @@ function FinalCTA() {
                 <FieldWithLabel id="phone" label="Phone Number">
                   <Input
                     id="phone"
-                    name="phone"
                     required
                     type="tel"
                     placeholder="(416) 555-0100"
@@ -1219,13 +1197,12 @@ function FinalCTA() {
                   />
                 </FieldWithLabel>
                 <FieldWithLabel id="city" label="City / Province">
-                  <Input id="city" name="city" required placeholder="Toronto, ON" className="h-12 rounded-xl" />
+                  <Input id="city" required placeholder="Toronto, ON" className="h-12 rounded-xl" />
                 </FieldWithLabel>
                 <div className="sm:col-span-2">
                   <FieldWithLabel id="brokerage" label="Brokerage Name">
                     <Input
                       id="brokerage"
-                      name="brokerage"
                       required
                       placeholder="RE/MAX Hallmark"
                       className="h-12 rounded-xl"
@@ -1235,14 +1212,10 @@ function FinalCTA() {
               </div>
               <Button
                 type="submit"
-                disabled={loading}
                 className="h-14 w-full rounded-full bg-[color:var(--ink)] font-display text-sm font-semibold uppercase tracking-wider text-white hover:bg-[color:var(--graphite)]"
               >
-                {loading ? (
-                  <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</>
-                ) : (
-                  <>Book My Free Strategy Call <ArrowRight className="ml-2 h-4 w-4" /></>
-                )}
+                Book My Free Strategy Call
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <p className="text-center text-xs text-[color:var(--muted-foreground)]">
                 No spam. No obligations. 100% confidential.
