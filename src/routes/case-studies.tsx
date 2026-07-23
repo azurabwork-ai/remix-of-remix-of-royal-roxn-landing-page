@@ -20,6 +20,27 @@ export const Route = createFileRoute("/case-studies")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Royal RoXn Realtor Success Stories",
+          description:
+            "Case studies of Canadian Realtors booking more qualified seller appointments and closing more listings with Royal RoXn.",
+          url: "https://rox-finder-pro.lovable.app/case-studies",
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, item: { "@type": "Article", headline: "37 seller appointments in 90 days - 11 new listings signed.", about: "Michael Thompson, Ontario Realtor" } },
+              { "@type": "ListItem", position: 2, item: { "@type": "Article", headline: "4.2x more listing appointments in her first quarter.", about: "Sarah Belanger, Quebec Realtor" } },
+              { "@type": "ListItem", position: 3, item: { "@type": "Article", headline: "Booked $4.1M in listings within 6 months of onboarding.", about: "Arjun Malhotra, British Columbia Realtor" } },
+              { "@type": "ListItem", position: 4, item: { "@type": "Article", headline: "From 2 listings/month to 9 listings/month in under a year.", about: "Priya Nair, Alberta Realtor" } },
+              { "@type": "ListItem", position: 5, item: { "@type": "Article", headline: "Stopped cold calling on day one - pipeline stayed full.", about: "David Laurent, Nova Scotia Realtor" } },
+            ],
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: "https://rox-finder-pro.lovable.app/" },
