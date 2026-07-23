@@ -103,8 +103,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Royal RoXn",
-          url: "https://rox-finder-pro.lovable.app",
-          logo: "https://rox-finder-pro.lovable.app/logo_royal.png",
+          url: "https://clients.royalroxn.com",
+          logo: "https://clients.royalroxn.com/logo_royal.png",
           email: "contact@royalroxn.com",
           telephone: ["+1-613-723-0251", "+1-343-599-4999"],
           address: {
@@ -125,7 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Royal RoXn",
-          url: "https://rox-finder-pro.lovable.app",
+          url: "https://clients.royalroxn.com",
         }),
       },
       {

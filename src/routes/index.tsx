@@ -58,12 +58,12 @@ export const Route = createFileRoute("/")({
           "A dedicated Canadian appointment-setting team that fills your calendar with qualified seller appointments.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rox-finder-pro.lovable.app/" },
-      { property: "og:image", content: "https://rox-finder-pro.lovable.app/logo_royal.png" },
+      { property: "og:url", content: "https://clients.royalroxn.com/" },
+      { property: "og:image", content: "https://clients.royalroxn.com/logo_royal.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Royal RoXn - Book Qualified Seller Appointments" },
       { name: "twitter:description", content: "Done-for-you appointment setting for Canadian Realtors." },
-      { name: "twitter:image", content: "https://rox-finder-pro.lovable.app/logo_royal.png" },
+      { name: "twitter:image", content: "https://clients.royalroxn.com/logo_royal.png" },
       { name: "keywords", content: "appointment setting for realtors, Canadian real estate leads, seller appointments, listing appointments, real estate prospecting Canada, ISA for realtors" },
     ],
     links: [
@@ -80,7 +80,7 @@ export const Route = createFileRoute("/")({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap",
       },
-      { rel: "canonical", href: "https://rox-finder-pro.lovable.app/" },
+      { rel: "canonical", href: "https://clients.royalroxn.com/" },
     ],
     scripts: [
       {
@@ -91,8 +91,8 @@ export const Route = createFileRoute("/")({
           name: "Royal RoXn",
           description:
             "Done-for-you appointment setting service for Canadian Realtors. We book qualified seller appointments directly on your calendar.",
-          url: "https://rox-finder-pro.lovable.app/",
-          image: "https://rox-finder-pro.lovable.app/logo_royal.png",
+          url: "https://clients.royalroxn.com/",
+          image: "https://clients.royalroxn.com/logo_royal.png",
           telephone: "+1-613-723-0251",
           email: "contact@royalroxn.com",
           priceRange: "$$",
@@ -163,7 +163,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://rox-finder-pro.lovable.app/" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://clients.royalroxn.com/" },
           ],
         }),
       },

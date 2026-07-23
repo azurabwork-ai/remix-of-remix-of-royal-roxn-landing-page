@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rox-finder-pro.lovable.app/sitemap.xml
+Sitemap: https://clients.royalroxn.com/sitemap.xml

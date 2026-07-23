@@ -10,10 +10,10 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:title", content: "Privacy Policy - Royal RoXn" },
       { property: "og:description", content: "Our commitment to protecting your data and privacy." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rox-finder-pro.lovable.app/privacy" },
+      { property: "og:url", content: "https://clients.royalroxn.com/privacy" },
       { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: "https://rox-finder-pro.lovable.app/privacy" }],
+    links: [{ rel: "canonical", href: "https://clients.royalroxn.com/privacy" }],
   }),
   component: PrivacyPage,
 });
