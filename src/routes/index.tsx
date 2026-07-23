@@ -1118,6 +1118,42 @@ function FAQ() {
 
 function FinalCTA() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [cityProvince, setCityProvince] = useState("");
+  const [brokerageName, setBrokerageName] = useState("");
+
+  const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwkctXlDjG3WpjYwBPWWzEjCbjeF9rLGBv485avxX3tw1_d3ivNgbZcYW4MOB7Q2pzj/exec";
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (submitting) return;
+    setErrorMsg(null);
+    setSubmitting(true);
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          full_name: fullName,
+          email,
+          phone,
+          city_province: cityProvince || "",
+          brokerage_name: brokerageName || "",
+        }),
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setErrorMsg("Something went wrong. Please try again or email contact@royalroxn.com.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
   return (
     <section id="book" className="relative overflow-hidden bg-[color:var(--gold)] py-24">
       <div
