@@ -394,7 +394,7 @@ function Landing() {
 function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-10">
         <Logo />
         <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
@@ -1200,7 +1200,7 @@ function FinalCTA() {
     }
   }
   return (
-    <section id="book" className="relative overflow-hidden bg-[color:var(--gold)] py-24">
+    <section id="book" className="relative overflow-hidden bg-[color:var(--gold)] py-16 sm:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-white/30 blur-3xl"
@@ -1209,7 +1209,7 @@ function FinalCTA() {
         aria-hidden
         className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[color:var(--ink)]/10 blur-3xl"
       />
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10">
         <div>
           <GoldPill>Limited Onboarding Slots</GoldPill>
           <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.05] text-[color:var(--ink)] sm:text-4xl md:text-5xl lg:text-6xl">
@@ -1340,7 +1340,7 @@ function FieldWithLabel({
 function Footer() {
   return (
     <footer className="bg-[color:var(--ink)] text-white/80">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Logo variant="light" />

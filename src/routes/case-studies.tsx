@@ -245,14 +245,18 @@ function CaseStudiesPage() {
 
       <section className="relative overflow-hidden bg-white">
         <div aria-hidden className="pointer-events-none absolute -top-40 -right-40 h-[420px] w-[420px] rounded-full bg-[color:var(--gold-soft)] blur-3xl" />
-        <div className="mx-auto max-w-4xl px-6 py-16 text-center lg:py-24">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]">
-            <ArrowLeft className="h-4 w-4" /> Back to Home
-          </Link>
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/30 bg-[color:var(--gold-soft)] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[color:var(--ink)]">
-            Case Studies
+        <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 sm:py-16 lg:py-24">
+          <div>
+            <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]">
+              <ArrowLeft className="h-4 w-4" /> Back to Home
+            </Link>
           </div>
-          <h1 className="mt-6 font-display text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
+          <div className="mt-6 flex justify-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/30 bg-[color:var(--gold-soft)] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[color:var(--ink)]">
+              Case Studies
+            </span>
+          </div>
+          <h1 className="mt-6 font-display text-[32px] font-extrabold leading-tight sm:text-5xl lg:text-6xl">
             Real results from{" "}
             <span className="bg-gradient-to-r from-[color:var(--gold)] to-amber-500 bg-clip-text text-transparent">
               Canadian Realtors
@@ -273,7 +277,7 @@ function CaseStudiesPage() {
           {cases.map((c, i) => (
             <article key={c.name} className="overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-white shadow-soft">
               <div className="grid gap-0 lg:grid-cols-[1fr_1.4fr]">
-                <div className="border-b border-[color:var(--border)] bg-[color:var(--ink)] p-8 text-white lg:border-b-0 lg:border-r">
+                <div className="border-b border-[color:var(--border)] bg-[color:var(--ink)] p-6 text-white sm:p-8 lg:border-b-0 lg:border-r">
                   <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
                     Case Study {String(i + 1).padStart(2, "0")}
                   </p>
@@ -287,20 +291,20 @@ function CaseStudiesPage() {
                   <p className="mt-6 font-display text-lg font-semibold leading-snug text-[color:var(--gold)]">
                     “{c.headline}”
                   </p>
-                  <div className="mt-8 grid grid-cols-3 gap-3">
+                  <div className="mt-8 grid grid-cols-3 gap-2 sm:gap-3">
                     {c.metrics.map((m) => {
                       const Icon = m.icon;
                       return (
-                        <div key={m.label} className="rounded-xl border border-white/10 bg-[color:var(--graphite)] p-3 text-center">
+                        <div key={m.label} className="min-w-0 rounded-xl border border-white/10 bg-[color:var(--graphite)] p-2 text-center sm:p-3">
                           <Icon className="mx-auto h-4 w-4 text-[color:var(--gold)]" />
-                          <p className="mt-2 font-display text-lg font-extrabold text-white">{m.value}</p>
-                          <p className="mt-0.5 text-[10px] uppercase tracking-wider text-white/60">{m.label}</p>
+                          <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{m.value}</p>
+                          <p className="mt-0.5 break-words text-[9px] uppercase leading-tight tracking-wider text-white/60 sm:text-[10px]">{m.label}</p>
                         </div>
                       );
                     })}
                   </div>
                 </div>
-                <div className="space-y-6 p-8 sm:p-10">
+                <div className="space-y-6 p-6 sm:p-8 lg:p-10">
                   <Detail label="Challenge" text={c.challenge} />
                   <Detail label="Solution" text={c.solution} />
                   <div className="rounded-2xl bg-[color:var(--gold-soft)] p-5">
@@ -314,8 +318,8 @@ function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="bg-[color:var(--gold)] py-20 text-center">
-        <div className="mx-auto max-w-2xl px-6">
+      <section className="bg-[color:var(--gold)] py-16 text-center sm:py-20">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6">
           <h2 className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
             Want your story here next?
           </h2>
