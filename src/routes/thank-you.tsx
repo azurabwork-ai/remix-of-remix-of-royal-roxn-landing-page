@@ -44,21 +44,6 @@ function ThankYouPage() {
             Thank you for booking your free strategy call with Royal RoXn. A Canadian strategist will reach out within one business day to confirm your appointment.
           </p>
 
-          <div className="mx-auto mt-10 grid max-w-xl gap-3 text-left">
-            {[
-              "Check your inbox for a confirmation email",
-              "We'll call you from a Canadian number",
-              "Have 30 minutes free for the call",
-            ].map((t) => (
-              <div key={t} className="flex items-center gap-3 rounded-2xl border border-[color:var(--border)] bg-white px-5 py-4 shadow-soft">
-                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[color:var(--gold)]">
-                  <Check className="h-4 w-4 text-[color:var(--ink)]" strokeWidth={3} />
-                </span>
-                <span className="font-display text-[15px] font-semibold">{t}</span>
-              </div>
-            ))}
-          </div>
-
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild className="h-12 rounded-full bg-[color:var(--ink)] px-6 font-display text-sm font-semibold text-white hover:bg-[color:var(--graphite)]">
               <Link to="/" className="inline-flex items-center gap-2">
