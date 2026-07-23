@@ -1072,15 +1072,15 @@ function FAQ() {
     },
     {
       q: "How is this different from buying leads?",
-      a: "Leads are just names. We deliver booked appointments with motivated, qualified sellers - people who have already agreed to speak with you about listing.",
+      a: "Leads are just contact information. We deliver qualified, face-to-face listing appointments with homeowners who have expressed interest in selling and are ready to meet with a real estate agent. You simply attend the appointment, present your marketing strategy, and focus on winning the listing.",
     },
     {
       q: "How quickly will I see results?",
-      a: "Most Realtors receive their first qualified seller appointments within 10-14 days of onboarding.",
+      a: "Most realtors receive their first qualified appointment within 7-10 business days after onboarding. Timelines may vary depending on your market and service area.",
     },
     {
       q: "Is there a long-term contract?",
-      a: "No. We earn your business month over month. Onboarding is simple and cancellation policies are transparent.",
+      a: "Yes. Our minimum partnership is 3 months, giving us enough time to build consistent appointment flow and deliver measurable results. Onboarding is simple, and our cancellation policy is clear and transparent.",
     },
   ];
   return (
@@ -1117,7 +1117,7 @@ function FAQ() {
 /* ---------- Final CTA ---------- */
 
 function FinalCTA() {
-  const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [fullName, setFullName] = useState("");
@@ -1147,10 +1147,9 @@ function FinalCTA() {
           brokerage_name: brokerageName || "",
         }),
       });
-      setSubmitted(true);
+      navigate({ to: "/thank-you" });
     } catch (err) {
       setErrorMsg("Something went wrong. Please try again or email contact@royalroxn.com.");
-    } finally {
       setSubmitting(false);
     }
   }
@@ -1190,24 +1189,13 @@ function FinalCTA() {
           </ul>
         </div>
 
-        <div className="rounded-[28px] border border-white/40 bg-white p-6 shadow-card sm:p-10">
-          {submitted ? (
-            <div className="flex h-full flex-col items-center justify-center py-16 text-center">
-              <div className="grid h-14 w-14 place-items-center rounded-full bg-[color:var(--gold)]">
-                <Check className="h-6 w-6 text-[color:var(--ink)]" strokeWidth={3} />
-              </div>
-              <h3 className="mt-6 font-display text-2xl font-bold">You're on the list</h3>
-              <p className="mt-2 text-[color:var(--muted-foreground)]">
-                A Royal RoXn strategist will reach out within one business day.
-              </p>
-            </div>
-          ) : (
-            <form
-              className="space-y-5"
+        <div className="rounded-[24px] border border-white/40 bg-white p-5 shadow-card sm:p-7">
+          <form
+              className="space-y-4"
               onSubmit={handleSubmit}
             >
-              <h3 className="font-display text-2xl font-bold">Book your free strategy call</h3>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <h3 className="font-display text-xl font-bold sm:text-2xl">Book your free strategy call</h3>
+              <div className="grid gap-3 sm:grid-cols-2">
                 <FieldWithLabel id="name" label="Full Name">
                   <Input
                     id="name"
@@ -1215,7 +1203,7 @@ function FinalCTA() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="Jane Doe"
-                    className="h-12 rounded-xl"
+                    className="h-11 rounded-xl"
                   />
                 </FieldWithLabel>
                 <FieldWithLabel id="email" label="Email">
@@ -1226,7 +1214,7 @@ function FinalCTA() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@brokerage.ca"
-                    className="h-12 rounded-xl"
+                    className="h-11 rounded-xl"
                   />
                 </FieldWithLabel>
                 <FieldWithLabel id="phone" label="Phone Number">
@@ -1237,7 +1225,7 @@ function FinalCTA() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="(416) 555-0100"
-                    className="h-12 rounded-xl"
+                    className="h-11 rounded-xl"
                   />
                 </FieldWithLabel>
                 <FieldWithLabel id="city" label="City / Province">
@@ -1246,7 +1234,7 @@ function FinalCTA() {
                     value={cityProvince}
                     onChange={(e) => setCityProvince(e.target.value)}
                     placeholder="Toronto, ON"
-                    className="h-12 rounded-xl"
+                    className="h-11 rounded-xl"
                   />
                 </FieldWithLabel>
                 <div className="sm:col-span-2">
@@ -1256,7 +1244,7 @@ function FinalCTA() {
                       value={brokerageName}
                       onChange={(e) => setBrokerageName(e.target.value)}
                       placeholder="RE/MAX Hallmark"
-                      className="h-12 rounded-xl"
+                      className="h-11 rounded-xl"
                     />
                   </FieldWithLabel>
                 </div>
@@ -1264,7 +1252,7 @@ function FinalCTA() {
               <Button
                 type="submit"
                 disabled={submitting}
-                className="h-14 w-full rounded-full bg-[color:var(--ink)] font-display text-sm font-semibold uppercase tracking-wider text-white hover:bg-[color:var(--graphite)]"
+                className="h-12 w-full rounded-full bg-[color:var(--ink)] font-display text-sm font-semibold uppercase tracking-wider text-white hover:bg-[color:var(--graphite)]"
               >
                 {submitting ? "Submitting..." : "Book My Free Strategy Call"}
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -1272,11 +1260,10 @@ function FinalCTA() {
               {errorMsg && (
                 <p className="text-center text-xs text-red-600">{errorMsg}</p>
               )}
-              <p className="text-center text-xs text-[color:var(--muted-foreground)]">
+              <p className="text-center text-[11px] text-[color:var(--muted-foreground)]">
                 No spam. No obligations. 100% confidential.
               </p>
             </form>
-          )}
         </div>
       </div>
     </section>
