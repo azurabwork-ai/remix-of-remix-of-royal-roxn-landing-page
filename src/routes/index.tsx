@@ -352,9 +352,9 @@ function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
       <img
         src={logoAsset.url}
         alt="Royal RoXn"
-        width={40}
-        height={40}
-        className="h-8 w-8 shrink-0 object-contain sm:h-10 sm:w-10"
+        width={52}
+        height={52}
+        className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12"
       />
       <span
         className={`truncate font-display text-base font-bold tracking-tight sm:text-lg ${
@@ -429,10 +429,10 @@ function Hero() {
         aria-hidden
         className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-[color:var(--gold-soft)] blur-3xl"
       />
-      <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-4xl px-4 pt-6 pb-10 text-center sm:px-6 sm:pt-8 sm:pb-12 lg:px-10 lg:pt-10 lg:pb-14">
         <div className="relative mx-auto flex flex-col items-center text-center">
           <GoldPill>Canadian Real Estate Growth Partner</GoldPill>
-          <h1 className="mt-6 font-display text-[34px] font-extrabold leading-[1.05] tracking-tight text-[color:var(--ink)] sm:text-5xl md:text-6xl lg:text-[68px]">
+          <h1 className="mt-4 font-display text-[34px] font-extrabold leading-[1.05] tracking-tight text-[color:var(--ink)] sm:text-5xl md:text-6xl lg:text-[68px]">
             Stop chasing leads.
             <br />
             <span className="relative inline-block">
@@ -442,12 +442,12 @@ function Hero() {
               </span>
             </span>
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)] sm:mt-6 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)] sm:text-lg">
             Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so
             you can focus on winning more listings - not cold calling.
           </p>
 
-          <ul className="mt-7 flex flex-col flex-wrap justify-center gap-x-6 gap-y-3 sm:mt-8 sm:flex-row">
+          <ul className="mt-5 flex flex-col flex-wrap justify-center gap-x-6 gap-y-3 sm:mt-6 sm:flex-row">
             {[
               "Qualified Seller Appointments",
               "Dedicated Appointment Team",
@@ -462,7 +462,7 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-9 flex w-full flex-col items-center justify-center gap-5 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap">
+          <div className="mt-7 flex w-full flex-col items-center justify-center gap-5 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap">
             <Button
               asChild
               className="cta-eyecatch group relative h-13 w-full rounded-full bg-[color:var(--cta-hero)] px-6 font-display text-sm font-semibold text-[color:var(--cta-hero-foreground)] shadow-card ring-2 ring-[color:var(--cta-hero-glow)]/60 ring-offset-2 ring-offset-[color:var(--background)] hover:bg-[color:var(--cta-hero)]/90 sm:h-14 sm:w-auto sm:px-7 sm:text-base"
