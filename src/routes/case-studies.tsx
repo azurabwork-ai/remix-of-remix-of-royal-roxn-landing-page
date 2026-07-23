@@ -333,6 +333,25 @@ function Detail({ label, text }: { label: string; text: string }) {
   );
 }
 
+function PrivateName({ name }: { name: string }) {
+  const parts = name.split(" ");
+  const first = parts[0];
+  const rest = parts.slice(1).join(" ");
+  return (
+    <span>
+      {first}{" "}
+      {rest && (
+        <span
+          aria-label="Last name hidden for privacy"
+          className="select-none blur-[6px] tracking-wider text-white/80"
+        >
+          {rest}
+        </span>
+      )}
+    </span>
+  );
+}
+
 function PageNav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
