@@ -240,6 +240,10 @@ function CaseStudiesPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)] sm:text-lg">
             Every one of these agents used to spend hours prospecting. Now they spend that time in front of qualified sellers.
           </p>
+          <p className="mx-auto mt-8 max-w-3xl rounded-xl border border-[color:var(--gold)]/30 bg-[color:var(--gold-soft)] px-4 py-3 text-left text-[12px] leading-relaxed text-[color:var(--ink)]/80 sm:text-[13px]">
+            <strong className="font-semibold text-[color:var(--ink)]">Note:</strong>{" "}
+            Compliance with our Non-Disclosure Agreement (NDA) prohibits the sharing of specific client credentials, including names, phone numbers, and complete addresses, to uphold strict confidentiality of our client's marketing strategies.
+          </p>
         </div>
       </section>
 
@@ -252,7 +256,9 @@ function CaseStudiesPage() {
                   <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
                     Case Study {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h2 className="mt-4 font-display text-2xl font-bold sm:text-3xl">{c.name}</h2>
+                  <h2 className="mt-4 font-display text-2xl font-bold sm:text-3xl">
+                    <PrivateName name={c.name} />
+                  </h2>
                   <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[color:var(--gold-soft)] px-3 py-1 text-xs font-semibold text-[color:var(--ink)]">
                     <MapPin className="h-3 w-3 text-[color:var(--gold)]" />
                     {c.province}
@@ -324,6 +330,25 @@ function Detail({ label, text }: { label: string; text: string }) {
       <p className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">{label}</p>
       <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--ink)]/85">{text}</p>
     </div>
+  );
+}
+
+function PrivateName({ name }: { name: string }) {
+  const parts = name.split(" ");
+  const first = parts[0];
+  const rest = parts.slice(1).join(" ");
+  return (
+    <span>
+      {first}{" "}
+      {rest && (
+        <span
+          aria-label="Last name hidden for privacy"
+          className="select-none blur-[6px] tracking-wider text-white/80"
+        >
+          {rest}
+        </span>
+      )}
+    </span>
   );
 }
 
