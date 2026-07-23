@@ -183,6 +183,34 @@ function GoldPill({ children }: { children: React.ReactNode }) {
   );
 }
 
+function PrivateName({ name, className = "" }: { name: string; className?: string }) {
+  const parts = name.split(" ");
+  const first = parts[0];
+  const rest = parts.slice(1).join(" ");
+  return (
+    <span className={className}>
+      {first}{" "}
+      {rest && (
+        <span
+          aria-label="Last name hidden for privacy"
+          className="select-none blur-[6px] tracking-wider text-[color:var(--ink)]/80"
+        >
+          {rest}
+        </span>
+      )}
+    </span>
+  );
+}
+
+function NDANote() {
+  return (
+    <p className="mx-auto mt-6 max-w-3xl rounded-xl border border-[color:var(--gold)]/30 bg-[color:var(--gold-soft)] px-4 py-3 text-center text-[12px] leading-relaxed text-[color:var(--ink)]/80 sm:text-[13px]">
+      <strong className="font-semibold text-[color:var(--ink)]">Note:</strong>{" "}
+      Compliance with our Non-Disclosure Agreement (NDA) prohibits the sharing of specific client credentials, including names, phone numbers, and complete addresses, to uphold strict confidentiality of our client's marketing strategies.
+    </p>
+  );
+}
+
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
     <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
