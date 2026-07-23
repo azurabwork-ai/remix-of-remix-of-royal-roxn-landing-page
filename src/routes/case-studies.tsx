@@ -11,10 +11,10 @@ export const Route = createFileRoute("/case-studies")({
       { property: "og:title", content: "Case Studies - Royal RoXn" },
       { property: "og:description", content: "Real results from Canadian Realtors partnering with Royal RoXn." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rox-finder-pro.lovable.app/case-studies" },
+      { property: "og:url", content: "https://clients.royalroxn.com/case-studies" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://rox-finder-pro.lovable.app/case-studies" }],
+    links: [{ rel: "canonical", href: "https://clients.royalroxn.com/case-studies" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/case-studies")({
           name: "Royal RoXn Realtor Success Stories",
           description:
             "Case studies of Canadian Realtors booking more qualified seller appointments and closing more listings with Royal RoXn.",
-          url: "https://rox-finder-pro.lovable.app/case-studies",
+          url: "https://clients.royalroxn.com/case-studies",
           mainEntity: {
             "@type": "ItemList",
             itemListElement: [
@@ -43,8 +43,8 @@ export const Route = createFileRoute("/case-studies")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://rox-finder-pro.lovable.app/" },
-            { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://rox-finder-pro.lovable.app/case-studies" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://clients.royalroxn.com/" },
+            { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://clients.royalroxn.com/case-studies" },
           ],
         }),
       },

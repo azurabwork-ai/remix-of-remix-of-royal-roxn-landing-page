@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://rox-finder-pro.lovable.app";
+const BASE_URL = "https://clients.royalroxn.com";
 
 interface SitemapEntry {
   path: string;

@@ -10,10 +10,10 @@ export const Route = createFileRoute("/terms")({
       { property: "og:title", content: "Terms of Service - Royal RoXn" },
       { property: "og:description", content: "The terms and conditions of engaging Royal RoXn." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://rox-finder-pro.lovable.app/terms" },
+      { property: "og:url", content: "https://clients.royalroxn.com/terms" },
       { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: "https://rox-finder-pro.lovable.app/terms" }],
+    links: [{ rel: "canonical", href: "https://clients.royalroxn.com/terms" }],
   }),
   component: TermsPage,
 });
