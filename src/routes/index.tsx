@@ -1200,7 +1200,7 @@ function FinalCTA() {
     }
   }
   return (
-    <section id="book" className="relative overflow-hidden bg-[color:var(--gold)] py-24">
+    <section id="book" className="relative overflow-hidden bg-[color:var(--gold)] py-16 sm:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-white/30 blur-3xl"
@@ -1209,7 +1209,7 @@ function FinalCTA() {
         aria-hidden
         className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[color:var(--ink)]/10 blur-3xl"
       />
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10">
         <div>
           <GoldPill>Limited Onboarding Slots</GoldPill>
           <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.05] text-[color:var(--ink)] sm:text-4xl md:text-5xl lg:text-6xl">
