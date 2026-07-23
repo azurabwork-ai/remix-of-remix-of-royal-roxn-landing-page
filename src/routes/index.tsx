@@ -1204,21 +1204,27 @@ function FinalCTA() {
           ) : (
             <form
               className="space-y-5"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
+              onSubmit={handleSubmit}
             >
               <h3 className="font-display text-2xl font-bold">Book your free strategy call</h3>
               <div className="grid gap-4 sm:grid-cols-2">
                 <FieldWithLabel id="name" label="Full Name">
-                  <Input id="name" required placeholder="Jane Doe" className="h-12 rounded-xl" />
+                  <Input
+                    id="name"
+                    required
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder="Jane Doe"
+                    className="h-12 rounded-xl"
+                  />
                 </FieldWithLabel>
                 <FieldWithLabel id="email" label="Email">
                   <Input
                     id="email"
                     required
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@brokerage.ca"
                     className="h-12 rounded-xl"
                   />
@@ -1228,18 +1234,27 @@ function FinalCTA() {
                     id="phone"
                     required
                     type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     placeholder="(416) 555-0100"
                     className="h-12 rounded-xl"
                   />
                 </FieldWithLabel>
                 <FieldWithLabel id="city" label="City / Province">
-                  <Input id="city" required placeholder="Toronto, ON" className="h-12 rounded-xl" />
+                  <Input
+                    id="city"
+                    value={cityProvince}
+                    onChange={(e) => setCityProvince(e.target.value)}
+                    placeholder="Toronto, ON"
+                    className="h-12 rounded-xl"
+                  />
                 </FieldWithLabel>
                 <div className="sm:col-span-2">
                   <FieldWithLabel id="brokerage" label="Brokerage Name">
                     <Input
                       id="brokerage"
-                      required
+                      value={brokerageName}
+                      onChange={(e) => setBrokerageName(e.target.value)}
                       placeholder="RE/MAX Hallmark"
                       className="h-12 rounded-xl"
                     />
@@ -1248,11 +1263,15 @@ function FinalCTA() {
               </div>
               <Button
                 type="submit"
+                disabled={submitting}
                 className="h-14 w-full rounded-full bg-[color:var(--ink)] font-display text-sm font-semibold uppercase tracking-wider text-white hover:bg-[color:var(--graphite)]"
               >
-                Book My Free Strategy Call
+                {submitting ? "Submitting..." : "Book My Free Strategy Call"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+              {errorMsg && (
+                <p className="text-center text-xs text-red-600">{errorMsg}</p>
+              )}
               <p className="text-center text-xs text-[color:var(--muted-foreground)]">
                 No spam. No obligations. 100% confidential.
               </p>
