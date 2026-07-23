@@ -62,7 +62,7 @@ function CaseStudiesPage() {
       province: "Ontario",
       headline: "8 qualified seller appointments in 60 days — 3 listings signed.",
       metrics: [
-        { icon: Calendar, label: "Appointments", value: "8" },
+        { icon: Calendar, label: "Appts", value: "8" },
         { icon: TrendingUp, label: "Listings", value: "3" },
         { icon: Clock, label: "Timeline", value: "60 days" },
       ],
@@ -75,7 +75,7 @@ function CaseStudiesPage() {
       province: "Quebec",
       headline: "6 seller appointments in 45 days from a referral-dependent business.",
       metrics: [
-        { icon: Calendar, label: "Appointments", value: "6" },
+        { icon: Calendar, label: "Appts", value: "6" },
         { icon: TrendingUp, label: "Listings", value: "2" },
         { icon: Clock, label: "Timeline", value: "45 days" },
       ],
@@ -88,7 +88,7 @@ function CaseStudiesPage() {
       province: "British Columbia",
       headline: "10 qualified seller appointments in 90 days — 4 listings signed.",
       metrics: [
-        { icon: Calendar, label: "Appointments", value: "10" },
+        { icon: Calendar, label: "Appts", value: "10" },
         { icon: TrendingUp, label: "Listings", value: "4" },
         { icon: Clock, label: "Timeline", value: "90 days" },
       ],
@@ -101,7 +101,7 @@ function CaseStudiesPage() {
       province: "Alberta",
       headline: "7 qualified appointments in 75 days created a steadier pipeline.",
       metrics: [
-        { icon: Calendar, label: "Appointments", value: "7" },
+        { icon: Calendar, label: "Appts", value: "7" },
         { icon: TrendingUp, label: "Pipeline", value: "Steady" },
         { icon: Clock, label: "Timeline", value: "75 days" },
       ],
@@ -114,7 +114,7 @@ function CaseStudiesPage() {
       province: "Nova Scotia",
       headline: "9 qualified seller appointments in 3 months — no more cold calling.",
       metrics: [
-        { icon: Calendar, label: "Appointments", value: "9" },
+        { icon: Calendar, label: "Appts", value: "9" },
         { icon: TrendingUp, label: "Listings", value: "3" },
         { icon: Clock, label: "Timeline", value: "3 months" },
       ],
@@ -127,7 +127,7 @@ function CaseStudiesPage() {
       province: "Manitoba",
       headline: "8 qualified appointments in 60 days without adding staff.",
       metrics: [
-        { icon: Calendar, label: "Appointments", value: "8" },
+        { icon: Calendar, label: "Appts", value: "8" },
         { icon: TrendingUp, label: "Capacity", value: "Same team" },
         { icon: Clock, label: "Timeline", value: "60 days" },
       ],
@@ -140,7 +140,7 @@ function CaseStudiesPage() {
       province: "Ontario",
       headline: "11 qualified seller appointments in 90 days built a predictable pipeline.",
       metrics: [
-        { icon: Calendar, label: "Appointments", value: "11" },
+        { icon: Calendar, label: "Appts", value: "11" },
         { icon: TrendingUp, label: "Listings", value: "4" },
         { icon: Clock, label: "Timeline", value: "90 days" },
       ],
