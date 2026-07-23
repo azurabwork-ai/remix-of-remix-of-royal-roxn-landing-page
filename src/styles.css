@@ -55,6 +55,12 @@
   --graphite: #1F1F1F;
   --mist: #F7F7F7;
 
+  --cta-nav: #10B981;
+  --cta-nav-foreground: #FFFFFF;
+  --cta-hero: #2563EB;
+  --cta-hero-foreground: #FFFFFF;
+  --cta-hero-glow: #60A5FA;
+
   --background: #FFFFFF;
   --foreground: #111111;
   --card: #FFFFFF;
