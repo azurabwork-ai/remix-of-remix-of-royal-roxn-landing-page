@@ -13,6 +13,11 @@
   --color-ink: var(--ink);
   --color-graphite: var(--graphite);
   --color-mist: var(--mist);
+  --color-cta-nav: var(--cta-nav);
+  --color-cta-nav-foreground: var(--cta-nav-foreground);
+  --color-cta-hero: var(--cta-hero);
+  --color-cta-hero-foreground: var(--cta-hero-foreground);
+  --color-cta-hero-glow: var(--cta-hero-glow);
 
   --radius-sm: calc(var(--radius) - 6px);
   --radius-md: calc(var(--radius) - 2px);
