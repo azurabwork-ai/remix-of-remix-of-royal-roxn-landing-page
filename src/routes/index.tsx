@@ -394,7 +394,7 @@ function Landing() {
 function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-10">
         <Logo />
         <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
