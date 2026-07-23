@@ -352,9 +352,9 @@ function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
       <img
         src={logoAsset.url}
         alt="Royal RoXn"
-        width={40}
-        height={40}
-        className="h-8 w-8 shrink-0 object-contain sm:h-10 sm:w-10"
+        width={52}
+        height={52}
+        className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12"
       />
       <span
         className={`truncate font-display text-base font-bold tracking-tight sm:text-lg ${
