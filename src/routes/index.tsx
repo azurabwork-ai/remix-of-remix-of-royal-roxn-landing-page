@@ -925,102 +925,77 @@ function Testimonials() {
     {
       name: "Karen Whitfield",
       quote:
-        "Royal RoXn transformed the way I run my business. My calendar is full of qualified seller appointments and my listing volume has never been higher.",
+        "Royal RoXn has taken a huge amount of prospecting off my plate. Instead of spending hours making calls, I'm meeting with homeowners who are genuinely interested in selling. It's made my schedule much more productive.",
     },
     {
       name: "David Laurent",
       quote:
-        "I stopped cold calling on day one. Their Canadian team is professional, consistent, and truly understands the seller conversation.",
+        "The communication has been excellent from the beginning. The appointments are organized, and I always know what to expect before each meeting.",
     },
     {
       name: "Emily Chen",
       quote:
-        "It's the most predictable pipeline I've ever had. I finally get to focus on closing listings instead of prospecting.",
+        "I was looking for a more consistent listing pipeline, and that's exactly what Royal RoXn has helped me build. It's allowed me to focus on serving clients instead of chasing new ones every day.",
     },
     {
       name: "Marc Dubois",
       quote:
-        "In three months I closed more listings than the previous six combined. Royal RoXn's team just gets Canadian sellers.",
+        "Every appointment doesn't become a listing, but the conversations are with motivated homeowners. That alone has saved me a lot of time compared to traditional prospecting.",
     },
     {
       name: "Rachel Nguyen",
       quote:
-        "The qualification is airtight. Every appointment on my calendar is a real seller - no more tire-kickers wasting my Saturdays.",
+        "Their team is professional, responsive, and easy to work with. The process has been simple, and the quality of appointments has been much better than I expected.",
     },
     {
       name: "Aiden O'Connor",
       quote:
-        "I finally feel like a listing agent again. The pipeline is predictable and my business has doubled year over year.",
+        "Having qualified seller appointments on my calendar each month has made planning my business much easier. I finally have a more predictable pipeline.",
     },
     {
       name: "Sophia Rossi",
       quote:
-        "Professional, consistent, and truly Canadian. Their setters sound like they've been on my team for years.",
+        "I was skeptical at first, but after the first few appointments I realized how much time I was saving. It has been a great investment for my business.",
     },
     {
       name: "Liam Patel",
       quote:
-        "Best ROI decision I've made in a decade of real estate. My GCI is up 68% since onboarding with Royal RoXn.",
+        "Royal RoXn understands the Canadian real estate market. The appointments have been relevant to my target area, and the homeowners have been well qualified.",
     },
     {
       name: "Grace Fontaine",
       quote:
-        "The quality of the sellers on my calendar is next level. Every appointment feels like a real listing opportunity.",
+        "The biggest benefit has been consistency. I no longer have to rely only on referrals because I know new seller conversations are being scheduled regularly.",
     },
     {
       name: "Owen McKenzie",
       quote:
-        "I closed 4 listings in my first month with Royal RoXn. Their setters do the heavy lifting so I can focus on presenting.",
+        "Their appointment-setting team represents my business professionally. Homeowners already understand why we're meeting before I even arrive.",
     },
     {
       name: "Zara Ahmed",
       quote:
-        "Consistent, predictable seller flow every single week. It has completely changed how I plan my business.",
+        "I can now spend more time preparing listing presentations instead of searching for my next opportunity. That has made a noticeable difference in my business.",
     },
     {
       name: "Julien Bouchard",
       quote:
-        "Their bilingual setters handle Quebec sellers with real cultural nuance. Nothing feels scripted or offshore.",
+        "The process was straightforward from day one. Their team handled everything professionally and kept me updated throughout the entire process.",
     },
     {
       name: "Nicole Sutherland",
       quote:
-        "I used to dread Mondays. Now I open my calendar and see 5 qualified listing appointments waiting.",
+        "I wanted more listing opportunities without hiring another staff member. Royal RoXn gave me exactly that while keeping my workload manageable.",
     },
     {
       name: "Ravi Deol",
       quote:
-        "Onboarding was smooth and appointments started landing in week one. Their team truly understands Canadian sellers.",
+        "The quality of conversations has been much better than the random online leads I was getting before. It's a much more efficient way to grow my listing business.",
     },
     {
       name: "Elena Martins",
       quote:
-        "The follow-up game is second to none. Sellers who ghosted me months ago are now on my calendar.",
-    },
-    {
-      name: "Tyler Robinson",
-      quote:
-        "I stopped buying leads entirely. Royal RoXn's appointments convert at 3× the rate of anything I was paying for.",
-    },
-    {
-      name: "Sana Iqbal",
-      quote:
-        "Being a mom and a top producer felt impossible until I had setters handling my prospecting. Total game changer.",
-    },
-    {
-      name: "Charles Beaumont",
-      quote:
-        "In luxury real estate, the seller conversation matters. Their setters treat every call like it's a million-dollar listing - because it often is.",
-    },
-    {
-      name: "Priya Bhatt",
-      quote:
-        "I went from 6 listings a year to 6 listings a quarter. My family finally sees me on weekends again.",
-    },
-    {
-      name: "Alexandre Roy",
-      quote:
-        "The best decision I made in my 15-year career. Predictable listings, predictable income, zero prospecting stress.",
+        "If you're looking for a more consistent flow of seller opportunities, Royal RoXn is definitely worth considering. They've become a valuable part of my business.",
     },
   ];
   return (
