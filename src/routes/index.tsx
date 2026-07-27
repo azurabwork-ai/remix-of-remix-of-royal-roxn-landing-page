@@ -21,7 +21,6 @@ import {
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
 import frustratedImg from "@/assets/frustrated-realtor.jpg";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 import remaxLogo from "@/assets/brokerages/remax.png.asset.json";
 import royalLepageLogo from "@/assets/brokerages/royal-lepage.png.asset.json";
@@ -405,7 +404,6 @@ function Nav() {
             <Phone className="h-4 w-4" />
             Call Us <span className="hidden lg:inline">+1 (343) 599-4999</span>
           </a>
-          <ThemeToggle />
           <Button
             asChild
             className="nav-cta group relative h-10 rounded-full bg-[color:var(--cta-nav)] px-4 font-display text-xs font-semibold text-[color:var(--cta-nav-foreground)] shadow-soft hover:bg-[color:var(--cta-nav)]/90 sm:h-11 sm:px-5 sm:text-sm"

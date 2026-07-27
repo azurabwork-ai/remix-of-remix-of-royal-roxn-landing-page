@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, MapPin, TrendingUp, Calendar, Clock, Check } from "lucide-react";
 import logoAsset from "@/assets/logo_royal.png.asset.json";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
@@ -306,10 +305,7 @@ function PageNav() {
           <img src={logoAsset.url} alt="Royal RoXn" className="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
           <span className="font-display text-base font-bold sm:text-lg text-[color:var(--ink)]">Royal RoXn</span>
         </Link>
-        <div className="flex items-center gap-3">
-          <Link to="/" className="text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]">Home</Link>
-          <ThemeToggle />
-        </div>
+        <Link to="/" className="text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]">Home</Link>
       </div>
     </header>
   );
