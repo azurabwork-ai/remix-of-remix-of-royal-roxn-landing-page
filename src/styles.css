@@ -66,7 +66,7 @@
   --cta-hero-foreground: #FFFFFF;
   --cta-hero-glow: #60A5FA;
 
-  --background: #FFFFFF;
+  --background: #FDFBF7;
   --foreground: #111111;
   --card: #FFFFFF;
   --card-foreground: #111111;
@@ -74,16 +74,16 @@
   --popover-foreground: #111111;
   --primary: #FDB515;
   --primary-foreground: #111111;
-  --secondary: #F7F7F7;
+  --secondary: #F7F5F0;
   --secondary-foreground: #111111;
-  --muted: #F7F7F7;
+  --muted: #F7F5F0;
   --muted-foreground: #5A5A5A;
   --accent: #FFF4D6;
   --accent-foreground: #111111;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #EAEAEA;
-  --input: #EAEAEA;
+  --border: #EDE9E0;
+  --input: #EDE9E0;
   --ring: #FDB515;
 }
 
