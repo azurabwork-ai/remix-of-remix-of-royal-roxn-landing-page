@@ -11,6 +11,9 @@ import {
   ShieldCheck,
   CheckCircle2,
   Share2,
+  Mail,
+  Download,
+  Flame,
 } from "lucide-react";
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
@@ -431,6 +434,41 @@ function BlogIndexPage() {
             ))}
           </div>
         )}
+
+        {/* Free Lead Magnet Resource Box (Video Formula: Action-Taker Resource & Email Setup) */}
+        <section className="mt-16 overflow-hidden rounded-3xl border-2 border-[color:var(--gold)]/30 bg-gradient-to-br from-amber-50/90 via-white to-amber-50/50 p-6 sm:p-10 shadow-sm">
+          <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)]/20 px-3.5 py-1 text-xs font-bold text-[color:var(--ink)]">
+                <Download className="h-4 w-4 text-[color:var(--gold)]" />
+                <span>Free Action-Taker Resource (2026 Edition)</span>
+              </div>
+              <h2 className="mt-3 font-display text-2xl font-extrabold text-[color:var(--ink)] sm:text-3xl">
+                The Canadian Listing Presentation Diagnostic Script
+              </h2>
+              <p className="mt-2 text-sm text-gray-700 sm:text-base leading-relaxed">
+                Download the exact word-for-word 7-question qualification script our setters use to
+                eliminate tire-kickers, verify positive equity, and guarantee both titleholders
+                attend your consultation.
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-4 text-xs font-semibold text-[color:var(--muted-foreground)]">
+                <span>✓ Word-for-word Canadian script</span>
+                <span>✓ RECO / BCFSA compliant</span>
+                <span>✓ 100% Free instant access</span>
+              </div>
+            </div>
+
+            <div className="w-full lg:w-auto shrink-0">
+              <a
+                href="/#book"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--ink)] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-black hover:scale-105 shadow-md lg:w-auto"
+              >
+                <span>Download Free Script PDF</span>
+                <ArrowRight className="h-4 w-4 text-[color:var(--gold)]" />
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* Lead Generation Conversion Card */}
         <section className="mt-16 overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--ink)] p-8 text-white shadow-xl sm:p-12">

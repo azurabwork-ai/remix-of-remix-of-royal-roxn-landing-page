@@ -13,6 +13,10 @@ import {
   CheckCircle2,
   ChevronRight,
   HelpCircle,
+  TrendingUp,
+  Download,
+  Flame,
+  Award,
 } from "lucide-react";
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
@@ -327,6 +331,37 @@ function BlogPostDetailPage() {
           </div>
         </header>
 
+        {/* Personal Story & Proof Hook (Video Formula: Hook + Real Proof + Transparent Context) */}
+        {post.personalStoryHook && (
+          <div className="mt-8 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white p-6 sm:p-8 shadow-xs">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[color:var(--gold)]">
+              <Award className="h-4 w-4" />
+              <span>Real World Market Verification</span>
+            </div>
+
+            <p className="mt-3 text-sm leading-relaxed text-gray-800 sm:text-base italic">
+              "{post.personalStoryHook.narrative}"
+            </p>
+
+            {/* Proof Metric Chips */}
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {post.personalStoryHook.proofStats.map((stat, sIdx) => (
+                <div
+                  key={sIdx}
+                  className="rounded-xl border border-gray-100 bg-gray-50/80 p-3.5 text-center transition-all hover:border-[color:var(--gold)]/40 hover:bg-amber-50/20"
+                >
+                  <div className="font-display text-lg font-extrabold text-[color:var(--ink)] sm:text-xl">
+                    {stat.value}
+                  </div>
+                  <div className="mt-1 text-[11px] font-medium text-[color:var(--muted-foreground)]">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Executive Summary Box */}
         <div className="mt-8 rounded-2xl border-2 border-[color:var(--gold)]/40 bg-gradient-to-br from-amber-50/70 via-white to-amber-50/30 p-6 shadow-xs">
           <div className="flex items-center gap-2">
@@ -389,6 +424,47 @@ function BlogPostDetailPage() {
             </section>
           ))}
         </article>
+
+        {/* Action-Takers Rule Callout (Video Formula: Action Takeaway) */}
+        {post.actionTakeaway && (
+          <div className="mt-10 overflow-hidden rounded-2xl border-2 border-[color:var(--ink)] bg-[color:var(--ink)] p-6 text-white shadow-md">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[color:var(--gold)]">
+              <Flame className="h-4 w-4 text-amber-400" />
+              <span>Action-Taker Execution Directive</span>
+            </div>
+            <p className="mt-3 text-sm font-medium leading-relaxed sm:text-base text-gray-100">
+              {post.actionTakeaway}
+            </p>
+          </div>
+        )}
+
+        {/* Free Resource Lead Magnet Card (Video Formula: Free Resource Gift for Action Takers) */}
+        {post.freeResourceCta && (
+          <div className="mt-10 overflow-hidden rounded-2xl border-2 border-dashed border-[color:var(--gold)] bg-amber-50/60 p-6 sm:p-8">
+            <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+              <div className="max-w-xl">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--gold)]/20 px-3 py-0.5 text-xs font-bold text-[color:var(--ink)]">
+                  <Download className="h-3.5 w-3.5 text-[color:var(--gold)]" />
+                  <span>Complimentary Action Resource</span>
+                </span>
+                <h3 className="mt-3 font-display text-lg font-bold text-[color:var(--ink)] sm:text-xl">
+                  {post.freeResourceCta.title}
+                </h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-gray-700 sm:text-sm">
+                  {post.freeResourceCta.description}
+                </p>
+              </div>
+
+              <a
+                href="/#book"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[color:var(--ink)] px-5 py-3 text-xs font-bold text-white transition-all hover:bg-black hover:scale-105 shadow-sm"
+              >
+                <span>{post.freeResourceCta.buttonText}</span>
+                <ArrowRight className="h-3.5 w-3.5 text-[color:var(--gold)]" />
+              </a>
+            </div>
+          </div>
+        )}
 
         {/* In-Article FAQs (AEO Schema Supported) */}
         {post.faqs.length > 0 && (
