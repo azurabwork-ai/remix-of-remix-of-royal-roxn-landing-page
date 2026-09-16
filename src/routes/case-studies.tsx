@@ -7,9 +7,16 @@ export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
       { title: "Case Studies - Royal RoXn Realtor Success Stories" },
-      { name: "description", content: "See how Canadian Realtors are booking more qualified seller appointments and closing more listings with Royal RoXn." },
+      {
+        name: "description",
+        content:
+          "See how Canadian Realtors are booking more qualified seller appointments and closing more listings with Royal RoXn.",
+      },
       { property: "og:title", content: "Case Studies - Royal RoXn" },
-      { property: "og:description", content: "Real results from Canadian Realtors partnering with Royal RoXn." },
+      {
+        property: "og:description",
+        content: "Real results from Canadian Realtors partnering with Royal RoXn.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://clients.royalroxn.com/case-studies" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -28,13 +35,70 @@ export const Route = createFileRoute("/case-studies")({
           mainEntity: {
             "@type": "ItemList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, item: { "@type": "Article", headline: "8 qualified seller appointments in 60 days — 3 listings signed.", about: "Ontario Realtor" } },
-              { "@type": "ListItem", position: 2, item: { "@type": "Article", headline: "6 seller appointments in 45 days from a referral-dependent business.", about: "Quebec Realtor" } },
-              { "@type": "ListItem", position: 3, item: { "@type": "Article", headline: "10 qualified seller appointments in 90 days — 4 listings signed.", about: "British Columbia Realtor" } },
-              { "@type": "ListItem", position: 4, item: { "@type": "Article", headline: "7 qualified appointments in 75 days created a steadier pipeline.", about: "Alberta Realtor" } },
-              { "@type": "ListItem", position: 5, item: { "@type": "Article", headline: "9 qualified seller appointments in 3 months — no more cold calling.", about: "Nova Scotia Realtor" } },
-              { "@type": "ListItem", position: 6, item: { "@type": "Article", headline: "8 qualified appointments in 60 days without adding staff.", about: "Manitoba Realtor" } },
-              { "@type": "ListItem", position: 7, item: { "@type": "Article", headline: "11 qualified seller appointments in 90 days built a predictable pipeline.", about: "Ontario Realtor" } },
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@type": "Article",
+                  headline: "8 qualified seller appointments in 60 days — 3 listings signed.",
+                  about: "Ontario Realtor",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                  "@type": "Article",
+                  headline: "6 seller appointments in 45 days from a referral-dependent business.",
+                  about: "Quebec Realtor",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                  "@type": "Article",
+                  headline: "10 qualified seller appointments in 90 days — 4 listings signed.",
+                  about: "British Columbia Realtor",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                item: {
+                  "@type": "Article",
+                  headline: "7 qualified appointments in 75 days created a steadier pipeline.",
+                  about: "Alberta Realtor",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 5,
+                item: {
+                  "@type": "Article",
+                  headline: "9 qualified seller appointments in 3 months — no more cold calling.",
+                  about: "Nova Scotia Realtor",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 6,
+                item: {
+                  "@type": "Article",
+                  headline: "8 qualified appointments in 60 days without adding staff.",
+                  about: "Manitoba Realtor",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 7,
+                item: {
+                  "@type": "Article",
+                  headline:
+                    "11 qualified seller appointments in 90 days built a predictable pipeline.",
+                  about: "Ontario Realtor",
+                },
+              },
             ],
           },
         }),
@@ -45,8 +109,18 @@ export const Route = createFileRoute("/case-studies")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://clients.royalroxn.com/" },
-            { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://clients.royalroxn.com/case-studies" },
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://clients.royalroxn.com/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Case Studies",
+              item: "https://clients.royalroxn.com/case-studies",
+            },
           ],
         }),
       },
@@ -66,9 +140,12 @@ function CaseStudiesPage() {
         { icon: TrendingUp, label: "Listings", value: "3" },
         { icon: Clock, label: "Timeline", value: "60 days" },
       ],
-      challenge: "Generating new listings consistently while managing active clients left very little time for prospecting.",
-      solution: "Royal RoXn handled seller outreach, qualification, and appointment booking with homeowners in the target market.",
-      result: "Within 60 days, eight qualified seller appointments were booked, resulting in three signed listings and a much healthier pipeline.",
+      challenge:
+        "Generating new listings consistently while managing active clients left very little time for prospecting.",
+      solution:
+        "Royal RoXn handled seller outreach, qualification, and appointment booking with homeowners in the target market.",
+      result:
+        "Within 60 days, eight qualified seller appointments were booked, resulting in three signed listings and a much healthier pipeline.",
     },
     {
       name: "Laura Chen",
@@ -79,9 +156,12 @@ function CaseStudiesPage() {
         { icon: TrendingUp, label: "Listings", value: "2" },
         { icon: Clock, label: "Timeline", value: "45 days" },
       ],
-      challenge: "Most new business came from referrals, making monthly listing opportunities unpredictable.",
-      solution: "A dedicated appointment-setting team focused on identifying motivated homeowners and scheduling qualified meetings.",
-      result: "Six seller appointments were booked in the first 45 days, leading to two new listings and a more consistent workflow.",
+      challenge:
+        "Most new business came from referrals, making monthly listing opportunities unpredictable.",
+      solution:
+        "A dedicated appointment-setting team focused on identifying motivated homeowners and scheduling qualified meetings.",
+      result:
+        "Six seller appointments were booked in the first 45 days, leading to two new listings and a more consistent workflow.",
     },
     {
       name: "Marcus Reid",
@@ -92,9 +172,12 @@ function CaseStudiesPage() {
         { icon: TrendingUp, label: "Listings", value: "4" },
         { icon: Clock, label: "Timeline", value: "90 days" },
       ],
-      challenge: "Balancing buyer clients and prospecting made it difficult to generate new listing opportunities.",
-      solution: "Royal RoXn took over the outbound prospecting process, allowing more time to focus on existing clients.",
-      result: "Ten qualified seller appointments were scheduled over 90 days, with four converting into signed listings.",
+      challenge:
+        "Balancing buyer clients and prospecting made it difficult to generate new listing opportunities.",
+      solution:
+        "Royal RoXn took over the outbound prospecting process, allowing more time to focus on existing clients.",
+      result:
+        "Ten qualified seller appointments were scheduled over 90 days, with four converting into signed listings.",
     },
     {
       name: "Priya Sharma",
@@ -106,8 +189,10 @@ function CaseStudiesPage() {
         { icon: Clock, label: "Timeline", value: "75 days" },
       ],
       challenge: "Prospecting was inconsistent, resulting in unpredictable listing months.",
-      solution: "Royal RoXn built a structured seller outreach process focused on the client's preferred service area.",
-      result: "Seven qualified appointments were booked over 75 days, creating a steadier listing pipeline and improving month-to-month consistency.",
+      solution:
+        "Royal RoXn built a structured seller outreach process focused on the client's preferred service area.",
+      result:
+        "Seven qualified appointments were booked over 75 days, creating a steadier listing pipeline and improving month-to-month consistency.",
     },
     {
       name: "Daniel O'Brien",
@@ -118,9 +203,12 @@ function CaseStudiesPage() {
         { icon: TrendingUp, label: "Listings", value: "3" },
         { icon: Clock, label: "Timeline", value: "3 months" },
       ],
-      challenge: "Too much time was being spent cold calling instead of meeting with potential sellers.",
-      solution: "The appointment-setting team managed outbound calls, qualification, and scheduling on behalf of the agent.",
-      result: "Nine qualified seller appointments were delivered within three months, resulting in three new listing agreements.",
+      challenge:
+        "Too much time was being spent cold calling instead of meeting with potential sellers.",
+      solution:
+        "The appointment-setting team managed outbound calls, qualification, and scheduling on behalf of the agent.",
+      result:
+        "Nine qualified seller appointments were delivered within three months, resulting in three new listing agreements.",
     },
     {
       name: "Emily Carter",
@@ -132,8 +220,10 @@ function CaseStudiesPage() {
         { icon: Clock, label: "Timeline", value: "60 days" },
       ],
       challenge: "Growing the business without hiring additional staff or increasing workload.",
-      solution: "Royal RoXn managed prospecting while the agent focused on client meetings and listing presentations.",
-      result: "Eight qualified seller appointments were booked in 60 days, helping create a more reliable flow of listing opportunities.",
+      solution:
+        "Royal RoXn managed prospecting while the agent focused on client meetings and listing presentations.",
+      result:
+        "Eight qualified seller appointments were booked in 60 days, helping create a more reliable flow of listing opportunities.",
     },
     {
       name: "Nathan Kim",
@@ -144,9 +234,12 @@ function CaseStudiesPage() {
         { icon: TrendingUp, label: "Listings", value: "4" },
         { icon: Clock, label: "Timeline", value: "90 days" },
       ],
-      challenge: "A lack of consistent seller opportunities made business growth difficult to predict.",
-      solution: "A targeted appointment-setting campaign focused on motivated homeowners within the desired market.",
-      result: "Eleven qualified seller appointments were scheduled over 90 days, resulting in four new listings and a stronger, more predictable pipeline.",
+      challenge:
+        "A lack of consistent seller opportunities made business growth difficult to predict.",
+      solution:
+        "A targeted appointment-setting campaign focused on motivated homeowners within the desired market.",
+      result:
+        "Eleven qualified seller appointments were scheduled over 90 days, resulting in four new listings and a stronger, more predictable pipeline.",
     },
   ];
 
@@ -155,10 +248,16 @@ function CaseStudiesPage() {
       <PageNav />
 
       <section className="relative overflow-hidden bg-white">
-        <div aria-hidden className="pointer-events-none absolute -top-40 -right-40 h-[420px] w-[420px] rounded-full bg-[color:var(--gold-soft)] blur-3xl" />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-40 -right-40 h-[420px] w-[420px] rounded-full bg-[color:var(--gold-soft)] blur-3xl"
+        />
         <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 sm:py-16 lg:py-24">
           <div>
-            <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]"
+            >
               <ArrowLeft className="h-4 w-4" /> Back to Home
             </Link>
           </div>
@@ -174,11 +273,14 @@ function CaseStudiesPage() {
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)] sm:text-lg">
-            Every one of these agents used to spend hours prospecting. Now they spend that time in front of qualified sellers.
+            Every one of these agents used to spend hours prospecting. Now they spend that time in
+            front of qualified sellers.
           </p>
           <p className="mx-auto mt-8 max-w-3xl rounded-xl border border-[color:var(--gold)]/30 bg-[color:var(--gold-soft)] px-4 py-3 text-left text-[12px] leading-relaxed text-[color:var(--ink)]/80 sm:text-[13px]">
-            <strong className="font-semibold text-[color:var(--ink)]">Note:</strong>{" "}
-            Compliance with our Non-Disclosure Agreement (NDA) prohibits the sharing of specific client credentials, including names, phone numbers, and complete addresses, to uphold strict confidentiality of our client's marketing strategies.
+            <strong className="font-semibold text-[color:var(--ink)]">Note:</strong> Compliance with
+            our Non-Disclosure Agreement (NDA) prohibits the sharing of specific client credentials,
+            including names, phone numbers, and complete addresses, to uphold strict confidentiality
+            of our client's marketing strategies.
           </p>
         </div>
       </section>
@@ -186,7 +288,10 @@ function CaseStudiesPage() {
       <section className="bg-[color:var(--mist)] py-16 sm:py-20">
         <div className="mx-auto max-w-6xl space-y-10 px-4 sm:px-6 lg:px-10">
           {cases.map((c, i) => (
-            <article key={c.name} className="overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-white shadow-soft">
+            <article
+              key={c.name}
+              className="overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-white shadow-soft"
+            >
               <div className="grid gap-0 lg:grid-cols-[1fr_1.4fr]">
                 <div className="border-b border-[color:var(--border)] bg-[color:var(--ink)] p-6 text-white sm:p-8 lg:border-b-0 lg:border-r">
                   <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
@@ -206,10 +311,17 @@ function CaseStudiesPage() {
                     {c.metrics.map((m) => {
                       const Icon = m.icon;
                       return (
-                        <div key={m.label} className="min-w-0 rounded-xl border border-white/10 bg-[color:var(--graphite)] p-2 text-center sm:p-3">
+                        <div
+                          key={m.label}
+                          className="min-w-0 rounded-xl border border-white/10 bg-[color:var(--graphite)] p-2 text-center sm:p-3"
+                        >
                           <Icon className="mx-auto h-4 w-4 text-[color:var(--gold)]" />
-                          <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{m.value}</p>
-                          <p className="mt-0.5 break-words text-[9px] uppercase leading-tight tracking-wider text-white/60 sm:text-[10px]">{m.label}</p>
+                          <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">
+                            {m.value}
+                          </p>
+                          <p className="mt-0.5 break-words text-[9px] uppercase leading-tight tracking-wider text-white/60 sm:text-[10px]">
+                            {m.label}
+                          </p>
                         </div>
                       );
                     })}
@@ -219,8 +331,12 @@ function CaseStudiesPage() {
                   <Detail label="Challenge" text={c.challenge} />
                   <Detail label="Solution" text={c.solution} />
                   <div className="rounded-2xl bg-[color:var(--gold-soft)] p-5">
-                    <p className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--ink)]">Result</p>
-                    <p className="mt-2 font-display text-base font-semibold text-[color:var(--ink)]">{c.result}</p>
+                    <p className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--ink)]">
+                      Result
+                    </p>
+                    <p className="mt-2 font-display text-base font-semibold text-[color:var(--ink)]">
+                      {c.result}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -238,7 +354,10 @@ function CaseStudiesPage() {
             Book a free strategy call and see if you qualify to partner with Royal RoXn.
           </p>
           <div className="mt-8">
-            <Button asChild className="cta-eyecatch group relative h-13 rounded-full bg-[color:var(--cta-hero)] px-7 font-display text-sm font-semibold text-[color:var(--cta-hero-foreground)] shadow-card ring-2 ring-[color:var(--cta-hero-glow)]/60 ring-offset-2 ring-offset-[color:var(--background)] hover:bg-[color:var(--cta-hero)]/90 sm:text-base">
+            <Button
+              asChild
+              className="cta-eyecatch group relative h-13 rounded-full bg-[color:var(--cta-hero)] px-7 font-display text-sm font-semibold text-[color:var(--cta-hero-foreground)] shadow-card ring-2 ring-[color:var(--cta-hero-glow)]/60 ring-offset-2 ring-offset-[color:var(--background)] hover:bg-[color:var(--cta-hero)]/90 sm:text-base"
+            >
               <Link to="/" hash="book" className="relative z-10 inline-flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--cta-hero-glow)] opacity-75"></span>
@@ -267,7 +386,9 @@ function CaseStudiesPage() {
 function Detail({ label, text }: { label: string; text: string }) {
   return (
     <div>
-      <p className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">{label}</p>
+      <p className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">
+        {label}
+      </p>
       <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--ink)]/85">{text}</p>
     </div>
   );
@@ -286,9 +407,7 @@ function PrivateName({ name }: { name: string }) {
             {i > 0 && " "}
             {visible}
             {hidden && (
-              <span className="select-none blur-[5px] tracking-wider text-white/80">
-                {hidden}
-              </span>
+              <span className="select-none blur-[5px] tracking-wider text-white/80">{hidden}</span>
             )}
           </span>
         );
@@ -300,12 +419,25 @@ function PrivateName({ name }: { name: string }) {
 function PageNav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-10">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logoAsset.url} alt="Royal RoXn" className="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
-          <span className="font-display text-base font-bold sm:text-lg text-[color:var(--ink)]">Royal RoXn</span>
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 lg:h-22 sm:px-6 lg:px-10">
+        <Link to="/" className="flex items-center gap-2.5 sm:gap-3.5">
+          <img
+            src={logoAsset.url}
+            alt="Royal RoXn"
+            width={68}
+            height={68}
+            className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16"
+          />
+          <span className="font-display text-lg font-bold tracking-tight sm:text-xl lg:text-2xl text-[color:var(--ink)]">
+            Royal RoXn
+          </span>
         </Link>
-        <Link to="/" className="text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]">Home</Link>
+        <Link
+          to="/"
+          className="text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]"
+        >
+          Home
+        </Link>
       </div>
     </header>
   );

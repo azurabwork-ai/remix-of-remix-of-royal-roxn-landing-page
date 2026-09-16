@@ -62,9 +62,16 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "https://clients.royalroxn.com/logo_royal.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Royal RoXn - Book Qualified Seller Appointments" },
-      { name: "twitter:description", content: "Done-for-you appointment setting for Canadian Realtors." },
+      {
+        name: "twitter:description",
+        content: "Done-for-you appointment setting for Canadian Realtors.",
+      },
       { name: "twitter:image", content: "https://clients.royalroxn.com/logo_royal.png" },
-      { name: "keywords", content: "appointment setting for realtors, Canadian real estate leads, seller appointments, listing appointments, real estate prospecting Canada, ISA for realtors" },
+      {
+        name: "keywords",
+        content:
+          "appointment setting for realtors, Canadian real estate leads, seller appointments, listing appointments, real estate prospecting Canada, ISA for realtors",
+      },
     ],
     links: [
       {
@@ -163,7 +170,12 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://clients.royalroxn.com/" },
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://clients.royalroxn.com/",
+            },
           ],
         }),
       },
@@ -210,8 +222,10 @@ function PrivateName({ name, className = "" }: { name: string; className?: strin
 function NDANote() {
   return (
     <p className="mx-auto mt-6 max-w-3xl rounded-xl border border-[color:var(--gold)]/30 bg-[color:var(--gold-soft)] px-4 py-3 text-center text-[12px] leading-relaxed text-[color:var(--ink)]/80 sm:text-[13px]">
-      <strong className="font-semibold text-[color:var(--ink)]">Note:</strong>{" "}
-      Compliance with our Non-Disclosure Agreement (NDA) prohibits the sharing of specific client credentials, including names, phone numbers, and complete addresses, to uphold strict confidentiality of our client's marketing strategies.
+      <strong className="font-semibold text-[color:var(--ink)]">Note:</strong> Compliance with our
+      Non-Disclosure Agreement (NDA) prohibits the sharing of specific client credentials, including
+      names, phone numbers, and complete addresses, to uphold strict confidentiality of our client's
+      marketing strategies.
     </p>
   );
 }
@@ -348,16 +362,16 @@ function AutoSlider({
 
 function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
   return (
-    <div className="flex min-w-0 items-center gap-2 sm:gap-2.5">
+    <div className="flex min-w-0 items-center gap-2.5 sm:gap-3.5">
       <img
         src={logoAsset.url}
         alt="Royal RoXn"
-        width={52}
-        height={52}
-        className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12"
+        width={68}
+        height={68}
+        className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16"
       />
       <span
-        className={`truncate font-display text-base font-bold tracking-tight sm:text-lg ${
+        className={`truncate font-display text-lg font-bold tracking-tight sm:text-xl lg:text-2xl ${
           variant === "light" ? "text-white" : "text-[color:var(--ink)]"
         }`}
       >
@@ -394,7 +408,7 @@ function Landing() {
 function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 lg:h-22 sm:px-6 lg:px-10">
         <Logo />
         <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <a
@@ -416,7 +430,6 @@ function Nav() {
         </div>
       </div>
     </header>
-
   );
 }
 
@@ -443,8 +456,8 @@ function Hero() {
             </span>
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--muted-foreground)] sm:text-lg">
-            Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so
-            you can focus on winning more listings - not cold calling.
+            Royal RoXn helps Canadian Realtors find, qualify, and book seller appointments so you
+            can focus on winning more listings - not cold calling.
           </p>
 
           <ul className="mt-5 flex flex-col flex-wrap justify-center gap-x-6 gap-y-3 sm:mt-6 sm:flex-row">
@@ -453,7 +466,10 @@ function Hero() {
               "Dedicated Appointment Team",
               "Canadian Market Experts",
             ].map((t) => (
-              <li key={t} className="flex items-center gap-3 text-[14px] font-medium sm:text-[15px]">
+              <li
+                key={t}
+                className="flex items-center gap-3 text-[14px] font-medium sm:text-[15px]"
+              >
                 <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[color:var(--gold)]">
                   <Check className="h-3.5 w-3.5 text-[color:var(--ink)]" strokeWidth={3} />
                 </span>
@@ -488,8 +504,6 @@ function Hero() {
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
   );
@@ -510,8 +524,7 @@ function Stats() {
         <div className="mx-auto max-w-3xl text-center">
           <SectionEyebrow>Proven Track Record</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            9+ Years of{" "}
-            <span className="text-[color:var(--gold)]">Undefeated Success</span>
+            9+ Years of <span className="text-[color:var(--gold)]">Undefeated Success</span>
           </h2>
           <p className="mt-4 text-white/70">
             Numbers we've delivered for Realtors across every Canadian province.
@@ -592,8 +605,7 @@ function PainPoints() {
         <div>
           <SectionEyebrow>The Realtor Reality</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Does this sound{" "}
-            <span className="text-[color:var(--gold)]">familiar?</span>
+            Does this sound <span className="text-[color:var(--gold)]">familiar?</span>
           </h2>
           <p className="mt-4 max-w-lg text-[color:var(--muted-foreground)]">
             Most Realtors we speak with are stuck in the same trap - great at closing, buried in
@@ -660,8 +672,7 @@ function HowItWorks() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>How It Works</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            A predictable path to{" "}
-            <span className="text-[color:var(--gold)]">more listings</span>
+            A predictable path to <span className="text-[color:var(--gold)]">more listings</span>
           </h2>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
@@ -756,51 +767,70 @@ function CaseStudies() {
     {
       name: "James Morrison",
       province: "Ontario",
-      challenge: "Generating new listings consistently while managing active clients left very little time for prospecting.",
-      solution: "Royal RoXn handled seller outreach, qualification, and appointment booking with homeowners in the target market.",
-      result: "Within 60 days, eight qualified seller appointments were booked, resulting in three signed listings and a much healthier pipeline.",
+      challenge:
+        "Generating new listings consistently while managing active clients left very little time for prospecting.",
+      solution:
+        "Royal RoXn handled seller outreach, qualification, and appointment booking with homeowners in the target market.",
+      result:
+        "Within 60 days, eight qualified seller appointments were booked, resulting in three signed listings and a much healthier pipeline.",
     },
     {
       name: "Laura Chen",
       province: "Quebec",
-      challenge: "Most new business came from referrals, making monthly listing opportunities unpredictable.",
-      solution: "A dedicated appointment-setting team focused on identifying motivated homeowners and scheduling qualified meetings.",
-      result: "Six seller appointments were booked in the first 45 days, leading to two new listings and a more consistent workflow.",
+      challenge:
+        "Most new business came from referrals, making monthly listing opportunities unpredictable.",
+      solution:
+        "A dedicated appointment-setting team focused on identifying motivated homeowners and scheduling qualified meetings.",
+      result:
+        "Six seller appointments were booked in the first 45 days, leading to two new listings and a more consistent workflow.",
     },
     {
       name: "Marcus Reid",
       province: "British Columbia",
-      challenge: "Balancing buyer clients and prospecting made it difficult to generate new listing opportunities.",
-      solution: "Royal RoXn took over the outbound prospecting process, allowing more time to focus on existing clients.",
-      result: "Ten qualified seller appointments were scheduled over 90 days, with four converting into signed listings.",
+      challenge:
+        "Balancing buyer clients and prospecting made it difficult to generate new listing opportunities.",
+      solution:
+        "Royal RoXn took over the outbound prospecting process, allowing more time to focus on existing clients.",
+      result:
+        "Ten qualified seller appointments were scheduled over 90 days, with four converting into signed listings.",
     },
     {
       name: "Priya Sharma",
       province: "Alberta",
       challenge: "Prospecting was inconsistent, resulting in unpredictable listing months.",
-      solution: "Royal RoXn built a structured seller outreach process focused on the client's preferred service area.",
-      result: "Seven qualified appointments were booked over 75 days, creating a steadier listing pipeline and improving month-to-month consistency.",
+      solution:
+        "Royal RoXn built a structured seller outreach process focused on the client's preferred service area.",
+      result:
+        "Seven qualified appointments were booked over 75 days, creating a steadier listing pipeline and improving month-to-month consistency.",
     },
     {
       name: "Daniel O'Brien",
       province: "Nova Scotia",
-      challenge: "Too much time was being spent cold calling instead of meeting with potential sellers.",
-      solution: "The appointment-setting team managed outbound calls, qualification, and scheduling on behalf of the agent.",
-      result: "Nine qualified seller appointments were delivered within three months, resulting in three new listing agreements.",
+      challenge:
+        "Too much time was being spent cold calling instead of meeting with potential sellers.",
+      solution:
+        "The appointment-setting team managed outbound calls, qualification, and scheduling on behalf of the agent.",
+      result:
+        "Nine qualified seller appointments were delivered within three months, resulting in three new listing agreements.",
     },
     {
       name: "Emily Carter",
       province: "Manitoba",
       challenge: "Growing the business without hiring additional staff or increasing workload.",
-      solution: "Royal RoXn managed prospecting while the agent focused on client meetings and listing presentations.",
-      result: "Eight qualified seller appointments were booked in 60 days, helping create a more reliable flow of listing opportunities.",
+      solution:
+        "Royal RoXn managed prospecting while the agent focused on client meetings and listing presentations.",
+      result:
+        "Eight qualified seller appointments were booked in 60 days, helping create a more reliable flow of listing opportunities.",
     },
     {
       name: "Nathan Kim",
       province: "Ontario",
-      challenge: "A lack of consistent seller opportunities made business growth difficult to predict.",
-      solution: "A targeted appointment-setting campaign focused on motivated homeowners within the desired market.",
-      result: "Eleven qualified seller appointments were scheduled over 90 days, resulting in four new listings and a stronger, more predictable pipeline.",
+      challenge:
+        "A lack of consistent seller opportunities made business growth difficult to predict.",
+      solution:
+        "A targeted appointment-setting campaign focused on motivated homeowners within the desired market.",
+      result:
+        "Eleven qualified seller appointments were scheduled over 90 days, resulting in four new listings and a stronger, more predictable pipeline.",
     },
   ];
   const all = cases;
@@ -810,12 +840,16 @@ function CaseStudies() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Case Studies</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Real results from{" "}
-            <span className="text-[color:var(--gold)]">Canadian Realtors</span>
+            Real results from <span className="text-[color:var(--gold)]">Canadian Realtors</span>
           </h2>
         </div>
         <NDANote />
-        <AutoSlider itemsPerView={{ base: 1, md: 2, lg: 3 }} intervalMs={5500} total={all.length} className="mt-14">
+        <AutoSlider
+          itemsPerView={{ base: 1, md: 2, lg: 3 }}
+          intervalMs={5500}
+          total={all.length}
+          className="mt-14"
+        >
           {all.map((c) => (
             <article
               key={c.name}
@@ -950,7 +984,12 @@ function Testimonials() {
           </h2>
         </div>
         <NDANote />
-        <AutoSlider itemsPerView={{ base: 1, md: 2, lg: 3 }} intervalMs={4500} total={items.length} className="mt-14">
+        <AutoSlider
+          itemsPerView={{ base: 1, md: 2, lg: 3 }}
+          intervalMs={4500}
+          total={items.length}
+          className="mt-14"
+        >
           {items.map((t) => (
             <figure
               key={t.name}
@@ -966,7 +1005,11 @@ function Testimonials() {
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-[color:var(--border)] pt-5">
                 <span className="grid h-11 w-11 place-items-center rounded-full bg-[color:var(--gold-soft)] font-display text-sm font-bold text-[color:var(--ink)]">
-                  {t.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                  {t.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")
+                    .slice(0, 2)}
                 </span>
                 <div>
                   <p className="font-display text-sm font-semibold">
@@ -997,8 +1040,7 @@ function Results() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>The Numbers</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Results that speak{" "}
-            <span className="text-[color:var(--gold)]">for themselves</span>
+            Results that speak <span className="text-[color:var(--gold)]">for themselves</span>
           </h2>
         </div>
         <div className="mt-14 grid grid-cols-2 gap-5 lg:grid-cols-4">
@@ -1010,9 +1052,7 @@ function Results() {
               <p className="font-display text-4xl font-extrabold text-[color:var(--ink)] sm:text-5xl">
                 {s.n}
               </p>
-              <p className="mt-3 text-sm font-medium text-[color:var(--muted-foreground)]">
-                {s.l}
-              </p>
+              <p className="mt-3 text-sm font-medium text-[color:var(--muted-foreground)]">{s.l}</p>
             </div>
           ))}
         </div>
@@ -1153,80 +1193,77 @@ function FinalCTA() {
         </div>
 
         <div className="rounded-[24px] border border-white/40 bg-white p-5 shadow-card sm:p-7">
-          <form
-              className="space-y-4"
-              onSubmit={handleSubmit}
-            >
-              <h3 className="font-display text-xl font-bold sm:text-2xl">Book your free strategy call</h3>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <FieldWithLabel id="name" label="Full Name">
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <h3 className="font-display text-xl font-bold sm:text-2xl">
+              Book your free strategy call
+            </h3>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <FieldWithLabel id="name" label="Full Name">
+                <Input
+                  id="name"
+                  required
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  placeholder="Jane Doe"
+                  className="h-11 rounded-xl"
+                />
+              </FieldWithLabel>
+              <FieldWithLabel id="email" label="Email">
+                <Input
+                  id="email"
+                  required
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@brokerage.ca"
+                  className="h-11 rounded-xl"
+                />
+              </FieldWithLabel>
+              <FieldWithLabel id="phone" label="Phone Number">
+                <Input
+                  id="phone"
+                  required
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="(416) 555-0100"
+                  className="h-11 rounded-xl"
+                />
+              </FieldWithLabel>
+              <FieldWithLabel id="city" label="City / Province">
+                <Input
+                  id="city"
+                  value={cityProvince}
+                  onChange={(e) => setCityProvince(e.target.value)}
+                  placeholder="Toronto, ON"
+                  className="h-11 rounded-xl"
+                />
+              </FieldWithLabel>
+              <div className="sm:col-span-2">
+                <FieldWithLabel id="brokerage" label="Brokerage Name">
                   <Input
-                    id="name"
-                    required
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Jane Doe"
+                    id="brokerage"
+                    value={brokerageName}
+                    onChange={(e) => setBrokerageName(e.target.value)}
+                    placeholder="RE/MAX Hallmark"
                     className="h-11 rounded-xl"
                   />
                 </FieldWithLabel>
-                <FieldWithLabel id="email" label="Email">
-                  <Input
-                    id="email"
-                    required
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@brokerage.ca"
-                    className="h-11 rounded-xl"
-                  />
-                </FieldWithLabel>
-                <FieldWithLabel id="phone" label="Phone Number">
-                  <Input
-                    id="phone"
-                    required
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="(416) 555-0100"
-                    className="h-11 rounded-xl"
-                  />
-                </FieldWithLabel>
-                <FieldWithLabel id="city" label="City / Province">
-                  <Input
-                    id="city"
-                    value={cityProvince}
-                    onChange={(e) => setCityProvince(e.target.value)}
-                    placeholder="Toronto, ON"
-                    className="h-11 rounded-xl"
-                  />
-                </FieldWithLabel>
-                <div className="sm:col-span-2">
-                  <FieldWithLabel id="brokerage" label="Brokerage Name">
-                    <Input
-                      id="brokerage"
-                      value={brokerageName}
-                      onChange={(e) => setBrokerageName(e.target.value)}
-                      placeholder="RE/MAX Hallmark"
-                      className="h-11 rounded-xl"
-                    />
-                  </FieldWithLabel>
-                </div>
               </div>
-              <Button
-                type="submit"
-                disabled={submitting}
-                className="h-12 w-full rounded-full bg-[color:var(--ink)] font-display text-sm font-semibold uppercase tracking-wider text-white hover:bg-[color:var(--graphite)]"
-              >
-                {submitting ? "Submitting..." : "Book My Free Strategy Call"}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              {errorMsg && (
-                <p className="text-center text-xs text-red-600">{errorMsg}</p>
-              )}
-              <p className="text-center text-[11px] text-[color:var(--muted-foreground)]">
-                No spam. No obligations. 100% confidential.
-              </p>
-            </form>
+            </div>
+            <Button
+              type="submit"
+              disabled={submitting}
+              className="h-12 w-full rounded-full bg-[color:var(--ink)] font-display text-sm font-semibold uppercase tracking-wider text-white hover:bg-[color:var(--graphite)]"
+            >
+              {submitting ? "Submitting..." : "Book My Free Strategy Call"}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            {errorMsg && <p className="text-center text-xs text-red-600">{errorMsg}</p>}
+            <p className="text-center text-[11px] text-[color:var(--muted-foreground)]">
+              No spam. No obligations. 100% confidential.
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -1244,7 +1281,10 @@ function FieldWithLabel({
 }) {
   return (
     <div className="space-y-1.5">
-      <Label htmlFor={id} className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--ink)]">
+      <Label
+        htmlFor={id}
+        className="font-display text-xs font-semibold uppercase tracking-wider text-[color:var(--ink)]"
+      >
         {label}
       </Label>
       {children}
@@ -1270,10 +1310,26 @@ function Footer() {
               Quick Links
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
-              <li><a href="/#how" className="hover:text-[color:var(--gold)]">How It Works</a></li>
-              <li><Link to="/case-studies" className="hover:text-[color:var(--gold)]">Case Studies</Link></li>
-              <li><a href="/#testimonials" className="hover:text-[color:var(--gold)]">Testimonials</a></li>
-              <li><a href="/#faq" className="hover:text-[color:var(--gold)]">FAQ</a></li>
+              <li>
+                <a href="/#how" className="hover:text-[color:var(--gold)]">
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <Link to="/case-studies" className="hover:text-[color:var(--gold)]">
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <a href="/#testimonials" className="hover:text-[color:var(--gold)]">
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="/#faq" className="hover:text-[color:var(--gold)]">
+                  FAQ
+                </a>
+              </li>
             </ul>
           </div>
           <div>
@@ -1283,20 +1339,38 @@ function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
-                <span>1730 St. Laurent Blvd,<br />Ottawa, ON K1G 3Y7, Canada</span>
+                <span>
+                  1730 St. Laurent Blvd,
+                  <br />
+                  Ottawa, ON K1G 3Y7, Canada
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
                 <span>
-                  <a href="tel:+16137230251" className="block hover:text-[color:var(--gold)]">+1 (613) 723-0251</a>
-                  <a href="tel:+13435994999" className="block hover:text-[color:var(--gold)]">+1 (343) 599-4999</a>
+                  <a href="tel:+16137230251" className="block hover:text-[color:var(--gold)]">
+                    +1 (613) 723-0251
+                  </a>
+                  <a href="tel:+13435994999" className="block hover:text-[color:var(--gold)]">
+                    +1 (343) 599-4999
+                  </a>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
                 <span>
-                  <a href="mailto:contact@royalroxn.com" className="block hover:text-[color:var(--gold)]">contact@royalroxn.com</a>
-                  <a href="mailto:accounts@royalroxn.com" className="block hover:text-[color:var(--gold)]">accounts@royalroxn.com</a>
+                  <a
+                    href="mailto:contact@royalroxn.com"
+                    className="block hover:text-[color:var(--gold)]"
+                  >
+                    contact@royalroxn.com
+                  </a>
+                  <a
+                    href="mailto:accounts@royalroxn.com"
+                    className="block hover:text-[color:var(--gold)]"
+                  >
+                    accounts@royalroxn.com
+                  </a>
                 </span>
               </li>
             </ul>
@@ -1306,9 +1380,21 @@ function Footer() {
               Legal
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
-              <li><Link to="/privacy" className="hover:text-[color:var(--gold)]">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-[color:var(--gold)]">Terms of Service</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[color:var(--gold)]">Case Studies</Link></li>
+              <li>
+                <Link to="/privacy" className="hover:text-[color:var(--gold)]">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="hover:text-[color:var(--gold)]">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/case-studies" className="hover:text-[color:var(--gold)]">
+                  Case Studies
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

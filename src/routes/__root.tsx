@@ -78,7 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Royal RoXn" },
-      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
       { name: "theme-color", content: "#FDB515" },
       {
         name: "google-site-verification",
@@ -97,6 +100,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", href: "/logo_royal.png" },
     ],
     scripts: [
+      {
+        type: "text/javascript",
+        children: `try {
+          if (typeof window !== "undefined") {
+            window.addEventListener(
+              "error",
+              function (e) {
+                if (e && (e.message || "").indexOf("property fetch of #<Window>") !== -1) {
+                  if (e.preventDefault) e.preventDefault();
+                  if (e.stopPropagation) e.stopPropagation();
+                  return true;
+                }
+              },
+              true
+            );
+            if (window.fetch) {
+              var _origFetch = window.fetch.bind(window);
+              var _currentFetch = _origFetch;
+              try {
+                Object.defineProperty(window, "fetch", {
+                  get: function () {
+                    return _currentFetch;
+                  },
+                  set: function (fn) {
+                    _currentFetch = fn;
+                  },
+                  configurable: true,
+                  enumerable: true,
+                });
+              } catch (err) {}
+            }
+          }
+        } catch (e) {}`,
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -162,11 +199,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <noscript>
           <img
             height="1"
