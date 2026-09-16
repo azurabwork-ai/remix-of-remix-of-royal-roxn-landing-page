@@ -41,6 +41,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BLOG_POSTS } from "@/data/blog-posts";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -396,6 +397,7 @@ function Landing() {
       <CaseStudies />
       <Testimonials />
       <Results />
+      <BlogSection />
       <FAQ />
       <FinalCTA />
       <Footer />
@@ -410,13 +412,25 @@ function Nav() {
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 lg:h-22 sm:px-6 lg:px-10">
         <Logo />
-        <div className="flex shrink-0 items-center gap-2 sm:gap-5">
+        <div className="flex shrink-0 items-center gap-3 sm:gap-5">
+          <Link
+            to="/case-studies"
+            className="hidden text-sm font-medium text-[color:var(--muted-foreground)] transition-colors hover:text-[color:var(--gold)] md:inline-block"
+          >
+            Case Studies
+          </Link>
+          <Link
+            to="/blog"
+            className="hidden text-sm font-medium text-[color:var(--muted-foreground)] transition-colors hover:text-[color:var(--gold)] sm:inline-block"
+          >
+            Blog
+          </Link>
           <a
             href="tel:+13435994999"
-            className="hidden items-center gap-2 text-sm font-medium text-[color:var(--ink)] hover:text-[color:var(--gold)] sm:inline-flex"
+            className="hidden items-center gap-2 text-sm font-medium text-[color:var(--ink)] hover:text-[color:var(--gold)] lg:inline-flex"
           >
             <Phone className="h-4 w-4" />
-            Call Us <span className="hidden lg:inline">+1 (343) 599-4999</span>
+            <span>+1 (343) 599-4999</span>
           </a>
           <Button
             asChild
@@ -430,6 +444,99 @@ function Nav() {
         </div>
       </div>
     </header>
+  );
+}
+
+/* ---------- Blog Section ---------- */
+
+function BlogSection() {
+  const recentPosts = BLOG_POSTS.slice(0, 3);
+
+  return (
+    <section className="border-t border-[color:var(--border)] bg-gray-50/60 py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-white px-3 py-1 text-xs font-bold uppercase tracking-wider text-[color:var(--gold)] shadow-2xs">
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Canadian Realtor Growth Guides</span>
+            </div>
+            <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-[color:var(--ink)] sm:text-4xl">
+              Latest Insights & Listing Strategies
+            </h2>
+            <p className="mt-2 max-w-xl text-sm text-[color:var(--muted-foreground)]">
+              In-depth playbooks on generating seller listings without cold calling, ISA economics,
+              and seller qualification scripts.
+            </p>
+          </div>
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-5 py-2.5 text-xs font-semibold text-[color:var(--ink)] shadow-xs transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+          >
+            View All Guides
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {recentPosts.map((post) => (
+            <article
+              key={post.slug}
+              className="flex flex-col justify-between overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white shadow-xs transition-all hover:-translate-y-1 hover:shadow-md"
+            >
+              <div>
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: post.slug }}
+                  className="group block overflow-hidden"
+                >
+                  <div className="relative aspect-16/10 overflow-hidden bg-gray-100">
+                    <img
+                      src={post.imageUrl}
+                      alt={post.imageAlt}
+                      referrerPolicy="no-referrer"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute top-2.5 left-2.5 rounded-full bg-white/90 px-2.5 py-0.5 text-[10px] font-semibold text-[color:var(--ink)] backdrop-blur-xs shadow-xs">
+                      {post.category}
+                    </span>
+                  </div>
+                </Link>
+
+                <div className="p-5">
+                  <div className="flex items-center justify-between text-[11px] text-[color:var(--muted-foreground)]">
+                    <span>{post.publishedDate}</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: post.slug }}
+                    className="group mt-2.5 block"
+                  >
+                    <h3 className="font-display text-base font-bold leading-snug text-[color:var(--ink)] transition-colors group-hover:text-[color:var(--gold)]">
+                      {post.title}
+                    </h3>
+                  </Link>
+                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-[color:var(--muted-foreground)]">
+                    {post.excerpt}
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-[color:var(--border)] px-5 py-3.5">
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: post.slug }}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[color:var(--gold)] hover:underline"
+                >
+                  Read Playbook <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -1382,9 +1489,19 @@ function Footer() {
           </div>
           <div>
             <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-              Legal
+              Navigation & Legal
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
+              <li>
+                <Link to="/case-studies" className="hover:text-[color:var(--gold)]">
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-[color:var(--gold)]">
+                  Blog & Listing Guides
+                </Link>
+              </li>
               <li>
                 <Link to="/privacy" className="hover:text-[color:var(--gold)]">
                   Privacy Policy
@@ -1393,11 +1510,6 @@ function Footer() {
               <li>
                 <Link to="/terms" className="hover:text-[color:var(--gold)]">
                   Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link to="/case-studies" className="hover:text-[color:var(--gold)]">
-                  Case Studies
                 </Link>
               </li>
             </ul>

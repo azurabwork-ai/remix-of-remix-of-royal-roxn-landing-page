@@ -432,12 +432,20 @@ function PageNav() {
             Royal RoXn
           </span>
         </Link>
-        <Link
-          to="/"
-          className="text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]"
-        >
-          Home
-        </Link>
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link
+            to="/"
+            className="text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]"
+          >
+            Home
+          </Link>
+          <Link
+            to="/blog"
+            className="text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]"
+          >
+            Blog
+          </Link>
+        </div>
       </div>
     </header>
   );
@@ -446,6 +454,23 @@ function PageNav() {
 function PageFooter() {
   return (
     <footer className="border-t border-[color:var(--border)] bg-white py-8 text-center text-xs text-[color:var(--muted-foreground)]">
+      <div className="flex flex-wrap justify-center gap-4 mb-2">
+        <Link to="/" className="hover:text-[color:var(--gold)]">
+          Home
+        </Link>
+        <span>•</span>
+        <Link to="/blog" className="hover:text-[color:var(--gold)]">
+          Blog
+        </Link>
+        <span>•</span>
+        <Link to="/privacy" className="hover:text-[color:var(--gold)]">
+          Privacy
+        </Link>
+        <span>•</span>
+        <Link to="/terms" className="hover:text-[color:var(--gold)]">
+          Terms
+        </Link>
+      </div>
       © {new Date().getFullYear()} Royal RoXn. All rights reserved.
     </footer>
   );

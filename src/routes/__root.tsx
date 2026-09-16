@@ -87,6 +87,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "google-site-verification",
         content: "ffR8V17hFhK5wTOBDFT5DAQ6XU9Z57GUF9OVH0fs7GA",
       },
+      { name: "geo.region", content: "CA-ON" },
+      { name: "geo.placename", content: "Ottawa" },
+      { name: "geo.position", content: "45.4215;-75.6972" },
+      { name: "ICBM", content: "45.4215, -75.6972" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Royal RoXn" },
       { property: "og:locale", content: "en_CA" },
@@ -140,8 +144,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Royal RoXn",
+          alternateName: ["Royal RoXn Canada", "Royal RoXn Real Estate Appointment Setting"],
           url: "https://clients.royalroxn.com",
           logo: "https://clients.royalroxn.com/logo_royal.png",
+          description:
+            "Dedicated appointment-setting and inside sales agent (ISA) agency booking qualified seller listings for Canadian real estate agents.",
           email: "contact@royalroxn.com",
           telephone: ["+1-613-723-0251", "+1-343-599-4999"],
           address: {
@@ -152,8 +159,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             postalCode: "K1G 3Y7",
             addressCountry: "CA",
           },
-          areaServed: "CA",
-          sameAs: [],
+          areaServed: {
+            "@type": "Country",
+            name: "Canada",
+          },
+          knowsAbout: [
+            "Real Estate Appointment Setting",
+            "Canadian Real Estate Marketing",
+            "Inside Sales Agent (ISA) Services",
+            "Seller Listing Consultations",
+            "Real Estate Lead Qualification",
+          ],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Real Estate Appointment Services",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Done-For-You Seller Appointment Setting",
+                  description:
+                    "Pre-qualified, verified home sellers booked directly on Canadian Realtors' calendars with 0-90 day listing timelines.",
+                },
+              },
+            ],
+          },
         }),
       },
       {
@@ -162,7 +193,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Royal RoXn",
+          alternateName: "Royal RoXn Canadian Realtor Appointments",
           url: "https://clients.royalroxn.com",
+          description:
+            "Canada's leading done-for-you appointment-setting agency for residential real estate professionals.",
         }),
       },
       {
