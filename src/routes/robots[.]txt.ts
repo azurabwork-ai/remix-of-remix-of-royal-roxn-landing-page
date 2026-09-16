@@ -8,7 +8,7 @@ export const Route = createFileRoute("/robots.txt")({
           "User-agent: *",
           "Allow: /",
           "",
-          "# AI Search Engine Crawlers (AEO / Answer Engine Optimization)",
+          "# AI Search Engine & LLM Crawlers",
           "User-agent: GPTBot",
           "Allow: /",
           "",
@@ -23,6 +23,9 @@ export const Route = createFileRoute("/robots.txt")({
           "",
           "User-agent: Applebot-Extended",
           "Allow: /",
+          "",
+          "# LLM Documentation Context",
+          "# LLMs-txt: https://clients.royalroxn.com/llms.txt",
           "",
           "Sitemap: https://clients.royalroxn.com/sitemap.xml",
         ].join("\n");

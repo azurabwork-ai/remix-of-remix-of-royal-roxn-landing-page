@@ -299,14 +299,14 @@ function BlogIndexPage() {
                   </div>
                 </div>
 
-                {/* Right Image & AEO Takeaway */}
-                <div className="space-y-4 lg:col-span-5">
+                {/* Right Image */}
+                <div className="lg:col-span-5">
                   <Link
                     to="/blog/$slug"
                     params={{ slug: featuredPost.slug }}
                     className="group block overflow-hidden rounded-2xl border border-[color:var(--border)] shadow-xs"
                   >
-                    <div className="relative aspect-16/10 overflow-hidden bg-gray-100">
+                    <div className="relative aspect-16/10 overflow-hidden bg-gray-100 sm:aspect-4/3 lg:aspect-16/11">
                       <img
                         src={featuredPost.imageUrl}
                         alt={featuredPost.imageAlt}
@@ -319,16 +319,6 @@ function BlogIndexPage() {
                       </span>
                     </div>
                   </Link>
-
-                  <div className="rounded-2xl border border-[color:var(--border)] bg-gray-50/80 p-5">
-                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[color:var(--gold)]">
-                      <Sparkles className="h-3.5 w-3.5" />
-                      <span>Quick AEO Takeaway</span>
-                    </div>
-                    <p className="mt-2 text-xs leading-relaxed text-gray-700">
-                      "{featuredPost.aeoQuickAnswer}"
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>

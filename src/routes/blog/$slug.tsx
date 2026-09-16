@@ -327,14 +327,14 @@ function BlogPostDetailPage() {
           </div>
         </header>
 
-        {/* AEO Quick Answer Box (Crucial for Answer Engine Optimization) */}
+        {/* Executive Summary Box */}
         <div className="mt-8 rounded-2xl border-2 border-[color:var(--gold)]/40 bg-gradient-to-br from-amber-50/70 via-white to-amber-50/30 p-6 shadow-xs">
           <div className="flex items-center gap-2">
             <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[color:var(--gold)] text-white shadow-xs">
               <Sparkles className="h-4 w-4" />
             </div>
             <h2 className="font-display text-sm font-bold uppercase tracking-wider text-[color:var(--ink)]">
-              Quick Answer & Executive Summary (AEO)
+              Quick Answer & Executive Summary
             </h2>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-gray-800 sm:text-base">

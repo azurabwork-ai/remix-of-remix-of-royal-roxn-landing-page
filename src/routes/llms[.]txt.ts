@@ -1,4 +1,6 @@
-# Royal RoXn
+import { createFileRoute } from "@tanstack/react-router";
+
+const LLMS_TEXT = `# Royal RoXn
 
 > Done-for-you appointment setting that books qualified seller appointments on Canadian Realtors' calendars.
 
@@ -33,3 +35,19 @@ Royal RoXn is an institutional-grade Canadian appointment-setting service and In
 ## Technical Endpoints
 - [XML Sitemap](https://clients.royalroxn.com/sitemap.xml): Full URL manifest for search engines and AI crawlers.
 - [Robots.txt](https://clients.royalroxn.com/robots.txt): Crawler access rules supporting Googlebot, GPTBot, PerplexityBot, ClaudeBot, and Applebot.
+`;
+
+export const Route = createFileRoute("/llms[.]txt")({
+  server: {
+    handlers: {
+      GET: async () => {
+        return new Response(LLMS_TEXT, {
+          headers: {
+            "Content-Type": "text/markdown; charset=utf-8",
+            "Cache-Control": "public, max-age=86400",
+          },
+        });
+      },
+    },
+  },
+});

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# LLM Documentation Context
+# LLMs-txt: https://clients.royalroxn.com/llms.txt
+
 Sitemap: https://clients.royalroxn.com/sitemap.xml
