@@ -17,6 +17,7 @@ import {
   Sparkles,
   ChevronLeft,
   ChevronRight,
+  Menu,
 } from "lucide-react";
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
@@ -363,16 +364,16 @@ function AutoSlider({
 
 function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
   return (
-    <div className="flex min-w-0 items-center gap-2.5 sm:gap-3.5">
+    <div className="flex min-w-0 items-center gap-2 sm:gap-3.5">
       <img
         src={logoAsset.url}
         alt="Royal RoXn"
         width={68}
         height={68}
-        className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16"
+        className="h-10 w-10 shrink-0 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16"
       />
       <span
-        className={`truncate font-display text-lg font-bold tracking-tight sm:text-xl lg:text-2xl ${
+        className={`truncate font-display text-base font-bold tracking-tight sm:text-xl lg:text-2xl ${
           variant === "light" ? "text-white" : "text-[color:var(--ink)]"
         }`}
       >
@@ -408,11 +409,13 @@ function Landing() {
 /* ---------- Nav ---------- */
 
 function Nav() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 lg:h-22 sm:px-6 lg:px-10">
+    <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/90 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 lg:h-22 sm:px-6 lg:px-10">
         <Logo />
-        <div className="flex shrink-0 items-center gap-3 sm:gap-5">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-5">
           <Link
             to="/case-studies"
             className="hidden text-sm font-medium text-[color:var(--muted-foreground)] transition-colors hover:text-[color:var(--gold)] md:inline-block"
@@ -434,15 +437,57 @@ function Nav() {
           </a>
           <Button
             asChild
-            className="nav-cta group relative h-10 rounded-full bg-[color:var(--cta-nav)] px-4 font-display text-xs font-semibold text-[color:var(--cta-nav-foreground)] shadow-soft hover:bg-[color:var(--cta-nav)]/90 sm:h-11 sm:px-5 sm:text-sm"
+            className="nav-cta group relative h-9 rounded-full bg-[color:var(--cta-nav)] px-3.5 font-display text-xs font-semibold text-[color:var(--cta-nav-foreground)] shadow-soft hover:bg-[color:var(--cta-nav)]/90 sm:h-11 sm:px-5 sm:text-sm"
           >
-            <a href="#book" className="relative z-10 inline-flex items-center gap-2">
-              Book Call
+            <a href="#book" className="relative z-10 inline-flex items-center gap-1.5 sm:gap-2">
+              <span>Book Call</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </a>
           </Button>
+
+          {/* Mobile hamburger toggle */}
+          <button
+            type="button"
+            aria-label="Toggle mobile menu"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--border)] bg-white text-[color:var(--ink)] transition-colors hover:border-[color:var(--gold)] sm:hidden cursor-pointer"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="border-b border-[color:var(--border)] bg-white px-5 py-4 shadow-lg sm:hidden">
+          <nav className="flex flex-col space-y-3 text-sm font-medium">
+            <Link
+              to="/case-studies"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between rounded-lg px-3 py-2.5 text-[color:var(--ink)] hover:bg-[color:var(--mist)] hover:text-[color:var(--gold)]"
+            >
+              <span>Case Studies</span>
+              <ArrowRight className="h-4 w-4 text-[color:var(--gold)]" />
+            </Link>
+            <Link
+              to="/blog"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between rounded-lg px-3 py-2.5 text-[color:var(--ink)] hover:bg-[color:var(--mist)] hover:text-[color:var(--gold)]"
+            >
+              <span>Blog & Growth Guides</span>
+              <ArrowRight className="h-4 w-4 text-[color:var(--gold)]" />
+            </Link>
+            <a
+              href="tel:+13435994999"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-[color:var(--ink)] hover:bg-[color:var(--mist)] hover:text-[color:var(--gold)]"
+            >
+              <Phone className="h-4 w-4 text-[color:var(--gold)]" />
+              <span>Call +1 (343) 599-4999</span>
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

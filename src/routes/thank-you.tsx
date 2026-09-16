@@ -24,24 +24,21 @@ export const Route = createFileRoute("/thank-you")({
 function ThankYouPage() {
   return (
     <div className="min-h-screen bg-white text-[color:var(--ink)]">
-      <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/80 backdrop-blur-md">
-        <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:h-20 lg:h-22 sm:px-6 lg:px-10">
-          <Link to="/" className="flex items-center gap-2.5 sm:gap-3.5">
+      <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-white/90 backdrop-blur-md">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 lg:h-22 sm:px-6 lg:px-10">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3.5">
             <img
               src={logoAsset.url}
               alt="Royal RoXn"
               width={68}
               height={68}
-              className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16"
+              className="h-10 w-10 shrink-0 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16"
             />
-            <span className="font-display text-lg font-bold tracking-tight sm:text-xl lg:text-2xl">
+            <span className="font-display text-base font-bold tracking-tight sm:text-xl lg:text-2xl">
               Royal RoXn
             </span>
           </Link>
-          <Link
-            to="/"
-            className="text-sm font-medium text-[color:var(--muted-foreground)] hover:text-[color:var(--gold)]"
-          >
+          <Link to="/" className="text-sm font-semibold text-[color:var(--gold)] hover:underline">
             Home
           </Link>
         </div>
