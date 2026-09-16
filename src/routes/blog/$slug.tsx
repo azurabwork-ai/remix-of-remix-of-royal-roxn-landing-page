@@ -21,6 +21,7 @@ import {
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
 import { BLOG_POSTS, type BlogPost } from "@/data/blog-posts";
+import { LeadMagnetDownloadModal } from "@/components/LeadMagnetDownloadModal";
 import {
   Accordion,
   AccordionContent,
@@ -198,6 +199,7 @@ function BlogPostDetailPage() {
   const { slug } = useParams({ from: "/blog/$slug" });
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   const [copied, setCopied] = useState(false);
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
 
   if (!post) {
     return (
@@ -455,16 +457,33 @@ function BlogPostDetailPage() {
                 </p>
               </div>
 
-              <a
-                href="/#book"
-                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[color:var(--ink)] px-5 py-3 text-xs font-bold text-white transition-all hover:bg-black hover:scale-105 shadow-sm"
+              <button
+                type="button"
+                onClick={() => setDownloadModalOpen(true)}
+                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[color:var(--ink)] px-5 py-3 text-xs font-bold text-white transition-all hover:bg-black hover:scale-105 shadow-sm cursor-pointer"
               >
                 <span>{post.freeResourceCta.buttonText}</span>
                 <ArrowRight className="h-3.5 w-3.5 text-[color:var(--gold)]" />
-              </a>
+              </button>
             </div>
           </div>
         )}
+
+        {/* Lead Magnet Download Modal */}
+        <LeadMagnetDownloadModal
+          isOpen={downloadModalOpen}
+          onClose={() => setDownloadModalOpen(false)}
+          resourceId={
+            post.slug === "how-to-get-seller-listings-canada-without-cold-calling"
+              ? "seller-pre-qualification-script"
+              : post.slug === "inside-sales-agent-isa-vs-appointment-setting-service"
+                ? "isa-vs-appointment-setting-model"
+                : post.slug === "why-buying-real-estate-leads-fails-and-what-to-do"
+                  ? "portal-leads-roi-audit"
+                  : "7-diagnostic-questions-card"
+          }
+          sourceArticle={post.title}
+        />
 
         {/* In-Article FAQs (AEO Schema Supported) */}
         {post.faqs.length > 0 && (

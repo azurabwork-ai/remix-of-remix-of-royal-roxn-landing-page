@@ -3,9 +3,11 @@ import type {} from "@tanstack/react-start";
 import { BLOG_POSTS } from "@/data/blog-posts";
 
 const BASE_URL = "https://clients.royalroxn.com";
+const TODAY = "2026-09-16";
 
 interface SitemapEntry {
   path: string;
+  lastmod?: string;
   changefreq?: "daily" | "weekly" | "monthly" | "yearly";
   priority?: string;
 }
@@ -16,24 +18,26 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const blogEntries: SitemapEntry[] = BLOG_POSTS.map((post) => ({
           path: `/blog/${post.slug}`,
+          lastmod: TODAY,
           changefreq: "weekly",
-          priority: "0.8",
+          priority: "0.85",
         }));
 
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/blog", changefreq: "daily", priority: "0.9" },
+          { path: "/", lastmod: TODAY, changefreq: "weekly", priority: "1.0" },
+          { path: "/blog", lastmod: TODAY, changefreq: "daily", priority: "0.9" },
           ...blogEntries,
-          { path: "/case-studies", changefreq: "monthly", priority: "0.8" },
-          { path: "/privacy", changefreq: "yearly", priority: "0.3" },
-          { path: "/terms", changefreq: "yearly", priority: "0.3" },
-          { path: "/thank-you", changefreq: "yearly", priority: "0.3" },
+          { path: "/case-studies", lastmod: TODAY, changefreq: "monthly", priority: "0.8" },
+          { path: "/privacy", lastmod: TODAY, changefreq: "yearly", priority: "0.3" },
+          { path: "/terms", lastmod: TODAY, changefreq: "yearly", priority: "0.3" },
+          { path: "/thank-you", lastmod: TODAY, changefreq: "yearly", priority: "0.3" },
         ];
 
         const urls = entries.map((e) =>
           [
             `  <url>`,
             `    <loc>${BASE_URL}${e.path}</loc>`,
+            e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,

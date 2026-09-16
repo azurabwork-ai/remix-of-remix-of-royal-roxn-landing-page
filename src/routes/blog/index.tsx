@@ -18,6 +18,7 @@ import {
 
 import logoAsset from "@/assets/logo_royal.png.asset.json";
 import { BLOG_POSTS, type BlogPost } from "@/data/blog-posts";
+import { LeadMagnetDownloadModal } from "@/components/LeadMagnetDownloadModal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -177,6 +178,7 @@ function BlogNav() {
 function BlogIndexPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
 
   const categories = useMemo(() => {
     return ["All", "Listing Strategy", "ISA & Operations", "Lead Generation"];
@@ -459,16 +461,25 @@ function BlogIndexPage() {
             </div>
 
             <div className="w-full lg:w-auto shrink-0">
-              <a
-                href="/#book"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--ink)] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-black hover:scale-105 shadow-md lg:w-auto"
+              <button
+                type="button"
+                onClick={() => setDownloadModalOpen(true)}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--ink)] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-black hover:scale-105 shadow-md lg:w-auto cursor-pointer"
               >
                 <span>Download Free Script PDF</span>
                 <ArrowRight className="h-4 w-4 text-[color:var(--gold)]" />
-              </a>
+              </button>
             </div>
           </div>
         </section>
+
+        {/* Lead Magnet Download Modal */}
+        <LeadMagnetDownloadModal
+          isOpen={downloadModalOpen}
+          onClose={() => setDownloadModalOpen(false)}
+          resourceId="seller-pre-qualification-script"
+          sourceArticle="Canadian Realtor Growth Blog Hub"
+        />
 
         {/* Lead Generation Conversion Card */}
         <section className="mt-16 overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--ink)] p-8 text-white shadow-xl sm:p-12">
