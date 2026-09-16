@@ -1348,8 +1348,13 @@ function Footer() {
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
                 <span>
-                  <a href="tel:+16137230251" className="block hover:text-[color:var(--gold)]">
-                    +1 (613) 723-0251
+                  <a
+                    href="https://wa.me/16137230251"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block hover:text-[color:var(--gold)]"
+                  >
+                    +1 (613) 723-0251 (Whatsapp)
                   </a>
                   <a href="tel:+13435994999" className="block hover:text-[color:var(--gold)]">
                     +1 (343) 599-4999

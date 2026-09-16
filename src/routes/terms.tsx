@@ -127,7 +127,7 @@ function TermsPage() {
               contact@royalroxn.com
             </a>
             <br />
-            Phone: +1 (613) 723-0251 · +1 (343) 599-4999
+            Phone: +1 (613) 723-0251 (Whatsapp) · +1 (343) 599-4999
           </p>
         </div>
       </section>
