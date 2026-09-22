@@ -459,4 +459,105 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "what-is-royal-roxn-canadian-realtors-listing-pipeline",
+    title:
+      "What Is Royal RoXn? Helping Canadian Realtors Build a More Predictable Listing Pipeline",
+    metaTitle: "What Is Royal RoXn? | Predictable Listing Pipeline for Canadian Realtors",
+    metaDescription:
+      "Discover how Royal RoXn helps Canadian Realtors build a predictable listing pipeline through professional appointment setting, prospecting, and lead qualification.",
+    excerpt:
+      "Royal RoXn is a professional real estate appointment-setting and lead generation company focused on helping Realtors connect with qualified prospects and create more opportunities for listing appointments.",
+    category: "Listing Strategy",
+    publishedDate: "March 2, 2026",
+    readTime: "9 min read",
+    imageUrl:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
+    imageAlt:
+      "Royal RoXn professional real estate appointment setting and listing pipeline for Canadian Realtors",
+    featured: true,
+    author: {
+      name: "Royal RoXn Editorial Team",
+      role: "Canadian Real Estate Advisory",
+    },
+    keywords: [
+      "what is royal roxn",
+      "royal roxn real estate",
+      "canadian realtor appointment setting",
+      "predictable listing pipeline",
+      "real estate lead generation canada",
+    ],
+    aeoQuickAnswer:
+      "Royal RoXn is a specialized appointment-setting and lead generation company that helps Canadian residential real estate agents and teams build a predictable listing pipeline. By handling outbound prospecting, lead qualification, follow-up, and calendar scheduling, Royal RoXn puts qualified seller opportunities directly on a Realtor's calendar.",
+    personalStoryHook: {
+      narrative:
+        "For real estate professionals, getting consistent listing opportunities is one of the biggest challenges of growing a successful business. Canadian Realtors often spend countless hours prospecting, cold calling, and following up. Royal RoXn was built to solve this problem.",
+      proofStats: [
+        { label: "Predictable Pipeline", value: "100%" },
+        { label: "Qualified Conversations", value: "Verified" },
+        { label: "Calendar Bookings", value: "Automated" },
+        { label: "Target Market", value: "Canada" },
+      ],
+    },
+    actionTakeaway:
+      "Action-Takers Rule: Separate prospecting activities from sales and relationship activities. Let a professional appointment-setting system fill your calendar with qualified seller conversations.",
+    freeResourceCta: {
+      title: "Download Free Guide: Building a Predictable Canadian Listing Pipeline",
+      description:
+        "Learn the foundational appointment-setting framework used by top Canadian producing agents to scale their business.",
+      buttonText: "Download Free Pipeline Guide",
+    },
+    content: [
+      {
+        sectionHeading: "What Does Royal RoXn Do?",
+        paragraphs: [
+          "Royal RoXn helps Realtors create a more consistent flow of potential seller conversations through professional prospecting and appointment-setting services.",
+          "The process is designed around one simple objective: Put qualified opportunities on a Realtor's calendar.",
+        ],
+        bulletPoints: [
+          "Prospect identification & Lead generation",
+          "Outbound prospecting & Lead qualification",
+          "Persistent follow-up & Appointment setting",
+          "Calendar scheduling & Campaign management",
+          "Lead nurturing & Performance tracking",
+        ],
+      },
+      {
+        sectionHeading: "Why Appointment Setting Matters for Realtors",
+        paragraphs: [
+          "Generating leads is only one part of real estate marketing. A Realtor can receive hundreds of leads, but if those leads are not properly contacted, qualified, followed up with, and converted into conversations, the number of leads alone does not necessarily create business.",
+          "A professional appointment-setting system moves prospects through the funnel: Prospecting → Contact → Qualification → Conversation → Appointment → Listing Opportunity.",
+        ],
+      },
+      {
+        sectionHeading: "The Challenge Canadian Realtors Face",
+        paragraphs: [
+          "The Canadian real estate market is competitive, and Realtors need a consistent pipeline of potential clients to maintain predictable growth. Many agents face similar challenges: spending too much time cold calling, inconsistent lead flow, difficulty following up, and low-quality leads.",
+        ],
+      },
+      {
+        sectionHeading: "How Royal RoXn Helps Realtors",
+        paragraphs: [
+          "Royal RoXn's approach supports Realtors throughout the entire prospecting and appointment-setting lifecycle, from initial outreach to confirmed calendar bookings, allowing agents to focus on client consultations and negotiations.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is Royal RoXn?",
+        answer:
+          "Royal RoXn is a professional appointment-setting and lead generation company that helps real estate professionals create qualified conversations and appointment opportunities.",
+      },
+      {
+        question: "Does Royal RoXn work with Realtors?",
+        answer:
+          "Yes. Royal RoXn focuses on helping Realtors and real estate professionals generate and develop potential listing opportunities across Canada.",
+      },
+      {
+        question: "How can I get started with Royal RoXn?",
+        answer:
+          "Realtors interested in learning more can book a strategy call with Royal RoXn to discuss their business goals, target market, and appointment-setting requirements.",
+      },
+    ],
+  },
 ];
