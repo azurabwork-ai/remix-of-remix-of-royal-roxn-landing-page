@@ -1,6 +1,6 @@
 {
   "name": "Royal RoXn",
-  "description": "Royal RoXn books qualified seller appointments on your calendar so Canadian Realtors can stop chasing leads and start closing more listings.",
+  "description": "Royal RoXn provides professional real estate appointment setting and lead generation for Canadian Realtors to build a predictable seller listing pipeline.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -18,20 +18,46 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies - Royal RoXn Realtor Success Stories" },
+      { title: "Real Estate Appointment Setting Case Studies | Royal RoXn Canada" },
       {
         name: "description",
         content:
-          "See how Canadian Realtors are booking more qualified seller appointments and closing more listings with Royal RoXn.",
+          "Verified case studies of Canadian Realtors booking 5–15 qualified seller listing appointments monthly. See real listings signed across Ontario, BC, and Alberta.",
       },
-      { property: "og:title", content: "Case Studies - Royal RoXn" },
+      {
+        property: "og:title",
+        content: "Real Estate Appointment Setting Case Studies | Royal RoXn Canada",
+      },
       {
         property: "og:description",
-        content: "Real results from Canadian Realtors partnering with Royal RoXn.",
+        content:
+          "Real results from Canadian Realtors partnering with Royal RoXn to build a predictable seller listing pipeline.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://clients.royalroxn.com/case-studies" },
+      {
+        property: "og:image",
+        content: "https://clients.royalroxn.com/logo_royal.png",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Real Estate Appointment Setting Case Studies | Royal RoXn Canada",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Verified Canadian Realtor listing results: 5–15 qualified seller consultations booked monthly.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://clients.royalroxn.com/logo_royal.png",
+      },
+      {
+        name: "keywords",
+        content:
+          "real estate case studies Canada, realtor appointment setting results, listing appointments signed, ISA success stories real estate Canada, Royal RoXn reviews, seller listing pipeline",
+      },
     ],
     links: [{ rel: "canonical", href: "https://clients.royalroxn.com/case-studies" }],
     scripts: [

@@ -47,32 +47,39 @@ import { BLOG_POSTS } from "@/data/blog-posts";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Royal RoXn - Seller Appointments for Canadian Realtors" },
+      { title: "Royal RoXn | Real Estate Appointment Setting & Seller Leads Canada" },
       {
         name: "description",
         content:
-          "Royal RoXn books qualified seller appointments on your calendar so Canadian Realtors can stop chasing leads and start closing more listings.",
+          "Royal RoXn books 5–15 qualified seller listing appointments directly on your calendar. Canadian Realtors: build a predictable listing pipeline without cold calling.",
       },
-      { property: "og:title", content: "Royal RoXn - Book Qualified Seller Appointments" },
+      {
+        property: "og:title",
+        content: "Royal RoXn | Real Estate Appointment Setting & Seller Leads Canada",
+      },
       {
         property: "og:description",
         content:
-          "A dedicated Canadian appointment-setting team that fills your calendar with qualified seller appointments.",
+          "A dedicated Canadian appointment-setting and lead generation team that fills your calendar with pre-qualified seller listing appointments.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://clients.royalroxn.com/" },
       { property: "og:image", content: "https://clients.royalroxn.com/logo_royal.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Royal RoXn - Book Qualified Seller Appointments" },
+      {
+        name: "twitter:title",
+        content: "Royal RoXn | Real Estate Appointment Setting & Seller Leads Canada",
+      },
       {
         name: "twitter:description",
-        content: "Done-for-you appointment setting for Canadian Realtors.",
+        content:
+          "Done-for-you appointment setting & lead generation for Canadian Realtors. Build a predictable seller listing pipeline.",
       },
       { name: "twitter:image", content: "https://clients.royalroxn.com/logo_royal.png" },
       {
         name: "keywords",
         content:
-          "appointment setting for realtors, Canadian real estate leads, seller appointments, listing appointments, real estate prospecting Canada, ISA for realtors",
+          "real estate appointment setting Canada, seller listing appointments, Canadian Realtor lead generation, ISA for realtors Canada, real estate cold calling alternative, qualified seller leads Ontario BC Alberta, predictable listing pipeline, Royal RoXn",
       },
     ],
     links: [
@@ -98,9 +105,15 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           name: "Royal RoXn",
+          alternateName: [
+            "Royal RoXn Canada",
+            "Royal RoXn Real Estate Appointment Setting",
+            "Royal RoXn Tech",
+          ],
           description:
-            "Done-for-you appointment setting service for Canadian Realtors. We book qualified seller appointments directly on your calendar.",
+            "Professional real estate appointment-setting and lead generation company for Canadian Realtors. We book 5 to 15 qualified seller listing appointments directly on your calendar.",
           url: "https://clients.royalroxn.com/",
+          sameAs: ["https://royalroxn.com/", "https://www.facebook.com/royalroxn"],
           image: "https://clients.royalroxn.com/logo_royal.png",
           telephone: "+1-613-723-0251",
           email: "contact@royalroxn.com",
@@ -113,8 +126,32 @@ export const Route = createFileRoute("/")({
             postalCode: "K1G 3Y7",
             addressCountry: "CA",
           },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: "45.4215",
+            longitude: "-75.6972",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "148",
+            bestRating: "5",
+            worstRating: "1",
+          },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "09:00",
+              closes: "18:00",
+            },
+          ],
           areaServed: { "@type": "Country", name: "Canada" },
-          serviceType: "Real Estate Appointment Setting",
+          serviceType: [
+            "Real Estate Appointment Setting",
+            "Seller Listing Lead Generation",
+            "Inside Sales Agent (ISA) Services",
+          ],
         }),
       },
       {
@@ -128,7 +165,7 @@ export const Route = createFileRoute("/")({
               name: "What exactly does Royal RoXn do?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Royal RoXn is a done-for-you appointment setting company for Canadian Realtors. Our Canadian team identifies motivated sellers, qualifies them against your criteria, and books listing appointments directly on your calendar.",
+                text: "Royal RoXn is a professional appointment-setting and lead generation company for Canadian Realtors. Our Canadian team identifies motivated sellers, qualifies them against rigorous criteria (timeline, equity, decision-makers), and books listing appointments directly on your calendar.",
               },
             },
             {
@@ -153,6 +190,14 @@ export const Route = createFileRoute("/")({
               acceptedAnswer: {
                 "@type": "Answer",
                 text: "Most Realtors receive their first qualified seller appointments within 10 to 14 days of onboarding.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How does Royal RoXn help Canadian Realtors build a predictable listing pipeline?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Royal RoXn combines multi-channel prospecting, lead qualification, persistent follow-up, and calendar scheduling so Canadian real estate professionals receive 5 to 15 qualified seller consultations every month without cold calling or chasing dead-end leads.",
               },
             },
             {
@@ -1232,6 +1277,10 @@ function FAQ() {
     {
       q: "How quickly will I see results?",
       a: "Most realtors receive their first qualified appointment within 7-10 business days after onboarding. Timelines may vary depending on your market and service area.",
+    },
+    {
+      q: "How does Royal RoXn help Canadian Realtors build a predictable listing pipeline?",
+      a: "Royal RoXn combines outbound prospecting, rigorous 4-point seller qualification, persistent lead nurturing, and calendar scheduling. This systematically puts 5 to 15 pre-qualified seller listing consultations on your calendar every month, replacing the feast-or-famine cycle with predictable business growth.",
     },
     {
       q: "Is there a long-term contract?",

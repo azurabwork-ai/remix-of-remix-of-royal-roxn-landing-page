@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { BLOG_POSTS } from "@/data/blog-posts";
 
 const BASE_URL = "https://clients.royalroxn.com";
-const TODAY = "2026-09-16";
+const TODAY = "2026-09-22";
 
 interface SitemapEntry {
   path: string;

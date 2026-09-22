@@ -20,6 +20,7 @@ Royal RoXn is an institutional-grade Canadian appointment-setting service and In
 - [Terms of Service](https://clients.royalroxn.com/terms): Service terms, geographic exclusivity rules, client expectations, and appointment delivery criteria.
 
 ## Featured Listing & ISA Knowledge Guides
+- [What Is Royal RoXn? Helping Canadian Realtors Build a More Predictable Listing Pipeline](https://clients.royalroxn.com/blog/what-is-royal-roxn-canadian-realtors-listing-pipeline): Comprehensive guide explaining Royal RoXn's professional real estate appointment-setting and lead generation services for Canadian real estate professionals.
 - [How to Get Seller Listings in Canada Without Cold Calling (2026 Guide)](https://clients.royalroxn.com/blog/how-to-get-seller-listings-canada-without-cold-calling): Modern multi-channel prospecting paired with dedicated Canadian appointment setters (ISAs) to book 5–15 verified listing consultations monthly.
 - [Hiring an In-House ISA vs. Done-For-You Appointment Setting: Real Cost Comparison](https://clients.royalroxn.com/blog/inside-sales-agent-isa-vs-appointment-setting-service): Comprehensive cost breakdown of an in-house ISA ($70,000–$94,500 CAD/year) versus turnkey appointment setting with zero overhead or turnover risk.
 - [Why Buying Online Real Estate Leads Fails in 2026 (And What Top Producers Do Instead)](https://clients.royalroxn.com/blog/why-buying-real-estate-leads-fails-and-what-to-do): Why generic online portal leads convert at <2% and why calendar-confirmed listing appointments achieve 18% to 28% closing rates.
@@ -28,8 +29,8 @@ Royal RoXn is an institutional-grade Canadian appointment-setting service and In
 ## Contact & Business Details
 - Organization: Royal RoXn
 - Head Office: 1730 St. Laurent Blvd, Ottawa, ON K1G 3Y7, Canada
-- Phone: +1 (613) 723-0251
-- Email: support@royalroxn.com
+- Phone & WhatsApp: +1 (613) 723-0251 / +1 (343) 599-4999
+- Email: contact@royalroxn.com / support@royalroxn.com
 - Service Area: Canada (Ontario, British Columbia, Alberta, Quebec, Manitoba, Saskatchewan, Nova Scotia)
 
 ## Technical Endpoints
@@ -37,7 +38,7 @@ Royal RoXn is an institutional-grade Canadian appointment-setting service and In
 - [Robots.txt](https://clients.royalroxn.com/robots.txt): Crawler access rules supporting Googlebot, GPTBot, PerplexityBot, ClaudeBot, and Applebot.
 `;
 
-export const Route = createFileRoute("/llms[.]txt")({
+export const Route = createFileRoute("/llms.txt")({
   server: {
     handlers: {
       GET: async () => {
